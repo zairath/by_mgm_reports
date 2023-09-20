@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="label_lpn" language="groovy" pageWidth="255" pageHeight="141" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="251" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
+	<property name="ireport.zoom" value="3.452271214393125"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="27"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.ireport.encoding" value="UTF-8"/>
+	<property name="ireport.callouts" value="##4/6/12 callouts.1.text=This Report was converted from on 4/6/12 3:47 PM callouts.1.bounds=10,-10,600,32"/>
+	<property name="net.sf.jasperreports.governor.max.pages" value="500"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA["US_ENGLISH"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_CONNECTION" class="com.redprairie.moca.jrds.JRMocaConnection" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new com.redprairie.moca.jrds.JRMocaConnection("http://localhost:4500/service", "super", "super", true)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_DATE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getDateInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_TIME" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_TZ" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wh_id" class="java.lang.String">
+		<property name="prompt" value="^wh_id^"/>
+	</parameter>
+	<parameter name="trknum" class="java.lang.String">
+		<property name="prompt" value="^trknum^"/>
+	</parameter>
+	<parameter name="prtnum" class="java.lang.String">
+		<property name="prompt" value="^prtnum^"/>
+	</parameter>
+	<queryString language="MOCA">
+		<![CDATA[list rpt produce labels where @%trknum and @%prtnum and @%wh_id]]>
+	</queryString>
+	<field name="trknum" class="java.lang.String"/>
+	<field name="lodnum" class="java.lang.String"/>
+	<field name="subnum" class="java.lang.String"/>
+	<field name="expire_dte" class="java.util.Date"/>
+	<field name="for_qr" class="java.lang.String"/>
+	<field name="catch_qty" class="java.lang.Double"/>
+	<field name="adrnam" class="java.lang.String"/>
+	<field name="prtnum" class="java.lang.String"/>
+	<group name="groupby_lodnum">
+		<groupExpression><![CDATA[$F{lodnum}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="71" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="633c84a7-276f-4a1e-ad91-efde7c0bb4e7" x="0" y="57" width="251" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{for_qr}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="64bc4431-53b1-4107-b33b-5a05e9face82" isPrintRepeatedValues="false" x="195" y="0" width="60" height="47" isRemoveLineWhenBlank="true"/>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+new com.google.zxing.qrcode.QRCodeWriter().encode($F{for_qr},
+com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="1eaad373-6a35-47c7-8cf5-23200c7836d3" isPrintRepeatedValues="false" x="97" y="0" width="60" height="47" isRemoveLineWhenBlank="true"/>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+new com.google.zxing.qrcode.QRCodeWriter().encode($F{subnum},
+com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="5c337c5d-99ef-4f77-b701-361e80ebfab9" isPrintRepeatedValues="false" x="0" y="0" width="60" height="47" isRemoveLineWhenBlank="true"/>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+new com.google.zxing.qrcode.QRCodeWriter().encode($F{lodnum},
+com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="7db50652-6be4-44ab-a441-b3921ac3d3d1" x="0" y="47" width="46" height="10"/>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[LPN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f7a579fc-da85-4362-bb7c-34bf2351ab46" x="97" y="47" width="47" height="10"/>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Sub LPN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="40abe6e0-108f-454e-9de8-3d32436cb70c" x="195" y="47" width="46" height="10"/>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Weight]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="66" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="4c084f16-25b1-43b2-9fad-84a05accf5a9" x="0" y="0" width="69" height="10"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Client Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="920bfda7-f3e3-41cf-9ed3-62f55bd73e45" x="0" y="10" width="69" height="10"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Items]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2574253e-eda5-4560-8b46-52b6e6480a74" x="0" y="20" width="69" height="10"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Expired Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="aa4bf71e-75cf-4b2e-a10c-f807fb54826d" x="0" y="30" width="69" height="10"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Qty KG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="36cecc31-1594-4acc-af97-ed2d5f8cefeb" x="0" y="40" width="69" height="10"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[LPN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9a8e154d-6b42-48f8-ac5d-649ddba823a7" x="0" y="50" width="69" height="10"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Sub LPN]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="6367117f-080c-48ee-b448-3fb63f7c553e" x="74" y="0" width="177" height="10"/>
+				<box leftPadding="3"/>
+				<textElement markup="none">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{adrnam}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="e05fec29-a4be-4612-aee9-a14d875c75f9" x="69" y="0" width="5" height="10"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cf9a8a64-a185-4610-a065-e44be6111258" x="69" y="10" width="5" height="10"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="66dce445-e296-4feb-86dd-8e5b09d488bd" x="69" y="20" width="5" height="10"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7658e3b1-4c3f-47e4-a150-8f6eb929c358" x="69" y="30" width="5" height="10"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="57f20355-f31a-4489-bf56-4ef33222c8de" x="69" y="40" width="5" height="10"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="46d36792-09b8-4652-a762-94f94b9bd714" x="69" y="50" width="5" height="10"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="28446293-72a8-4c3c-8632-2fc66fbf5cf9" x="74" y="10" width="177" height="10"/>
+				<box leftPadding="3"/>
+				<textElement markup="none">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prtnum}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="5a4507c0-4dd7-4dfc-b8ba-9a9a9374a265" x="74" y="20" width="177" height="10"/>
+				<box leftPadding="3"/>
+				<textElement markup="none">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{expire_dte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4c0f24a5-4a60-4850-a968-755fa1e7a376" x="74" y="30" width="177" height="10"/>
+				<box leftPadding="3"/>
+				<textElement markup="none">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{catch_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b24bef09-c343-4694-9ece-827e9828ed5a" x="74" y="40" width="177" height="10"/>
+				<box leftPadding="3"/>
+				<textElement markup="none">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lodnum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c3d03bc7-c843-49b8-a6d5-478fc175e4e7" x="74" y="50" width="177" height="10"/>
+				<box leftPadding="3"/>
+				<textElement markup="none">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subnum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

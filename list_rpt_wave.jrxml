@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="list_rpt_wave" language="groovy" pageWidth="2880" pageHeight="1190" orientation="Landscape" columnWidth="2870" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5" uuid="d9c1cbd4-5057-4b69-8fdd-42549973c3aa">
+	<property name="ireport.zoom" value="2.143588810000003"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA["US_ENGLISH"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_CONNECTION" class="com.redprairie.moca.jrds.JRMocaConnection" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new com.redprairie.moca.jrds.JRMocaConnection("http://localhost:4500/service", "super", "super", true)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_DATE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getDateInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_TIME" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_TZ" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wh_id" class="java.lang.String">
+		<property name="prompt" value="^wh_id^"/>
+	</parameter>
+	<parameter name="client_id" class="java.lang.String">
+		<property name="prompt" value="^client_id^"/>
+	</parameter>
+	<parameter name="start_date" class="java.util.Date">
+		<property name="prompt" value="start_date"/>
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="end_date" class="java.util.Date">
+		<property name="prompt" value="end_date"/>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString language="MOCA">
+		<![CDATA[list rpt export wave data]]>
+	</queryString>
+	<field name="wv#" class="java.lang.String"/>
+	<field name="client_id" class="java.lang.String"/>
+	<field name="client_name" class="java.lang.String"/>
+	<field name="ord#" class="java.lang.String"/>
+	<field name="lpn" class="java.lang.String"/>
+	<field name="sku" class="java.lang.String"/>
+	<field name="description" class="java.lang.String"/>
+	<field name="batch" class="java.lang.String"/>
+	<field name="uom" class="java.lang.String"/>
+	<field name="pack" class="java.lang.Integer"/>
+	<field name="picked_location" class="java.lang.String"/>
+	<field name="present_cnts" class="java.lang.Integer"/>
+	<field name="ctns" class="java.lang.Integer"/>
+	<field name="pckdte" class="java.util.Date"/>
+	<field name="last_pck_usr_id" class="java.lang.String"/>
+	<field name="dispatch_dte" class="java.util.Date"/>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="e6e070c9-3e34-4112-8b77-18e7784d67c1" x="1" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[Wave]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fe2b0f4a-3eff-49dc-bbbc-cc2d25f9aa5b" x="151" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[client_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3f295c36-d8f0-4c82-8958-e17ba7ab748c" x="301" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[client_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="99bec7be-a33d-4eaa-baec-d0e01acc9d9a" x="451" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[Order]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1741bf3f-d5c7-44ad-9b8e-caa799d74a09" x="601" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[LPN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d5c601e7-b452-4140-a9cc-409375c7622c" x="751" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[SKU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0da83a61-3d65-450c-8d0e-99c60a3dba8d" x="901" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="09702267-85fb-419d-895c-7c5b223c00c5" x="1051" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[Batch]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d0c1f30f-8e58-41db-9d01-fc0099503c4f" x="1201" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[UOM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ca05e186-f3e2-48e7-958f-dc1f7f7e967d" x="1351" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[Pack]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c73b80ac-e0be-4919-9c55-d3ec45e8210e" x="1501" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[Picked Location]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6e2c78ff-6189-4581-b8f8-ed5c6c97e5cd" x="1651" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[Present CTNS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cbb1f1c9-4a03-4e8a-850f-c8c6accb50c3" x="1801" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[CTNS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="641f0af4-1397-46ab-aa3f-4c3f1c599a19" x="1951" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[Pick Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="728ec28f-e86f-4ade-a3a7-b4f25d8d17f8" x="2101" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[Last User Pick]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9d3bd7ca-5975-4e2b-9d97-43028577f2fa" x="2251" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[Dispatch Date]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="126" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="c3b116bb-f99d-4cde-9c5c-7014b2e19de9" x="1" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{wv#}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="0933e803-5e57-4a09-8566-2fbf1f80ccd3" x="451" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{ord#}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="8d16c272-059f-43bd-9c46-ebfef421d058" x="601" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{lpn}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="38a00627-14cd-478d-896c-958ec5a6b714" x="751" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{sku}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="ea5e52ec-f25a-4346-b9d5-bf888af91d30" x="901" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="cb6926b7-1493-4687-9db0-9c0ad4e145cc" x="1051" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{batch}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="bcf7e556-ab64-4a44-91c2-c2af6e94906a" x="1201" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{uom}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="8c185a95-4996-4ad4-bfc8-74fc6e347ff1" x="1351" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{pack}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="8458ccf1-3b20-4abb-a66e-47fd3bbadce6" x="1501" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{picked_location}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="9f1c5e63-6320-4f35-aa71-6acd0dac9109" x="1651" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{present_cnts}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="2eee26a8-4168-42cd-98bd-49ce9eb024b5" x="1801" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{ctns}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="35793941-d861-4162-a701-9e4ed4d04969" x="1951" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{pckdte}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="928f368d-380e-4edd-bed3-01c43ac4950e" x="2101" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{last_pck_usr_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="cfe337c5-642e-47a6-9d76-e4384a19fbac" x="2251" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{dispatch_dte}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="bf3db3f9-07b1-4fc8-9d09-1909da22fa91" x="151" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{client_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="13d6d208-937a-498f-8fab-c6b51db938a2" x="301" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{client_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
