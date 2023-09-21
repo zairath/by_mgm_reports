@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_event_trk" language="groovy" pageWidth="3240" pageHeight="1190" orientation="Landscape" columnWidth="3230" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5" uuid="821cf0c7-282f-4674-9afa-e6da813c6a77">
-	<property name="ireport.zoom" value="1.6105100000000012"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.zoom" value="1.9487171000000019"/>
+	<property name="ireport.x" value="3350"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
@@ -123,31 +123,31 @@
 				<text><![CDATA[From Inventory Status]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="aa850831-273c-42ba-9ff3-513371bb9c60" x="1801" y="0" width="150" height="20"/>
+				<reportElement uuid="aa850831-273c-42ba-9ff3-513371bb9c60" x="1951" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
 				<text><![CDATA[To Inventory Status]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="efe69a9c-7c80-4a5d-be13-459ba335ffa7" x="1951" y="0" width="150" height="20"/>
+				<reportElement uuid="efe69a9c-7c80-4a5d-be13-459ba335ffa7" x="2251" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
 				<text><![CDATA[Transaction QTY]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="c692e456-eee2-4cd6-b2b3-8b5fc077e262" x="2101" y="0" width="150" height="20"/>
+				<reportElement uuid="c692e456-eee2-4cd6-b2b3-8b5fc077e262" x="2401" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
 				<text><![CDATA[Uom Code]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="201a20ca-08b7-4029-9166-8394dddaf046" x="2251" y="0" width="150" height="20"/>
+				<reportElement uuid="201a20ca-08b7-4029-9166-8394dddaf046" x="2551" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
 				<text><![CDATA[From Batch]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="e3ba6abc-9eed-45b9-ade9-2f96ac397a51" x="2401" y="0" width="150" height="20"/>
+				<reportElement uuid="e3ba6abc-9eed-45b9-ade9-2f96ac397a51" x="2701" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
 				<text><![CDATA[To Batch]]></text>
@@ -165,10 +165,22 @@
 				<text><![CDATA[outbound_shipment]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="78742e28-9cc7-471b-b756-50b0d22b59a6" x="2551" y="0" width="150" height="20"/>
+				<reportElement uuid="78742e28-9cc7-471b-b756-50b0d22b59a6" x="2851" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
 				<text><![CDATA[User_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e896d8b2-ed44-45b0-ab23-e4cabf9ebe77" x="1801" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<text><![CDATA[From Inventory Status Desc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f33f11df-ffa7-4544-8434-a70296f41029" x="2101" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<text><![CDATA[To Inventory Status Desc]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -235,31 +247,31 @@
 				<textFieldExpression><![CDATA[$F{from_inventorystatus}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="f7057401-ebf1-4a30-8d55-3b87bfef704f" x="1801" y="0" width="150" height="20"/>
+				<reportElement uuid="f7057401-ebf1-4a30-8d55-3b87bfef704f" x="1951" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{to_inventorystatus}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="7988f7b3-59a1-44df-b98e-7f4bef4d4a96" x="1951" y="0" width="150" height="20"/>
+				<reportElement uuid="7988f7b3-59a1-44df-b98e-7f4bef4d4a96" x="2251" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{transaction_qty}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="5ad24471-c4c2-416c-9166-063de17fc177" x="2101" y="0" width="150" height="20"/>
+				<reportElement uuid="5ad24471-c4c2-416c-9166-063de17fc177" x="2401" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{uomcod}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="37938ba3-570b-4c2c-892c-f12a13e69b03" x="2251" y="0" width="150" height="20"/>
+				<reportElement uuid="37938ba3-570b-4c2c-892c-f12a13e69b03" x="2551" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{from_revlvl}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="421792f3-c9d3-43a2-9f12-e6f19ad63a1b" x="2401" y="0" width="150" height="20"/>
+				<reportElement uuid="421792f3-c9d3-43a2-9f12-e6f19ad63a1b" x="2701" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{to_revlvl}]]></textFieldExpression>
@@ -277,10 +289,22 @@
 				<textFieldExpression><![CDATA[$F{outbound_order_number}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="49df40cb-3fc3-44f8-9b9d-b31758428d3e" x="2551" y="0" width="150" height="20"/>
+				<reportElement uuid="49df40cb-3fc3-44f8-9b9d-b31758428d3e" x="2851" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{usr_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="553c68e7-df01-463e-a021-1cb48afd8650" x="1801" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{from_inventorystatusdesc}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="2d6d7cea-7eaf-4655-a3a6-534ae94296d3" x="2101" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{to_inventorystatusdesc}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
