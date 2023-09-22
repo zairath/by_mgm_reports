@@ -209,7 +209,7 @@
 				<reportElement uuid="8966f46f-6455-459d-bc24-537f7b0765bd" x="0" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{prtnum}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{date_printed}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement uuid="2a95cc06-191d-4e59-afa8-387f9de91aac" x="1950" y="0" width="150" height="20"/>
