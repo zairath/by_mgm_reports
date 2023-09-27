@@ -240,7 +240,7 @@
 				<text><![CDATA[PUTAWAY BY]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="bb22ebe2-22b4-4061-8f9b-b84ede457d47" x="2405" y="1" width="150" height="18"/>
+				<reportElement uuid="bb22ebe2-22b4-4061-8f9b-b84ede457d47" x="2405" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[BATCH CODE]]></text>
