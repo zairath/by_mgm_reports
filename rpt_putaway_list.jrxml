@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_putaway_list" language="groovy" pageWidth="3240" pageHeight="1684" orientation="Landscape" columnWidth="3230" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5" uuid="71e96340-ce56-4112-a345-47116e06927a">
 	<property name="ireport.zoom" value="1.7715610000000017"/>
-	<property name="ireport.x" value="3697"/>
+	<property name="ireport.x" value="4658"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
@@ -73,25 +73,25 @@
 				<reportElement uuid="db39480d-5271-408d-847f-8534697556bd" x="451" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
-				<text><![CDATA[Customer]]></text>
+				<text><![CDATA[CUSTOMER]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="9cc25344-f489-4f3e-8d67-0a3f265e8745" x="151" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
-				<text><![CDATA[Warehouse]]></text>
+				<text><![CDATA[WAREHOUSE]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="39fb2fc8-7462-4edb-814c-c3004adf6c24" x="601" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
-				<text><![CDATA[Container]]></text>
+				<text><![CDATA[CONTAINER]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="149cbb0c-f032-44d5-9575-08830c8fdcff" x="751" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
-				<text><![CDATA[Ref]]></text>
+				<text><![CDATA[REF]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="c56ef0ba-4f73-4623-bc20-47bef8e75619" x="1051" y="0" width="150" height="20"/>
@@ -103,19 +103,19 @@
 				<reportElement uuid="d3c6c81d-9842-4648-84d7-2e0f7d6b9bd2" x="901" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
-				<text><![CDATA[GR Date]]></text>
+				<text><![CDATA[GR DATE]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="05216e8f-04ba-47e7-9675-bc6e118f925a" x="1201" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
-				<text><![CDATA[Description]]></text>
+				<text><![CDATA[DESCRIPTION]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="66259292-6466-421f-ad2b-9c9f7168cec8" x="1351" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
-				<text><![CDATA[Size]]></text>
+				<text><![CDATA[SIZE]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="c76fa490-f72d-4aa4-ab9b-f3460156fb3c" x="1951" y="0" width="150" height="20"/>
@@ -133,13 +133,13 @@
 				<reportElement uuid="5de963ea-86d0-4000-a538-a365c661818e" x="1651" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
-				<text><![CDATA[Batch]]></text>
+				<text><![CDATA[REVISION LEVEL]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="bd04c07d-da3d-4ff0-a1d0-6fc70c99732d" x="1501" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
-				<text><![CDATA[Color]]></text>
+				<text><![CDATA[COLOR]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="807c5fb7-c1e0-4713-8f41-0f736960e7b0" x="2101" y="0" width="150" height="20"/>
@@ -157,25 +157,25 @@
 				<reportElement uuid="8040f499-fa51-4511-8251-48e1b18ec8ff" x="2551" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
-				<text><![CDATA[Putaway Location]]></text>
+				<text><![CDATA[PUTAWAY LOCATION]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="fd0cbfa8-f04a-46e2-bcab-052dded56aff" x="301" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
-				<text><![CDATA[Customer Code]]></text>
+				<text><![CDATA[CUSTOMER CODE]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="1ffdbf50-81c7-42d9-bfca-bc605732f2d9" x="2851" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
-				<text><![CDATA[Created At]]></text>
+				<text><![CDATA[CREATE AT]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="500b91d6-0b00-4069-aa09-6285cbed3dbd" x="3001" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
-				<text><![CDATA[Created By]]></text>
+				<text><![CDATA[CREATE BY]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="b9c9f7fe-18e9-4362-8df1-4da423c8f325" x="2401" y="0" width="150" height="20"/>
@@ -187,7 +187,7 @@
 				<reportElement uuid="56c90b43-b7ed-4940-9c52-77edbe56ff0b" x="2701" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
-				<text><![CDATA[Putaway By]]></text>
+				<text><![CDATA[PUTAWAY BY]]></text>
 			</staticText>
 		</band>
 	</title>
