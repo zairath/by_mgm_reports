@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tat_rpt" language="groovy" pageWidth="3960" pageHeight="7128" orientation="Landscape" columnWidth="3954" leftMargin="3" rightMargin="3" topMargin="3" bottomMargin="3" uuid="345ae4f4-6a98-4ed9-899e-44959c34223e">
 	<property name="ireport.zoom" value="1.771561000000014"/>
-	<property name="ireport.x" value="3336"/>
+	<property name="ireport.x" value="3315"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
@@ -317,7 +317,7 @@
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{phone_number}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm a" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss" isBlankWhenNull="true">
 				<reportElement uuid="6fcafe08-342c-471d-90d4-fe1cb95524a9" x="2100" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
@@ -329,49 +329,49 @@
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{yard_loc}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm a" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss" isBlankWhenNull="true">
 				<reportElement uuid="74f482d4-d7dc-4075-873b-02d01c04ef9f" x="2400" y="0" width="150" height="20" isPrintWhenDetailOverflows="true"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{gate_in_inbound}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm a" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss" isBlankWhenNull="true">
 				<reportElement uuid="e7d9152d-26d3-4e4c-ba7d-7165cd3bdd37" x="2550" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{gate_in_outbound}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm a" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss" isBlankWhenNull="true">
 				<reportElement uuid="058e76aa-51ce-4470-84c8-b11426602cb1" x="2700" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{start_activity_inbound}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm a" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss" isBlankWhenNull="true">
 				<reportElement uuid="fc816082-9f2f-4eb3-82d2-f977c0e17bb6" x="2850" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{start_activity_outbound}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm a" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss" isBlankWhenNull="true">
 				<reportElement uuid="e4adcfe2-a9cf-4fc3-8c65-d958ea0ff7bd" x="3000" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{finish_activity_inbound}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm a" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss" isBlankWhenNull="true">
 				<reportElement uuid="f9a27cf5-e69e-45e3-adb1-efae49bd6b1c" x="3150" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{finish_activity_outbound}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm a" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss" isBlankWhenNull="true">
 				<reportElement uuid="725e54e5-b4f8-441f-b6e9-e3b721234dab" x="3300" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{get_out_time}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm a" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss" isBlankWhenNull="true">
 				<reportElement uuid="a2810893-ff0f-42a9-94c3-6490fd958cc8" x="3450" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
