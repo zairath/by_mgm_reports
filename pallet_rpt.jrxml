@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pallet_rpt" language="groovy" pageWidth="7200" pageHeight="1684" orientation="Landscape" columnWidth="7180" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" uuid="e40e7c1b-a80e-4842-bb71-7d2df9d8c90a">
 	<property name="ireport.zoom" value="1.9487171000000025"/>
-	<property name="ireport.x" value="6827"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
@@ -125,7 +125,7 @@
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[Description]]></text>
+				<text><![CDATA[DESCRIPTION]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="ed48228f-9ced-4144-85c9-332c8cae35c1" x="1500" y="0" width="150" height="20"/>
@@ -401,13 +401,13 @@
 					<textElement/>
 					<textFieldExpression><![CDATA[$F{stkuom}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h.mm a" isBlankWhenNull="true">
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a" isBlankWhenNull="true">
 					<reportElement uuid="ab05e200-d596-4b76-8e62-7e83ec9f8b3c" x="3602" y="0" width="150" height="20"/>
 					<box leftPadding="3"/>
 					<textElement/>
 					<textFieldExpression><![CDATA[$F{expire_dte}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h.mm a" isBlankWhenNull="true">
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a" isBlankWhenNull="true">
 					<reportElement uuid="5e99ace7-11c1-4ed1-9104-3bb5d4b030b9" x="3752" y="0" width="150" height="20"/>
 					<box leftPadding="3"/>
 					<textElement/>
@@ -455,7 +455,7 @@
 					<textElement/>
 					<textFieldExpression><![CDATA[$F{reference_1}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h.mm a" isBlankWhenNull="true">
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a" isBlankWhenNull="true">
 					<reportElement uuid="93edcbfb-a18e-4502-b18d-1d56a5e35eb4" x="3452" y="0" width="150" height="20"/>
 					<box leftPadding="3"/>
 					<textElement/>
