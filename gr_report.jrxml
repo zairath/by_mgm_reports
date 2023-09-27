@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="gr_report" language="groovy" pageWidth="3816" pageHeight="7128" orientation="Landscape" columnWidth="3812" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
-	<property name="ireport.zoom" value="1.7715610000000215"/>
-	<property name="ireport.x" value="3849"/>
+	<property name="ireport.zoom" value="2.853116706110036"/>
+	<property name="ireport.x" value="7668"/>
 	<property name="ireport.y" value="0"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
@@ -240,7 +240,7 @@
 				<text><![CDATA[PUTAWAY BY]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="bb22ebe2-22b4-4061-8f9b-b84ede457d47" x="2405" y="1" width="150" height="18"/>
+				<reportElement uuid="bb22ebe2-22b4-4061-8f9b-b84ede457d47" x="2405" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[BATCH CODE]]></text>
@@ -321,13 +321,13 @@
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[( $F{catch_unttyp} != null ? $F{rcv_catch_qty} : $F{carton_weight} )]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h.mm a">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a">
 				<reportElement uuid="d56dfccb-c703-408a-868e-c6cbcac0504a" x="2856" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{expire_dte}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h.mm a">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a">
 				<reportElement uuid="d9bb48b1-ee07-4e1d-9bc1-b9a919b80c94" x="3006" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>

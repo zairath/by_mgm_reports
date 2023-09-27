@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ship_report" language="groovy" pageWidth="3670" pageHeight="7128" orientation="Landscape" columnWidth="3666" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
-	<property name="ireport.zoom" value="1.0000000000000089"/>
-	<property name="ireport.x" value="41"/>
+	<property name="ireport.zoom" value="1.948717100000018"/>
+	<property name="ireport.x" value="6149"/>
 	<property name="ireport.y" value="0"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
@@ -176,7 +176,7 @@
 				<reportElement uuid="1c0a6681-d1c8-45d2-adf0-d3cdaf6cd0a3" x="1097" y="0" width="120" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Descriptions]]></text>
+				<text><![CDATA[DESCRIPTION]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="d6d4904f-b55f-4376-b785-088a69778678" x="2417" y="0" width="120" height="18"/>
@@ -214,7 +214,7 @@
 				<reportElement uuid="d6b318de-30ce-44cf-81f3-0a2d93fc5075" x="2777" y="0" width="120" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Carrier]]></text>
+				<text><![CDATA[CARRIER]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="bebe7f78-9500-4708-9832-c9e3d6e1f9c3" x="2897" y="0" width="120" height="18"/>
@@ -408,13 +408,13 @@
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{trlr_num}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a" isBlankWhenNull="true">
 				<reportElement uuid="ffefd5fa-6723-4fed-9a87-b692e7995f2b" x="3137" y="0" width="120" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{loaded_date}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h.mm a" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a" isBlankWhenNull="true">
 				<reportElement uuid="c8e3ee23-5dc7-4d5b-b711-110f1d901fdb" x="3017" y="0" width="120" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
