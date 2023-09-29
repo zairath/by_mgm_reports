@@ -41,7 +41,10 @@
 		<![CDATA[list rpt export ptwy data]]>
 	</queryString>
 	<field name="gr#" class="java.lang.String"/>
+	<field name="batch_code" class="java.lang.String"/>
+	<field name="refrence_1" class="java.lang.String"/>
 	<field name="wh_id" class="java.lang.String"/>
+	<field name="subnum" class="java.lang.String"/>
 	<field name="cus_code" class="java.lang.String"/>
 	<field name="customer" class="java.lang.String"/>
 	<field name="container#" class="java.lang.String"/>
@@ -49,18 +52,23 @@
 	<field name="gr_date" class="java.util.Date"/>
 	<field name="sku" class="java.lang.String"/>
 	<field name="lngdsc" class="java.lang.String"/>
-	<field name="size" class="java.lang.String"/>
-	<field name="color" class="java.lang.String"/>
 	<field name="batch" class="java.lang.String"/>
 	<field name="lpn" class="java.lang.String"/>
 	<field name="po" class="java.lang.String"/>
-	<field name="ctns" class="java.lang.Integer"/>
+	<field name="unit_ctn" class="java.lang.Integer"/>
 	<field name="qty" class="java.lang.Integer"/>
 	<field name="stkuom" class="java.lang.String"/>
+	<field name="uom_cas" class="java.lang.Integer"/>
+	<field name="weight_rcv" class="java.lang.Double"/>
+	<field name="catch_untwgt" class="java.lang.Double"/>
+	<field name="catch_unttyp" class="java.lang.String"/>
 	<field name="putaway_location" class="java.lang.String"/>
 	<field name="putaway_user" class="java.lang.String"/>
+	<field name="expire_dte" class="java.util.Date"/>
+	<field name="manfac_dte" class="java.util.Date"/>
 	<field name="created_at" class="java.util.Date"/>
 	<field name="created_by" class="java.lang.String"/>
+	<field name="gr_usr" class="java.lang.String"/>
 	<title>
 		<band height="20" splitType="Stretch">
 			<staticText>
@@ -307,7 +315,7 @@
 				<reportElement uuid="1672c649-7e73-4c89-99a9-b64e47ec8ff6" x="1503" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
-				<textFieldExpression><![CDATA[$F{ctns}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement uuid="4a81be7b-ed89-409b-9afc-fb48429956c0" x="1052" y="0" width="150" height="20"/>
@@ -349,51 +357,61 @@
 				<reportElement uuid="ac88c1d5-b311-4975-9642-76d73a73d318" x="1353" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{uom_cas}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement uuid="78a5b79c-5f9b-4671-a634-1933ff20f3fa" x="1653" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{weight_rcv}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement uuid="0cef61b0-82f0-45d3-ba7f-891127a1ac70" x="1803" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{catch_untwgt}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement uuid="0460e18e-a857-4bbe-ade9-1424d1e6d2e1" x="1954" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{catch_unttyp}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement uuid="6f13d1c3-74bc-4068-8462-6d5e37c494c8" x="2405" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{subnum}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement uuid="acd198df-6e22-4205-af74-9af88177b85c" x="2706" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{batch_code}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement uuid="7122eb22-df9e-4899-9b2d-2c462c86de6a" x="2856" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{refrence_1}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a" isBlankWhenNull="true">
 				<reportElement uuid="7a7ece41-c65b-4f75-b513-f70f66751d8f" x="3157" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{manfac_dte}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a" isBlankWhenNull="true">
 				<reportElement uuid="c1d2862b-fd32-4f97-8bd4-dd6b1f10277c" x="3307" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{expire_dte}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement uuid="2fb8ba89-d811-404f-9cd9-54df8034b3d3" x="3908" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{gr_usr}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
