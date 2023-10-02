@@ -30,8 +30,8 @@
 		<property name="MOCA" value="true"/>
 		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
 	</parameter>
-	<parameter name="start_date" class="java.util.Date">
-		<property name="prompt" value="start_date"/>
+	<parameter name="date" class="java.util.Date">
+		<property name="prompt" value="date"/>
 	</parameter>
 	<parameter name="wh_id" class="java.lang.String">
 		<property name="prompt" value="^wh_id^"/>
@@ -40,8 +40,9 @@
 		<property name="prompt" value="^prt_client_id^"/>
 	</parameter>
 	<queryString language="MOCA">
-		<![CDATA[list rpt export soh by lpn where @%start_date and @%prt_client_id and @%wh_id]]>
+		<![CDATA[list rpt export soh by lpn where @%date and @%prt_client_id and @%wh_id]]>
 	</queryString>
+	<field name="date_printed" class="java.util.Date"/>
 	<field name="wh_id" class="java.lang.String"/>
 	<field name="stoloc" class="java.lang.String"/>
 	<field name="lodnum" class="java.lang.String"/>
@@ -53,51 +54,45 @@
 	<field name="lngdsc" class="java.lang.String"/>
 	<field name="expire_dte" class="java.util.Date"/>
 	<field name="untcas" class="java.lang.String"/>
-	<field name="stock" class="java.lang.String"/>
-	<field name="trn_in" class="java.lang.String"/>
-	<field name="trn_out" class="java.lang.String"/>
-	<field name="catch_weight" class="java.lang.String"/>
-	<field name="carton_weight" class="java.lang.String"/>
-	<field name="date_printed" class="java.util.Date"/>
 	<field name="init_stock" class="java.lang.String"/>
-	<field name="init_trn_in" class="java.lang.String"/>
-	<field name="init_trn_out" class="java.lang.String"/>
 	<field name="init_catch_weight" class="java.lang.String"/>
 	<field name="init_carton_weight" class="java.lang.String"/>
+	<field name="trn_in" class="java.lang.String"/>
+	<field name="trn_in_ctn" class="java.lang.String"/>
+	<field name="trn_in_catch_weight" class="java.lang.String"/>
+	<field name="trn_out" class="java.lang.String"/>
+	<field name="trn_out_ctn" class="java.lang.String"/>
+	<field name="trn_out_catch_weight" class="java.lang.String"/>
+	<field name="trn_adj" class="java.lang.String"/>
+	<field name="trn_adj_ctn" class="java.lang.String"/>
+	<field name="trn_adj_catch_weight" class="java.lang.String"/>
+	<field name="final_stock" class="java.lang.String"/>
+	<field name="final_catch_weight" class="java.lang.String"/>
+	<field name="final_carton_weight" class="java.lang.String"/>
+	<field name="client_name" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
 		<band height="18">
 			<staticText>
-				<reportElement uuid="25d16a08-ca09-4b11-8bab-da07f0e3c539" x="0" y="0" width="150" height="18"/>
+				<reportElement uuid="2c4679a5-17d2-4fb5-ad85-ae8d8b9f7fcf" x="1" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[date]]></text>
+				<text><![CDATA[CLIENT NAME
+]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="4c2c9c9a-5eae-4131-b2e5-08a195233823" x="150" y="0" width="150" height="18"/>
+				<reportElement uuid="4a73b174-4b50-4daf-868f-579f28522a1f" x="151" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[warehouse_id]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="2c4679a5-17d2-4fb5-ad85-ae8d8b9f7fcf" x="300" y="0" width="150" height="18"/>
-				<box leftPadding="3"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[storage_location]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="4a73b174-4b50-4daf-868f-579f28522a1f" x="450" y="0" width="150" height="18"/>
-				<box leftPadding="3"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[lpn]]></text>
+				<text><![CDATA[LPN]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="62bf4337-8066-4f33-a27a-3913d34df608" x="600" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[item]]></text>
+				<text><![CDATA[ITEM]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="dbda8bce-06ec-42e3-b5c4-3416b979a468" x="750" y="0" width="150" height="18"/>
@@ -171,24 +166,24 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[current_weight]]></text>
 			</staticText>
+			<staticText>
+				<reportElement uuid="83cab3d7-7c45-4bdd-9883-44f1eab84577" x="301" y="0" width="150" height="18"/>
+				<box leftPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[LPN]]></text>
+			</staticText>
 		</band>
 	</title>
 	<detail>
 		<band height="361" splitType="Stretch">
 			<textField isStretchWithOverflow="true">
-				<reportElement uuid="a031932d-10cf-4013-8ed8-d2783b3130b7" x="150" y="0" width="150" height="20"/>
+				<reportElement uuid="0054ae7e-9b96-43f3-8032-4c25ae29d7f1" x="1" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{wh_id}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{client_name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement uuid="0054ae7e-9b96-43f3-8032-4c25ae29d7f1" x="300" y="0" width="150" height="20"/>
-				<box leftPadding="3"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{stoloc}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="1181844d-adfe-49bd-9770-9e0c8771a730" x="450" y="0" width="150" height="20"/>
+				<reportElement uuid="1181844d-adfe-49bd-9770-9e0c8771a730" x="151" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{lodnum}]]></textFieldExpression>
@@ -272,10 +267,10 @@
 				<textFieldExpression><![CDATA[$F{stock}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement uuid="a6a16128-8b81-47df-977c-a5d995601bc2" x="0" y="0" width="150" height="20"/>
+				<reportElement uuid="4d8815a8-256d-451c-9278-0d172c37bbd3" x="301" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{date_printed}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{lodnum}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
