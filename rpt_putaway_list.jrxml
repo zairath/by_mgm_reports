@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_putaway_list" language="groovy" pageWidth="5040" pageHeight="1684" orientation="Landscape" columnWidth="5030" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5" uuid="71e96340-ce56-4112-a345-47116e06927a">
 	<property name="ireport.zoom" value="1.7715610000000017"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="4573"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
@@ -190,7 +190,8 @@
 				<reportElement uuid="8e6682ce-4e10-4610-bd84-af796ff57c4b" x="2856" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement/>
-				<text><![CDATA[REFRENCE 1]]></text>
+				<text><![CDATA[REFERENCE 1
+]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="c76fa490-f72d-4aa4-ab9b-f3460156fb3c" x="3006" y="0" width="150" height="20"/>
