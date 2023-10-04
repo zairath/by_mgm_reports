@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="list_rpt_wave" language="groovy" pageWidth="2880" pageHeight="1190" orientation="Landscape" columnWidth="2870" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5" uuid="d9c1cbd4-5057-4b69-8fdd-42549973c3aa">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="list_rpt_wave" language="groovy" pageWidth="3600" pageHeight="1190" orientation="Landscape" columnWidth="3590" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5" uuid="d9c1cbd4-5057-4b69-8fdd-42549973c3aa">
 	<property name="ireport.zoom" value="2.143588810000003"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="2524"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
@@ -45,9 +45,12 @@
 	<field name="client_name" class="java.lang.String"/>
 	<field name="ord#" class="java.lang.String"/>
 	<field name="lpn" class="java.lang.String"/>
+	<field name="sub_lpn" class="java.lang.String"/>
 	<field name="sku" class="java.lang.String"/>
 	<field name="description" class="java.lang.String"/>
-	<field name="batch" class="java.lang.String"/>
+	<field name="revlvl" class="java.lang.String"/>
+	<field name="batch_code" class="java.lang.String"/>
+	<field name="reference1" class="java.lang.String"/>
 	<field name="uom" class="java.lang.String"/>
 	<field name="pack" class="java.lang.Integer"/>
 	<field name="picked_location" class="java.lang.String"/>
@@ -56,203 +59,295 @@
 	<field name="pckdte" class="java.util.Date"/>
 	<field name="last_pck_usr_id" class="java.lang.String"/>
 	<field name="dispatch_dte" class="java.util.Date"/>
+	<field name="pck_catch_qty" class="java.lang.Double"/>
+	<field name="catch_unttyp" class="java.lang.String"/>
+	<field name="picked_weight" class="java.lang.Double"/>
+	<field name="total_picked_qty" class="java.lang.Integer"/>
 	<title>
 		<band height="20" splitType="Stretch">
 			<staticText>
-				<reportElement uuid="e6e070c9-3e34-4112-8b77-18e7784d67c1" x="1" y="0" width="150" height="20"/>
+				<reportElement uuid="e6e070c9-3e34-4112-8b77-18e7784d67c1" x="302" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement/>
-				<text><![CDATA[Wave]]></text>
+				<text><![CDATA[WAVE NUMBER ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="fe2b0f4a-3eff-49dc-bbbc-cc2d25f9aa5b" x="151" y="0" width="150" height="20"/>
+				<reportElement uuid="fe2b0f4a-3eff-49dc-bbbc-cc2d25f9aa5b" x="1" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement/>
-				<text><![CDATA[client_id]]></text>
+				<text><![CDATA[CLIENT ID ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="3f295c36-d8f0-4c82-8958-e17ba7ab748c" x="301" y="0" width="150" height="20"/>
+				<reportElement uuid="3f295c36-d8f0-4c82-8958-e17ba7ab748c" x="151" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement/>
-				<text><![CDATA[client_name]]></text>
+				<text><![CDATA[CLIENT NAME ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="99bec7be-a33d-4eaa-baec-d0e01acc9d9a" x="451" y="0" width="150" height="20"/>
-				<box leftPadding="5"/>
-				<textElement/>
-				<text><![CDATA[Order]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="1741bf3f-d5c7-44ad-9b8e-caa799d74a09" x="601" y="0" width="150" height="20"/>
-				<box leftPadding="5"/>
-				<textElement/>
-				<text><![CDATA[LPN]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="d5c601e7-b452-4140-a9cc-409375c7622c" x="751" y="0" width="150" height="20"/>
-				<box leftPadding="5"/>
-				<textElement/>
-				<text><![CDATA[SKU]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="0da83a61-3d65-450c-8d0e-99c60a3dba8d" x="901" y="0" width="150" height="20"/>
-				<box leftPadding="5"/>
-				<textElement/>
-				<text><![CDATA[Description]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="09702267-85fb-419d-895c-7c5b223c00c5" x="1051" y="0" width="150" height="20"/>
-				<box leftPadding="5"/>
-				<textElement/>
-				<text><![CDATA[Batch]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="d0c1f30f-8e58-41db-9d01-fc0099503c4f" x="1201" y="0" width="150" height="20"/>
+				<reportElement uuid="d0c1f30f-8e58-41db-9d01-fc0099503c4f" x="1952" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement/>
 				<text><![CDATA[UOM]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="ca05e186-f3e2-48e7-958f-dc1f7f7e967d" x="1351" y="0" width="150" height="20"/>
+				<reportElement uuid="6e2c78ff-6189-4581-b8f8-ed5c6c97e5cd" x="1802" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement/>
-				<text><![CDATA[Pack]]></text>
+				<text><![CDATA[INITIAL QTY]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="c73b80ac-e0be-4919-9c55-d3ec45e8210e" x="1501" y="0" width="150" height="20"/>
+				<reportElement uuid="99bec7be-a33d-4eaa-baec-d0e01acc9d9a" x="452" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement/>
-				<text><![CDATA[Picked Location]]></text>
+				<text><![CDATA[ORDER NUMBER ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="6e2c78ff-6189-4581-b8f8-ed5c6c97e5cd" x="1651" y="0" width="150" height="20"/>
+				<reportElement uuid="1741bf3f-d5c7-44ad-9b8e-caa799d74a09" x="602" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement/>
-				<text><![CDATA[Present CTNS]]></text>
+				<text><![CDATA[LPN]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="cbb1f1c9-4a03-4e8a-850f-c8c6accb50c3" x="1801" y="0" width="150" height="20"/>
+				<reportElement uuid="d5c601e7-b452-4140-a9cc-409375c7622c" x="1052" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement/>
-				<text><![CDATA[CTNS]]></text>
+				<text><![CDATA[SKU]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="641f0af4-1397-46ab-aa3f-4c3f1c599a19" x="1951" y="0" width="150" height="20"/>
+				<reportElement uuid="0da83a61-3d65-450c-8d0e-99c60a3dba8d" x="1202" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement/>
-				<text><![CDATA[Pick Date]]></text>
+				<text><![CDATA[DESCRIPTION]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="728ec28f-e86f-4ade-a3a7-b4f25d8d17f8" x="2101" y="0" width="150" height="20"/>
+				<reportElement uuid="09702267-85fb-419d-895c-7c5b223c00c5" x="1352" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement/>
-				<text><![CDATA[Last User Pick]]></text>
+				<text><![CDATA[REVISION LEVEL]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="9d3bd7ca-5975-4e2b-9d97-43028577f2fa" x="2251" y="0" width="150" height="20"/>
+				<reportElement uuid="c73b80ac-e0be-4919-9c55-d3ec45e8210e" x="902" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement/>
-				<text><![CDATA[Dispatch Date]]></text>
+				<text><![CDATA[PICKED LOCATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3f120250-a551-4aba-b84b-0794f89d5977" x="752" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[SUB LPN
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="297f431b-023f-43fa-98c1-61cb378eeb84" x="1502" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[BATCH CODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d11ab5f7-dd08-4503-94eb-93db36da4120" x="1652" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[REFERENCE 1
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ca05e186-f3e2-48e7-958f-dc1f7f7e967d" x="2102" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[UNIT CASE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7d851b15-c55f-4a81-9685-1ae2151a0dae" x="2252" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[PICKED QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b1512ac1-9d9b-4cd1-ac7e-82d9d2d4e67f" x="2402" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[PICKED WEIGHT
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b36c03bb-faad-402d-80c0-a327c8ce7412" x="2552" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[CATCH QTY
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2d6b233b-6505-41ca-8fed-94df13b5c62c" x="2702" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[CATCH UNIT TYPE
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1a0ecdb5-f9ba-40f2-a426-5f45e4b425ea" x="2852" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[TOTAL PICKED QTY
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="641f0af4-1397-46ab-aa3f-4c3f1c599a19" x="3002" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[PICK DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="728ec28f-e86f-4ade-a3a7-b4f25d8d17f8" x="3152" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[LAST USER PICK
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9d3bd7ca-5975-4e2b-9d97-43028577f2fa" x="3302" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement/>
+				<text><![CDATA[DISPATCH DATE
+]]></text>
 			</staticText>
 		</band>
 	</title>
 	<detail>
 		<band height="126" splitType="Stretch">
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="c3b116bb-f99d-4cde-9c5c-7014b2e19de9" x="1" y="0" width="150" height="20"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="c3b116bb-f99d-4cde-9c5c-7014b2e19de9" x="302" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{wv#}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="0933e803-5e57-4a09-8566-2fbf1f80ccd3" x="451" y="0" width="150" height="20"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="0933e803-5e57-4a09-8566-2fbf1f80ccd3" x="452" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{ord#}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="8d16c272-059f-43bd-9c46-ebfef421d058" x="601" y="0" width="150" height="20"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="8d16c272-059f-43bd-9c46-ebfef421d058" x="602" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{lpn}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="38a00627-14cd-478d-896c-958ec5a6b714" x="751" y="0" width="150" height="20"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="38a00627-14cd-478d-896c-958ec5a6b714" x="1052" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{sku}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="ea5e52ec-f25a-4346-b9d5-bf888af91d30" x="901" y="0" width="150" height="20"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="ea5e52ec-f25a-4346-b9d5-bf888af91d30" x="1202" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="cb6926b7-1493-4687-9db0-9c0ad4e145cc" x="1051" y="0" width="150" height="20"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="cb6926b7-1493-4687-9db0-9c0ad4e145cc" x="1352" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement markup="none"/>
-				<textFieldExpression><![CDATA[$F{batch}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{revlvl}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="bcf7e556-ab64-4a44-91c2-c2af6e94906a" x="1201" y="0" width="150" height="20"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="bcf7e556-ab64-4a44-91c2-c2af6e94906a" x="1952" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{uom}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="8c185a95-4996-4ad4-bfc8-74fc6e347ff1" x="1351" y="0" width="150" height="20"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="8c185a95-4996-4ad4-bfc8-74fc6e347ff1" x="2102" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{pack}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="8458ccf1-3b20-4abb-a66e-47fd3bbadce6" x="1501" y="0" width="150" height="20"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="8458ccf1-3b20-4abb-a66e-47fd3bbadce6" x="902" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{picked_location}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="9f1c5e63-6320-4f35-aa71-6acd0dac9109" x="1651" y="0" width="150" height="20"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="9f1c5e63-6320-4f35-aa71-6acd0dac9109" x="1802" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{present_cnts}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="2eee26a8-4168-42cd-98bd-49ce9eb024b5" x="1801" y="0" width="150" height="20"/>
-				<box leftPadding="5"/>
-				<textElement markup="none"/>
-				<textFieldExpression><![CDATA[$F{ctns}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="35793941-d861-4162-a701-9e4ed4d04969" x="1951" y="0" width="150" height="20"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="35793941-d861-4162-a701-9e4ed4d04969" x="3002" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{pckdte}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="928f368d-380e-4edd-bed3-01c43ac4950e" x="2101" y="0" width="150" height="20"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="928f368d-380e-4edd-bed3-01c43ac4950e" x="3152" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{last_pck_usr_id}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="cfe337c5-642e-47a6-9d76-e4384a19fbac" x="2251" y="0" width="150" height="20"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="cfe337c5-642e-47a6-9d76-e4384a19fbac" x="3302" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{dispatch_dte}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="bf3db3f9-07b1-4fc8-9d09-1909da22fa91" x="151" y="0" width="150" height="20"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="bf3db3f9-07b1-4fc8-9d09-1909da22fa91" x="1" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{client_id}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement uuid="13d6d208-937a-498f-8fab-c6b51db938a2" x="301" y="0" width="150" height="20"/>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="13d6d208-937a-498f-8fab-c6b51db938a2" x="151" y="0" width="150" height="20"/>
 				<box leftPadding="5"/>
 				<textElement markup="none"/>
 				<textFieldExpression><![CDATA[$F{client_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="92db9c7e-35b4-411a-8a42-692873199b11" x="752" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{sub_lpn}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="5f234916-4399-4135-95b5-3fa416aa6211" x="1502" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{batch_code}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="dd6df0e3-02a5-4ac9-b1df-b0b623793627" x="1652" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{reference1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="6b37effd-99b6-40dc-ac67-6912846e1b0f" x="2252" y="0" width="150" height="20"/>
+				<box leftPadding="5"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{ctns}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="53a70ec4-a901-4e27-9ec3-e246fd6d8aca" x="2402" y="0" width="150" height="20"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{picked_weight}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="e7d651bb-3854-4cc9-ab0f-1d98963f8d38" x="2552" y="0" width="150" height="20"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{pck_catch_qty}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="9486c190-e142-4d19-ab04-ff33c132d9e5" x="2702" y="0" width="150" height="20"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{catch_unttyp}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="e8b3ff89-e0a9-4cf4-9df3-6f695b3dbeb6" x="2852" y="0" width="150" height="20"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{total_picked_qty}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
