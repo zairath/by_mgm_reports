@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="grn_ba" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="14" bottomMargin="26" isFloatColumnFooter="true" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
-	<property name="ireport.zoom" value="1.5026296018031582"/>
+	<property name="ireport.zoom" value="1.6528925619834747"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="169"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
 	<property name="ireport.callouts" value="##4/6/12 callouts.1.text=This Report was converted from on 4/6/12 3:47 PM callouts.1.bounds=10,-10,600,32"/>
@@ -41,6 +41,7 @@
 	</queryString>
 	<field name="asn" class="java.lang.String"/>
 	<field name="customer" class="java.lang.String"/>
+	<field name="client_name" class="java.lang.String"/>
 	<field name="supnum" class="java.lang.String"/>
 	<field name="nomor_po" class="java.lang.String"/>
 	<field name="invlin" class="java.lang.String"/>
@@ -65,6 +66,8 @@
 	<field name="orgcod" class="java.lang.String"/>
 	<field name="revlvl" class="java.lang.String"/>
 	<field name="lotnum" class="java.lang.String"/>
+	<field name="inv_attr_str1" class="java.lang.String"/>
+	<field name="inv_attr_str2" class="java.lang.String"/>
 	<field name="rcvsts" class="java.lang.String"/>
 	<field name="mandte" class="java.util.Date"/>
 	<field name="expire_dte" class="java.util.Date"/>
@@ -81,6 +84,7 @@
 	<field name="actual_pcs" class="java.lang.Integer"/>
 	<field name="actual_carton" class="java.lang.Integer"/>
 	<field name="expected_carton" class="java.lang.Integer"/>
+	<field name="quantity_reported" class="java.lang.String"/>
 	<field name="inventory_status" class="java.lang.String"/>
 	<field name="truck_type" class="java.lang.String"/>
 	<field name="transporter_name" class="java.lang.String"/>
@@ -278,7 +282,7 @@
 				<textElement verticalAlignment="Middle">
 					<font size="10"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{supnum} + " - " + $F{customer}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{client_name}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement uuid="db5f43c5-1f52-4156-b0a8-ad8d966573b8" x="376" y="108" width="199" height="35"/>
@@ -320,19 +324,13 @@
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="17a5c893-9fdd-45de-b408-73787a1bbd22" x="209" y="0" width="40" height="20" backcolor="#CCCCFF"/>
+				<reportElement uuid="13f60beb-da3f-4e4f-8634-de49163e6470" x="209" y="0" width="117" height="20" backcolor="#CCCCFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="13f60beb-da3f-4e4f-8634-de49163e6470" x="249" y="0" width="117" height="20" backcolor="#CCCCFF"/>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<rectangle>
-				<reportElement uuid="919aedfe-1144-4430-97b4-dbe5d8388c5f" x="366" y="0" width="46" height="20" backcolor="#CCCCFF"/>
+				<reportElement uuid="919aedfe-1144-4430-97b4-dbe5d8388c5f" x="326" y="0" width="86" height="20" backcolor="#CCCCFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -361,24 +359,17 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="9" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Description]]></text>
+				<text><![CDATA[DESCRIPTIONS]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="356f8d43-c647-4864-b44a-c6f1363261da" x="209" y="0" width="40" height="20"/>
+				<reportElement uuid="e79f7563-9357-46f2-9fc0-6be29f4adfd7" x="209" y="0" width="117" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="9" isBold="true"/>
 				</textElement>
-				<text><![CDATA[UOM]]></text>
+				<text><![CDATA[BATCH]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="e79f7563-9357-46f2-9fc0-6be29f4adfd7" x="249" y="0" width="117" height="20"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="9" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Batch]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="2b45c99c-6023-4fc5-8a7d-49e5de4a8d22" x="366" y="0" width="46" height="20"/>
+				<reportElement uuid="2b45c99c-6023-4fc5-8a7d-49e5de4a8d22" x="326" y="0" width="86" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="9" isBold="true"/>
 				</textElement>
@@ -396,7 +387,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="9" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Status]]></text>
+				<text><![CDATA[NOTE]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -431,7 +422,7 @@
 				<textFieldExpression><![CDATA[$F{lngdsc}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement uuid="6e35a2a0-16e8-4a3e-bcb2-6586db0f9deb" x="209" y="0" width="40" height="50"/>
+				<reportElement uuid="53d54cc2-267a-4237-aaf4-a4f87d3ec291" x="209" y="0" width="117" height="50"/>
 				<box>
 					<pen lineWidth="0.5" lineStyle="Dashed"/>
 					<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -442,10 +433,10 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{stkuom}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{inv_attr_str1}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement uuid="53d54cc2-267a-4237-aaf4-a4f87d3ec291" x="249" y="0" width="117" height="50"/>
+				<reportElement uuid="5e8bc4ed-6e1a-4891-8d11-91e868bc5cf5" x="326" y="0" width="86" height="50"/>
 				<box>
 					<pen lineWidth="0.5" lineStyle="Dashed"/>
 					<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -456,21 +447,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{revlvl}]]></textFieldExpression>
-			</textField>
-			<textField pattern="" isBlankWhenNull="true">
-				<reportElement uuid="5e8bc4ed-6e1a-4891-8d11-91e868bc5cf5" x="366" y="0" width="46" height="50"/>
-				<box>
-					<pen lineWidth="0.5" lineStyle="Dashed"/>
-					<topPen lineWidth="0.5" lineStyle="Dashed"/>
-					<leftPen lineWidth="0.5" lineStyle="Dashed"/>
-					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
-					<rightPen lineWidth="0.5" lineStyle="Dashed"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="10"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{actual_carton}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{quantity_reported}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
 				<reportElement uuid="4f73a164-c1f6-4135-a11c-79a9702f2b5b" x="412" y="0" width="43" height="50"/>

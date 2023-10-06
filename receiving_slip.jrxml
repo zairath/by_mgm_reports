@@ -61,6 +61,8 @@
 	<field name="orgcod" class="java.lang.String"/>
 	<field name="revlvl" class="java.lang.String"/>
 	<field name="lotnum" class="java.lang.String"/>
+	<field name="inv_attr_str1" class="java.lang.String"/>
+	<field name="inv_attr_str2" class="java.lang.String"/>
 	<field name="rcvsts" class="java.lang.String"/>
 	<field name="mandte" class="java.util.Date"/>
 	<field name="expire_dte" class="java.util.Date"/>
@@ -361,35 +363,35 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Description]]></text>
+				<text><![CDATA[DESCRIPTIONS]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="e79f7563-9357-46f2-9fc0-6be29f4adfd7" x="206" y="0" width="72" height="35"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Batch]]></text>
+				<text><![CDATA[BATCH]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="25f91fba-b8db-4e07-9c2c-59ddbe658b22" x="278" y="0" width="71" height="35"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Expired Date]]></text>
+				<text><![CDATA[EXPIRED DATE]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="2b45c99c-6023-4fc5-8a7d-49e5de4a8d22" x="349" y="0" width="93" height="35"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Actual QTY]]></text>
+				<text><![CDATA[ACTUAL QTY]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="408efa6f-8fa2-46d3-bc39-b29a95f485b9" x="442" y="0" width="46" height="35"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Actual KG]]></text>
+				<text><![CDATA[ACTUAL KG]]></text>
 			</staticText>
 			<rectangle>
 				<reportElement uuid="7e36eb9a-54f1-40c5-95d7-94abd2d16bbf" x="488" y="0" width="87" height="35" backcolor="#CCCCCC"/>
@@ -402,7 +404,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8" isBold="true"/>
 				</textElement>
-				<text><![CDATA[UOM Legend]]></text>
+				<text><![CDATA[UOM LEGEND]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -456,7 +458,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{revlvl}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{inv_attr_str1}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
 				<reportElement uuid="c07aa76a-0c53-4c2c-b560-649dd6235d9d" stretchType="RelativeToBandHeight" x="278" y="0" width="71" height="30"/>
