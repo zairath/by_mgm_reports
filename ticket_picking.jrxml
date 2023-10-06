@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ticket_picking" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="14" bottomMargin="26" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
-	<property name="ireport.zoom" value="1.8181818181818181"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.zoom" value="2.2000000000000015"/>
+	<property name="ireport.x" value="94"/>
+	<property name="ireport.y" value="56"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
 	<property name="ireport.callouts" value="##4/6/12 callouts.1.text=This Report was converted from on 4/6/12 3:47 PM callouts.1.bounds=10,-10,600,32"/>
@@ -73,7 +73,6 @@
 	<field name="stkuom" class="java.lang.String"/>
 	<field name="total_item" class="java.lang.Integer"/>
 	<field name="uom" class="java.lang.String"/>
-	<field name="volume" class="java.lang.Double"/>
 	<field name="total_volume" class="java.lang.Double"/>
 	<field name="delivery_slot" class="java.lang.String"/>
 	<field name="order_date" class="java.lang.String"/>
@@ -94,6 +93,9 @@
 	<field name="revlvl" class="java.lang.String"/>
 	<field name="wrkzon" class="java.lang.String"/>
 	<field name="pck_uom" class="java.lang.String"/>
+	<field name="inv_attr_str1" class="java.lang.String"/>
+	<field name="inv_attr_str2" class="java.lang.String"/>
+	<field name="inv_attr_str3" class="java.lang.String"/>
 	<variable name="oprcod" class="java.lang.String">
 		<variableExpression><![CDATA[$F{oprcod}]]></variableExpression>
 		<initialValueExpression><![CDATA[$F{oprcod}]]></initialValueExpression>
@@ -207,7 +209,7 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="4bcbfde2-66fb-4a4e-afd0-e1b0d0aab3eb" x="70" y="0" width="266" height="20" backcolor="#CCCCCC"/>
+				<reportElement uuid="4bcbfde2-66fb-4a4e-afd0-e1b0d0aab3eb" x="70" y="0" width="104" height="20" backcolor="#CCCCCC"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -238,7 +240,7 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 				<text><![CDATA[SKU]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="b9b20322-f40c-4387-b179-08618748bef2" x="70" y="0" width="266" height="20"/>
+				<reportElement uuid="b9b20322-f40c-4387-b179-08618748bef2" x="70" y="0" width="104" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="6" isBold="true"/>
 				</textElement>
@@ -265,6 +267,45 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 				</textElement>
 				<text><![CDATA[Source Destination]]></text>
 			</staticText>
+			<rectangle>
+				<reportElement uuid="f7bd6594-5fbd-480b-8fe6-51308de63d8c" x="174" y="0" width="54" height="20" backcolor="#CCCCCC"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="59a32022-2ff2-4452-a5c5-b1291fe667e5" x="228" y="0" width="54" height="20" backcolor="#CCCCCC"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="658a9d64-382d-4e18-93ca-8b038a4fabce" x="282" y="0" width="54" height="20" backcolor="#CCCCCC"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="c732903b-47d5-4a88-9078-156735a7df28" x="174" y="0" width="54" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Batch Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4c63a57f-f372-49d1-a2f9-e60fd693b07f" x="228" y="0" width="54" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reference 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="007bb4b4-b897-4f8a-a727-9448a8a42c7c" x="282" y="0" width="54" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reference 2]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
@@ -284,7 +325,7 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 				<textFieldExpression><![CDATA[$F{item_number}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement uuid="f5b1f3be-3882-487e-b60f-eff21ee0d16e" x="70" y="0" width="266" height="20"/>
+				<reportElement uuid="f5b1f3be-3882-487e-b60f-eff21ee0d16e" x="70" y="0" width="104" height="20"/>
 				<box>
 					<pen lineWidth="0.5" lineStyle="Dashed"/>
 					<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -338,6 +379,48 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{srcloc}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement uuid="eb744e9d-827e-401e-9fda-f595c3857716" x="174" y="0" width="54" height="20"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inv_attr_str1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement uuid="dc8c580c-5c6d-4245-a389-2c503700b615" x="228" y="0" width="54" height="20"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inv_attr_str2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement uuid="f2818c73-331f-4f30-9934-37d877a6425d" x="282" y="0" width="54" height="20"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inv_attr_str3}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
