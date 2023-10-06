@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="soh_lpn_report" language="groovy" pageWidth="1800" pageHeight="595" orientation="Landscape" columnWidth="1796" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
 	<property name="ireport.zoom" value="1.9487171000000174"/>
-	<property name="ireport.x" value="6"/>
+	<property name="ireport.x" value="2531"/>
 	<property name="ireport.y" value="0"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
@@ -60,147 +60,135 @@
 	<title>
 		<band height="18">
 			<staticText>
-				<reportElement uuid="2c4679a5-17d2-4fb5-ad85-ae8d8b9f7fcf" x="141" y="0" width="150" height="18"/>
+				<reportElement uuid="2c4679a5-17d2-4fb5-ad85-ae8d8b9f7fcf" x="0" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[CLIENT ID
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="62bf4337-8066-4f33-a27a-3913d34df608" x="1306" y="0" width="150" height="18"/>
+				<reportElement uuid="62bf4337-8066-4f33-a27a-3913d34df608" x="1165" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[ADJUSTMENT ADD PALLET]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="83cab3d7-7c45-4bdd-9883-44f1eab84577" x="441" y="0" width="150" height="18"/>
+				<reportElement uuid="83cab3d7-7c45-4bdd-9883-44f1eab84577" x="300" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[INITIAL PALLET
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="2d5f5488-056a-4fcd-a73e-bcdef5e8972c" x="591" y="0" width="150" height="18"/>
+				<reportElement uuid="2d5f5488-056a-4fcd-a73e-bcdef5e8972c" x="450" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[INBOUND PALLET
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="5b91fde1-0c8a-4f36-a53e-af4be2b37234" x="741" y="0" width="150" height="18"/>
+				<reportElement uuid="5b91fde1-0c8a-4f36-a53e-af4be2b37234" x="600" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[OUTBOUND PALLET
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="2880c588-c04e-48c5-819a-5abd2b9e7d74" x="891" y="0" width="210" height="18"/>
+				<reportElement uuid="2880c588-c04e-48c5-819a-5abd2b9e7d74" x="750" y="0" width="210" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[CONSOLIDATION PALLET MINUS
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="6cbd7130-00a1-40cf-aafa-eb6997261970" x="1101" y="0" width="205" height="18"/>
+				<reportElement uuid="6cbd7130-00a1-40cf-aafa-eb6997261970" x="960" y="0" width="205" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[CONSOLIDATION PALLET PLUS
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="a67e0a6c-e514-479b-8779-7dbfd8af9f0f" x="1456" y="0" width="176" height="18"/>
+				<reportElement uuid="a67e0a6c-e514-479b-8779-7dbfd8af9f0f" x="1315" y="0" width="176" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[ADJUSTMENT REMOVE PALLET]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="4a73b174-4b50-4daf-868f-579f28522a1f" x="291" y="0" width="150" height="18"/>
+				<reportElement uuid="4a73b174-4b50-4daf-868f-579f28522a1f" x="150" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[CLIENT NAME
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="b6605265-227c-47a9-9e44-40825b40eb4a" x="1632" y="0" width="149" height="18"/>
+				<reportElement uuid="b6605265-227c-47a9-9e44-40825b40eb4a" x="1491" y="0" width="149" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[CURRENT PALLET]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="c1cd9950-fcd1-4e89-8290-9574f05efb8d" x="0" y="0" width="141" height="18"/>
-				<box leftPadding="3"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[WAREHOUSE ID]]></text>
 			</staticText>
 		</band>
 	</title>
 	<detail>
 		<band height="361" splitType="Stretch">
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="0054ae7e-9b96-43f3-8032-4c25ae29d7f1" x="141" y="0" width="150" height="20"/>
+				<reportElement uuid="0054ae7e-9b96-43f3-8032-4c25ae29d7f1" x="0" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{prt_client_id}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="1181844d-adfe-49bd-9770-9e0c8771a730" x="291" y="0" width="150" height="20"/>
+				<reportElement uuid="1181844d-adfe-49bd-9770-9e0c8771a730" x="150" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{client_name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="19a20edd-5f1b-4184-ace0-73b6abd50421" x="591" y="0" width="150" height="20"/>
+				<reportElement uuid="19a20edd-5f1b-4184-ace0-73b6abd50421" x="450" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{inbound_pallet}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="68fb4306-ce8f-480a-ba8c-f14985c0b2ce" x="741" y="0" width="150" height="20"/>
+				<reportElement uuid="68fb4306-ce8f-480a-ba8c-f14985c0b2ce" x="600" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{outbound_pallet}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="4c7608d6-1e6e-49e7-a803-92a98c85d3be" x="891" y="0" width="210" height="20"/>
+				<reportElement uuid="4c7608d6-1e6e-49e7-a803-92a98c85d3be" x="750" y="0" width="210" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{consolidation_pallet_minus}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="53ca4cc8-5e70-4143-be05-93dfe6c9b86b" x="1101" y="0" width="205" height="20"/>
+				<reportElement uuid="53ca4cc8-5e70-4143-be05-93dfe6c9b86b" x="960" y="0" width="205" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{consolidation_pallet_plus}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h.mm a" isBlankWhenNull="true">
-				<reportElement uuid="399b5235-0a22-4349-90a6-aff19df4a1ec" x="1306" y="0" width="150" height="20"/>
+				<reportElement uuid="399b5235-0a22-4349-90a6-aff19df4a1ec" x="1165" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{adjustment_add_pallet}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="4d8815a8-256d-451c-9278-0d172c37bbd3" x="441" y="0" width="150" height="20"/>
+				<reportElement uuid="4d8815a8-256d-451c-9278-0d172c37bbd3" x="300" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{init_pallet}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h.mm a" isBlankWhenNull="true">
-				<reportElement uuid="eae94963-4b28-412c-9827-c46367af1b78" x="1456" y="0" width="176" height="20"/>
+				<reportElement uuid="eae94963-4b28-412c-9827-c46367af1b78" x="1315" y="0" width="176" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{adjustment_remove_pallet}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h.mm a" isBlankWhenNull="true">
-				<reportElement uuid="0c525fb8-24c6-4313-ac26-323d02aa63b9" x="1632" y="0" width="149" height="20"/>
+				<reportElement uuid="0c525fb8-24c6-4313-ac26-323d02aa63b9" x="1491" y="0" width="149" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{final_pallet}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="b438c709-7768-4f02-a418-e0345380ed35" x="0" y="0" width="141" height="20"/>
-				<box leftPadding="3"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{wh_id}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
