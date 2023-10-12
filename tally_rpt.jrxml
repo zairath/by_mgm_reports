@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Tally_rpt" language="groovy" pageWidth="1233" pageHeight="7208" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1213" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
-	<property name="ireport.zoom" value="2.853116706110008"/>
-	<property name="ireport.x" value="2559"/>
-	<property name="ireport.y" value="0"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Tally_rpt" language="groovy" pageWidth="1233" pageHeight="1656" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1213" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
+	<property name="ireport.zoom" value="1.464100000000004"/>
+	<property name="ireport.x" value="291"/>
+	<property name="ireport.y" value="43"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
 	<property name="ireport.callouts" value="##4/6/12 callouts.1.text=This Report was converted from on 4/6/12 3:47 PM callouts.1.bounds=10,-10,600,32"/>
@@ -154,7 +154,7 @@
 		</band>
 	</title>
 	<detail>
-		<band height="176">
+		<band height="80">
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement uuid="ce4942cb-b17c-4208-9c49-5ecec672dec1" x="145" y="0" width="100" height="20"/>
 				<box leftPadding="3"/>
@@ -226,7 +226,7 @@
 	<summary>
 		<band height="216">
 			<staticText>
-				<reportElement uuid="005550ce-194c-4ea7-bcad-906c0095c57e" x="364" y="56" width="141" height="24"/>
+				<reportElement uuid="005550ce-194c-4ea7-bcad-906c0095c57e" x="344" y="46" width="141" height="25"/>
 				<box>
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5"/>
@@ -240,7 +240,7 @@
 				<text><![CDATA[SUPERVISOR]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="8a8ff884-6d00-4c81-8918-31ff0ce07cae" x="505" y="56" width="141" height="25"/>
+				<reportElement uuid="8a8ff884-6d00-4c81-8918-31ff0ce07cae" x="485" y="46" width="141" height="25"/>
 				<box>
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5"/>
@@ -254,7 +254,7 @@
 				<text><![CDATA[ADMINISTRATOR]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="933a2de0-64d6-4ef3-89f3-191bdb551122" x="646" y="56" width="141" height="25"/>
+				<reportElement uuid="933a2de0-64d6-4ef3-89f3-191bdb551122" x="626" y="46" width="141" height="25"/>
 				<box>
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5"/>
@@ -268,7 +268,7 @@
 				<text><![CDATA[INTERPRETER TALLY]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="13f03143-f045-42ec-9cc7-a8347c51734f" x="787" y="56" width="130" height="25"/>
+				<reportElement uuid="13f03143-f045-42ec-9cc7-a8347c51734f" x="767" y="46" width="130" height="25"/>
 				<box>
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5"/>
@@ -282,7 +282,7 @@
 				<text><![CDATA[DRIVER]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="00305313-6d1c-49c2-8e94-706b76585862" x="364" y="167" width="141" height="25"/>
+				<reportElement uuid="00305313-6d1c-49c2-8e94-706b76585862" x="344" y="157" width="141" height="25"/>
 				<box leftPadding="5">
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5"/>
@@ -296,7 +296,7 @@
 				<text><![CDATA[Nama :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="5d3f0674-d073-487c-afec-b0e3da474411" x="505" y="167" width="141" height="25"/>
+				<reportElement uuid="5d3f0674-d073-487c-afec-b0e3da474411" x="485" y="157" width="141" height="25"/>
 				<box leftPadding="5">
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5"/>
@@ -310,7 +310,7 @@
 				<text><![CDATA[Nama :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="20406ee6-ce1f-488f-8948-8768e2faba4b" x="646" y="167" width="141" height="25"/>
+				<reportElement uuid="20406ee6-ce1f-488f-8948-8768e2faba4b" x="626" y="157" width="141" height="25"/>
 				<box leftPadding="5">
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5"/>
@@ -324,7 +324,7 @@
 				<text><![CDATA[Nama :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="c44f6fc6-e064-46f1-8a3b-9bebc1a24200" x="787" y="167" width="130" height="25"/>
+				<reportElement uuid="c44f6fc6-e064-46f1-8a3b-9bebc1a24200" x="767" y="157" width="130" height="25"/>
 				<box leftPadding="5">
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5"/>
@@ -338,16 +338,16 @@
 				<text><![CDATA[Nama :]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement uuid="bd4a3bc7-d68c-47da-be27-88845f336494" x="505" y="81" width="141" height="86"/>
+				<reportElement uuid="bd4a3bc7-d68c-47da-be27-88845f336494" x="485" y="71" width="141" height="86"/>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="9c1906c2-e47e-4419-aab0-d6d1fcbdbceb" x="364" y="81" width="141" height="86"/>
+				<reportElement uuid="9c1906c2-e47e-4419-aab0-d6d1fcbdbceb" x="344" y="71" width="141" height="86"/>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="871d9e5f-9ee9-4137-b481-a953289ea578" x="646" y="81" width="141" height="86"/>
+				<reportElement uuid="871d9e5f-9ee9-4137-b481-a953289ea578" x="626" y="71" width="141" height="86"/>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="50fdaff8-cb30-4e74-bdbd-623eceeb066f" x="787" y="81" width="130" height="86"/>
+				<reportElement uuid="50fdaff8-cb30-4e74-bdbd-623eceeb066f" x="767" y="71" width="130" height="86"/>
 			</rectangle>
 		</band>
 	</summary>
