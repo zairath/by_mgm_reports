@@ -241,8 +241,8 @@
 							<pen lineWidth="0.0"/>
 						</graphicElement>
 					</rectangle>
-					<textField evaluationTime="Group" evaluationGroup="groupby_prtnum" pattern="" isBlankWhenNull="true">
-						<reportElement uuid="1930afc9-01d9-4214-9ba3-042fe1e92fd5" stretchType="RelativeToBandHeight" x="0" y="0" width="90" height="30"/>
+					<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="groupby_prtnum" pattern="" isBlankWhenNull="true">
+						<reportElement uuid="1930afc9-01d9-4214-9ba3-042fe1e92fd5" stretchType="RelativeToBandHeight" x="0" y="0" width="115" height="30"/>
 						<box>
 							<pen lineWidth="0.5" lineStyle="Dashed"/>
 							<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -261,7 +261,7 @@
 							<pen lineWidth="0.5" lineStyle="Dashed"/>
 						</graphicElement>
 					</rectangle>
-					<textField pattern="" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 						<reportElement uuid="4f96859b-b03d-4d87-a592-d0c08562472e" stretchType="RelativeToBandHeight" x="300" y="0" width="110" height="30"/>
 						<box>
 							<pen lineWidth="0.5" lineStyle="Dashed"/>
@@ -275,7 +275,7 @@
 						</textElement>
 						<textFieldExpression><![CDATA[$V{tot_dspunits_by_prtnum} + " " + $F{dsp_untqty_uom} + " " + $V{tot_remunits_by_prtnum} + " " + $F{rem_untqty_uom}]]></textFieldExpression>
 					</textField>
-					<textField pattern="" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 						<reportElement uuid="4e4ad7ad-e75f-46f1-948a-29f0e9112468" stretchType="RelativeToBandHeight" x="410" y="0" width="59" height="30"/>
 						<box>
 							<pen lineWidth="0.5" lineStyle="Dashed"/>
@@ -290,7 +290,7 @@
 						<textFieldExpression><![CDATA[$V{tot_cartons_by_prtnum}]]></textFieldExpression>
 					</textField>
 					<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="groupby_prtnum" pattern="" isBlankWhenNull="true">
-						<reportElement uuid="f5b1f3be-3882-487e-b60f-eff21ee0d16e" stretchType="RelativeToTallestObject" x="90" y="0" width="154" height="30"/>
+						<reportElement uuid="f5b1f3be-3882-487e-b60f-eff21ee0d16e" stretchType="RelativeToTallestObject" x="115" y="0" width="129" height="30"/>
 						<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
 							<pen lineWidth="0.5" lineStyle="Dashed"/>
 							<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -698,26 +698,26 @@
 	<columnHeader>
 		<band height="42">
 			<rectangle>
-				<reportElement uuid="66af1141-b26a-46a4-99d7-91f839429fd6" x="0" y="0" width="90" height="42" backcolor="#CCCCCC"/>
+				<reportElement uuid="66af1141-b26a-46a4-99d7-91f839429fd6" x="0" y="0" width="115" height="42" backcolor="#CCCCCC"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="4bcbfde2-66fb-4a4e-afd0-e1b0d0aab3eb" x="90" y="0" width="154" height="42" backcolor="#CCCCCC"/>
+				<reportElement uuid="4bcbfde2-66fb-4a4e-afd0-e1b0d0aab3eb" x="115" y="0" width="129" height="42" backcolor="#CCCCCC"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<staticText>
-				<reportElement uuid="86ddbfc4-2634-4076-b90f-a510d57bea17" x="0" y="0" width="90" height="42"/>
+				<reportElement uuid="86ddbfc4-2634-4076-b90f-a510d57bea17" x="0" y="0" width="115" height="42"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[SKU]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="b9b20322-f40c-4387-b179-08618748bef2" x="90" y="0" width="154" height="42"/>
+				<reportElement uuid="b9b20322-f40c-4387-b179-08618748bef2" x="115" y="0" width="129" height="42"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10" isBold="true"/>
 				</textElement>
