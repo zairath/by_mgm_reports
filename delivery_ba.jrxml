@@ -118,6 +118,8 @@
 	<field name="mandte" class="java.util.Date"/>
 	<field name="expire_dte" class="java.util.Date"/>
 	<field name="inv_attr_str1" class="java.lang.String"/>
+	<field name="inv_attr_str2" class="java.lang.String"/>
+	<field name="inv_attr_str3" class="java.lang.String"/>
 	<field name="invsts" class="java.lang.String"/>
 	<field name="catch_qty" class="java.lang.Double"/>
 	<field name="catch_unttyp" class="java.lang.String"/>
@@ -532,7 +534,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{revlvl}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{inv_attr_str1}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="true">
 				<reportElement uuid="e538e483-8067-4b14-81df-6f61e29bd029" stretchType="RelativeToBandHeight" x="315" y="0" width="88" height="30"/>
