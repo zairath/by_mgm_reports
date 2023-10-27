@@ -167,7 +167,7 @@
 	<variable name="tot_remunits" class="java.lang.Integer" resetType="Group" resetGroup="groupby_order" calculation="Sum">
 		<variableExpression><![CDATA[$F{rem_untqty}]]></variableExpression>
 	</variable>
-	<variable name="tot_ordqty" class="java.lang.Integer" resetType="Group" resetGroup="groupby_prtnum" calculation="Sum">
+	<variable name="tot_ordqty" class="java.lang.Integer" resetType="Group" resetGroup="groupby_prtnum" calculation="First">
 		<variableExpression><![CDATA[$F{ordqty}]]></variableExpression>
 	</variable>
 	<group name="groupby_order">
