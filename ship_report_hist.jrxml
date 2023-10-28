@@ -39,10 +39,10 @@
 	<parameter name="client_id" class="java.lang.String">
 		<property name="prompt" value="^client_id^"/>
 	</parameter>
-	<parameter name="start_date" class="java.util.Date">
+	<parameter name="start_date" class="java.sql.Timestamp">
 		<property name="prompt" value="start_date"/>
 	</parameter>
-	<parameter name="end_date" class="java.util.Date">
+	<parameter name="end_date" class="java.sql.Timestamp">
 		<property name="prompt" value="end_date"/>
 	</parameter>
 	<parameter name="prtnum" class="java.lang.String">
