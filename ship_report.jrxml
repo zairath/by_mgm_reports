@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ship_report" language="groovy" pageWidth="3670" pageHeight="7128" orientation="Landscape" columnWidth="3666" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
 	<property name="ireport.zoom" value="1.948717100000018"/>
-	<property name="ireport.x" value="5995"/>
+	<property name="ireport.x" value="4499"/>
 	<property name="ireport.y" value="0"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
@@ -116,8 +116,8 @@
 	<field name="lodnum" class="java.lang.String"/>
 	<field name="car_move_id" class="java.lang.String"/>
 	<field name="catch_unttyp" class="java.lang.String"/>
-	<group name="groupby_lodnum">
-		<groupExpression><![CDATA[$F{lodnum}]]></groupExpression>
+	<group name="groupby_revlvl">
+		<groupExpression><![CDATA[$F{revlvl}]]></groupExpression>
 	</group>
 	<background>
 		<band splitType="Stretch"/>
@@ -442,7 +442,7 @@
 				<reportElement uuid="d124ebab-4edf-4fd3-8d95-c7d0d16a00e5" x="2297" y="0" width="120" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{groupby_lodnum_COUNT}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{groupby_revlvl_COUNT}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement uuid="ecfeaa8f-1ba3-4aa4-a776-3b8800b1a37d" x="497" y="0" width="120" height="20"/>
