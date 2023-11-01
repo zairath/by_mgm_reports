@@ -458,7 +458,7 @@
 						<textFieldExpression><![CDATA[$V{tot_cartons_by_prtnum}]]></textFieldExpression>
 					</textField>
 					<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="groupby_prtnum" pattern="" isBlankWhenNull="true">
-						<reportElement uuid="f5b1f3be-3882-487e-b60f-eff21ee0d16e" stretchType="RelativeToTallestObject" x="115" y="0" width="129" height="30"/>
+						<reportElement uuid="f5b1f3be-3882-487e-b60f-eff21ee0d16e" stretchType="RelativeToTallestObject" x="115" y="0" width="185" height="30"/>
 						<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
 							<pen lineWidth="0.5" lineStyle="Dashed"/>
 							<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -470,20 +470,6 @@
 							<font size="10"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{lngdsc}]]></textFieldExpression>
-					</textField>
-					<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="groupby_prtnum" pattern="" isBlankWhenNull="true">
-						<reportElement uuid="2cec3a36-ee89-43af-a08f-c181708eecd6" stretchType="RelativeToBandHeight" x="244" y="0" width="56" height="30"/>
-						<box>
-							<pen lineWidth="0.5" lineStyle="Dashed"/>
-							<topPen lineWidth="0.5" lineStyle="Dashed"/>
-							<leftPen lineWidth="0.5" lineStyle="Dashed"/>
-							<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
-							<rightPen lineWidth="0.5" lineStyle="Dashed"/>
-						</box>
-						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font size="10"/>
-						</textElement>
-						<textFieldExpression><![CDATA[$V{tot_ordqty}]]></textFieldExpression>
 					</textField>
 				</frame>
 			</band>
@@ -872,7 +858,7 @@
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="4bcbfde2-66fb-4a4e-afd0-e1b0d0aab3eb" x="115" y="0" width="129" height="42" backcolor="#CCCCCC"/>
+				<reportElement uuid="4bcbfde2-66fb-4a4e-afd0-e1b0d0aab3eb" x="115" y="0" width="185" height="42" backcolor="#CCCCCC"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -885,7 +871,7 @@
 				<text><![CDATA[SKU]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="b9b20322-f40c-4387-b179-08618748bef2" x="115" y="0" width="129" height="42"/>
+				<reportElement uuid="b9b20322-f40c-4387-b179-08618748bef2" x="115" y="0" width="185" height="42"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10" isBold="true"/>
 				</textElement>
@@ -942,19 +928,6 @@
 					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Remarks]]></text>
-			</staticText>
-			<rectangle>
-				<reportElement uuid="6dc9ebc0-be6b-4c42-ad9a-57449f48c6c7" x="244" y="0" width="56" height="42" backcolor="#CCCCCC"/>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<staticText>
-				<reportElement uuid="9518524c-8c6b-4421-a995-8c3c49f509a9" x="244" y="0" width="56" height="42"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="10" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Ordered Qty]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
