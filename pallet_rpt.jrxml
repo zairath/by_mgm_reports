@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pallet_rpt" language="groovy" pageWidth="7200" pageHeight="1684" orientation="Landscape" columnWidth="7180" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" uuid="e40e7c1b-a80e-4842-bb71-7d2df9d8c90a">
 	<property name="ireport.zoom" value="1.9487171000000025"/>
-	<property name="ireport.x" value="5569"/>
+	<property name="ireport.x" value="5346"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
@@ -521,7 +521,7 @@
 					<reportElement uuid="36746348-8a0b-49a8-8501-711a835c1945" x="3000" y="0" width="150" height="20"/>
 					<box leftPadding="3"/>
 					<textElement/>
-					<textFieldExpression><![CDATA[$F{carton_weight}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[new BigDecimal $F{carton_weight}.setScale(0, BigDecimal.ROUND_HALF_UP)]]></textFieldExpression>
 				</textField>
 			</elementGroup>
 		</band>
