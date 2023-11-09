@@ -144,7 +144,7 @@
 		<variableExpression><![CDATA[$F{untqty}]]></variableExpression>
 	</variable>
 	<variable name="tot_cartons" class="java.lang.Float" resetType="Group" resetGroup="groupby_order" calculation="Sum">
-		<variableExpression><![CDATA[( $F{catch_unttyp} != null ? new BigDecimal $F{catch_qty}.setScale(0, BigDecimal.ROUND_HALF_UP) : new BigDecimal $F{carton_weight}.setScale(0, BigDecimal.ROUND_HALF_UP) )]]></variableExpression>
+		<variableExpression><![CDATA[( $F{catch_unttyp} != null ? $F{catch_qty} : $F{carton_weight} )]]></variableExpression>
 	</variable>
 	<variable name="tot_catchs" class="java.lang.Float" resetType="Group" resetGroup="groupby_order" calculation="Sum">
 		<variableExpression><![CDATA[$F{catch_qty}]]></variableExpression>
@@ -156,7 +156,7 @@
 		<variableExpression><![CDATA[$F{rem_untqty}]]></variableExpression>
 	</variable>
 	<variable name="tot_cartons_by_prtnum" class="java.lang.Float" resetType="Group" resetGroup="groupby_prtnum" calculation="Sum">
-		<variableExpression><![CDATA[( $F{catch_unttyp} != null ? new BigDecimal $F{catch_qty}.setScale(0, BigDecimal.ROUND_HALF_UP) : new BigDecimal $F{carton_weight}.setScale(0, BigDecimal.ROUND_HALF_UP) )]]></variableExpression>
+		<variableExpression><![CDATA[( $F{catch_unttyp} != null ? $F{catch_qty} : $F{carton_weight} )]]></variableExpression>
 	</variable>
 	<variable name="tot_catchs_by_prtnum" class="java.lang.Float" resetType="Group" resetGroup="groupby_prtnum" calculation="Sum">
 		<variableExpression><![CDATA[$F{catch_qty}]]></variableExpression>
@@ -219,7 +219,7 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font size="10" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$V{tot_cartons}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[String.format("%.2f",(double)($V{tot_cartons}.doubleValue()))]]></textFieldExpression>
 				</textField>
 				<rectangle>
 					<reportElement uuid="040be422-2a84-42de-8868-d85e5e630a20" mode="Opaque" x="469" y="0" width="106" height="30" backcolor="#CCCCCC"/>
@@ -392,6 +392,11 @@
 					</textElement>
 					<text><![CDATA[Name :]]></text>
 				</staticText>
+				<textField>
+					<reportElement uuid="e8bc83a5-12ba-451e-a71a-2b63b5139091" x="256" y="36" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$V{tot_cartons}]]></textFieldExpression>
+				</textField>
 			</band>
 		</groupFooter>
 	</group>
@@ -458,7 +463,7 @@
 						<textElement textAlignment="Center" verticalAlignment="Middle">
 							<font size="10"/>
 						</textElement>
-						<textFieldExpression><![CDATA[$V{tot_cartons_by_prtnum}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[String.format("%.2f",(double)($V{tot_cartons_by_prtnum}.doubleValue()))]]></textFieldExpression>
 					</textField>
 					<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="groupby_prtnum" pattern="" isBlankWhenNull="true">
 						<reportElement uuid="f5b1f3be-3882-487e-b60f-eff21ee0d16e" stretchType="RelativeToTallestObject" x="115" y="0" width="185" height="30"/>

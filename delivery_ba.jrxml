@@ -1019,7 +1019,7 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font size="10"/>
 					</textElement>
-					<textFieldExpression><![CDATA[( $F{catch_unttyp} != null ? new BigDecimal $F{catch_qty}.setScale(0, BigDecimal.ROUND_HALF_UP) : new BigDecimal $F{carton_weight}.setScale(0, BigDecimal.ROUND_HALF_UP) )]]></textFieldExpression>
+					<textFieldExpression><![CDATA[( $F{catch_unttyp} != null ? $F{catch_qty} : $F{carton_weight} )]]></textFieldExpression>
 				</textField>
 				<rectangle>
 					<reportElement uuid="c553b266-8888-44ad-ae7f-7d6d6a2cc23b" stretchType="RelativeToTallestObject" mode="Transparent" x="459" y="0" width="116" height="30"/>
