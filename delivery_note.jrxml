@@ -392,11 +392,6 @@
 					</textElement>
 					<text><![CDATA[Name :]]></text>
 				</staticText>
-				<textField>
-					<reportElement uuid="e8bc83a5-12ba-451e-a71a-2b63b5139091" x="256" y="36" width="100" height="20"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$V{tot_cartons}]]></textFieldExpression>
-				</textField>
 			</band>
 		</groupFooter>
 	</group>
