@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="client_rpt" language="groovy" pageWidth="667" pageHeight="842" columnWidth="657" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5" uuid="f8d17f80-7599-4e78-8596-08eae0c1f89b">
+	<property name="ireport.zoom" value="1.6105100000000014"/>
+	<property name="ireport.x" value="10"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA["US_ENGLISH"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_CONNECTION" class="com.redprairie.moca.jrds.JRMocaConnection" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new com.redprairie.moca.jrds.JRMocaConnection("http://localhost:4500/service", "super", "super", true)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_DATE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getDateInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_TIME" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_TZ" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wh_id" class="java.lang.String">
+		<property name="prompt" value="^wh_id^"/>
+	</parameter>
+	<queryString language="MOCA">
+		<![CDATA[[select client.client_id,
+        adrmst.adrnam,
+        adrmst.adrln1,
+        adrmst.adrln2,
+        adrmst.adrln3,
+        adrmst.adrcty
+   from client
+   join adrmst
+     on adrmst.adr_id = client.adr_id
+    and adrmst.adrtyp = 'CLI']]]>
+	</queryString>
+	<field name="client_id" class="java.lang.String"/>
+	<field name="adrnam" class="java.lang.String"/>
+	<field name="adrln1" class="java.lang.String"/>
+	<field name="adrln2" class="java.lang.String"/>
+	<field name="adrln3" class="java.lang.String"/>
+	<field name="adrcty" class="java.lang.String"/>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c68bc2b4-efd1-4c35-90e0-d999bd8115bd" x="1" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[CLIENT ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a45a88e0-cdbc-435d-9379-8a9958b8842f" x="102" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[CLIENT NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="29dacc05-0502-4e35-aa57-54c0d50d3e4f" x="202" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ADDRESS 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8013c6c3-2eb1-4032-a3bf-78b8effa7579" x="302" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ADDRESS 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0751cc95-cd85-4178-b78c-a3e1a74c4367" x="402" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ADDRES 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f3b69c86-b119-4cb8-a94e-f34aa83e125b" x="502" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[CITY]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="233">
+			<textField>
+				<reportElement uuid="36c8570a-f31e-4f06-a8f2-536c3e97ee3e" x="102" y="2" width="100" height="20"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{adrnam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="18499fe9-e2d9-40f6-a0ab-dc08ada86cf9" x="202" y="2" width="100" height="20"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{adrln1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4b851aa7-7d1e-4f60-9864-87015f0d8ee5" x="402" y="2" width="100" height="20"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{adrln3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="37fea909-807b-4d32-aa51-503d2a58785d" x="1" y="2" width="100" height="20"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{client_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="02395db1-d432-4e04-af02-5ca1995b1f19" x="502" y="2" width="100" height="20"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{adrcty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e8052467-1b9a-4889-a5ec-79a986286d69" x="302" y="2" width="100" height="20"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{adrln2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
