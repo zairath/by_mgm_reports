@@ -1,34 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="exp_storage_search_path" language="groovy" pageWidth="3670" pageHeight="7128" orientation="Landscape" columnWidth="3666" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
-	<property name="ireport.zoom" value="1.948717100000018"/>
-	<property name="ireport.x" value="0"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="exp_storage_search_path" language="groovy" pageWidth="1872" pageHeight="842" columnWidth="1864" leftMargin="4" rightMargin="4" topMargin="4" bottomMargin="4" uuid="1c157aa1-34c2-4ee5-b570-a0cf8a094da2">
+	<property name="ireport.zoom" value="1.650000000000001"/>
+	<property name="ireport.x" value="1963"/>
 	<property name="ireport.y" value="0"/>
-	<property name="ireport.scriptlethandling" value="0"/>
-	<property name="ireport.ireport.encoding" value="UTF-8"/>
-	<property name="ireport.callouts" value="##4/6/12 callouts.1.text=This Report was converted from on 4/6/12 3:47 PM callouts.1.bounds=10,-10,600,32"/>
-	<property name="net.sf.jasperreports.governor.max.pages" value="500"/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="java.util.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
-	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
+	<parameter name="MOCA_REPORT_TZ" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
-		<defaultValueExpression><![CDATA["US_ENGLISH"]]></defaultValueExpression>
-	</parameter>
-	<parameter name="MOCA_REPORT_CONNECTION" class="com.redprairie.moca.jrds.JRMocaConnection" isForPrompting="false">
-		<property name="MOCA" value="true"/>
-		<defaultValueExpression><![CDATA[new com.redprairie.moca.jrds.JRMocaConnection("http://localhost:4500/service", "super", "super", true)]]></defaultValueExpression>
-	</parameter>
-	<parameter name="MOCA_REPORT_DATE" class="java.lang.String" isForPrompting="false">
-		<property name="MOCA" value="true"/>
-		<defaultValueExpression><![CDATA[DateFormat.getDateInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
 	</parameter>
 	<parameter name="MOCA_REPORT_TIME" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
 		<defaultValueExpression><![CDATA[DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
 	</parameter>
-	<parameter name="MOCA_REPORT_TZ" class="java.lang.String" isForPrompting="false">
+	<parameter name="MOCA_REPORT_DATE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
-		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[DateFormat.getDateInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_CONNECTION" class="com.redprairie.moca.jrds.JRMocaConnection" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new com.redprairie.moca.jrds.JRMocaConnection("http://localhost:4500/service", "super", "super", true)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA["US_ENGLISH"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="wh_id" class="java.lang.String">
 		<property name="prompt" value="^wh_id^"/>
@@ -48,13 +41,156 @@
 	<field name="storage_zone" class="java.lang.String"/>
 	<field name="location_capacity" class="java.lang.String"/>
 	<field name="uomcod" class="java.lang.String"/>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
 	<title>
-		<band height="18"/>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="e0d46f91-b810-4efe-ba3f-2a4998ead6a1" x="2" y="2" width="118" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[STORAGE CONFIG ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6135a670-950a-4473-84eb-66e377f5eb96" x="121" y="2" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[WH ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0a3afe79-0041-4856-b975-437df78a6913" x="222" y="2" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRIORITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="34613ef8-c7ad-4a72-bcbc-3ce6dd1cdfe8" x="323" y="2" width="128" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEARCH PATH NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ec0e164c-d209-44c7-84bf-af5de2237500" x="452" y="2" width="128" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLIENT ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="806683df-4f86-423a-822b-88a8e9ac02e9" x="581" y="2" width="222" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[INVENTORY STATUS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="87f06c30-7cb9-4d98-a77f-16013c039d1f" x="803" y="2" width="318" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ITEM FAMILY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bc57baad-5c1d-41fe-ad1b-39f0860e7086" x="1121" y="2" width="128" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEQUENCE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b5d0bd64-28a7-4f84-9c81-ad2bb5dbb8f6" x="1250" y="2" width="128" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BUILDING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d9356be4-2553-4d9f-8a56-159342b7e600" x="1379" y="2" width="219" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[STORAGE ZONE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8f960c4a-d90e-4800-a7ad-1cd7f88f1514" x="1598" y="2" width="128" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[LOCATION CAPACITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2dcb6f56-c02f-4617-b33f-913f6c1ffc98" x="1727" y="2" width="128" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[UOM CODE]]></text>
+			</staticText>
+		</band>
 	</title>
 	<detail>
-		<band height="110" splitType="Stretch"/>
+		<band height="397" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="158c1c1f-5e57-417c-94e7-6a99bb08af6f" x="2" y="3" width="118" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{sto_config_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="c50287c4-4a3e-42b5-994b-ecc0c981ff1f" x="121" y="3" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{wh_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="22109780-f2d2-459b-a175-9c603f85249a" x="222" y="3" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{priority}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="49ab8b2b-0d72-49f4-b1c1-22220c61140e" x="323" y="3" width="128" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{search_path_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="645fd2f0-b61d-4b4c-8c16-b963605373a5" x="452" y="3" width="128" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{client_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="b3d02310-f410-4e9b-bab4-369726d15a40" x="581" y="3" width="222" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{inventory_status}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="a881f8ec-0323-4e26-9836-499821cf491e" x="803" y="3" width="318" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{item_family}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="9ef9932d-2a96-4ec0-b00d-5525f42191a5" x="1121" y="3" width="128" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{sequence}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="e496f90a-77da-4107-a3a4-53488c643dc1" x="1250" y="3" width="128" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{bldg_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="f13a2119-c1dc-4ce3-a3c2-af491ed2e61b" x="1379" y="3" width="219" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{storage_zone}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7f8110e3-292f-4694-a26c-2a98cdf5d832" x="1598" y="3" width="128" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{location_capacity}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="2c6b5123-87e1-40e7-aceb-20586f0aed55" x="1727" y="3" width="128" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{uomcod}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
 </jasperReport>
