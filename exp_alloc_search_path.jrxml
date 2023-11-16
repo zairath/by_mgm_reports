@@ -1,34 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="exp_alloc_search_path" language="groovy" pageWidth="3670" pageHeight="7128" orientation="Landscape" columnWidth="3666" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
-	<property name="ireport.zoom" value="1.948717100000018"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="exp_allocation_search_path" language="groovy" pageWidth="1872" pageHeight="842" columnWidth="1864" leftMargin="4" rightMargin="4" topMargin="4" bottomMargin="4" uuid="f632e95a-7094-4389-be89-4ff20c1e84d1">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<property name="ireport.scriptlethandling" value="0"/>
-	<property name="ireport.ireport.encoding" value="UTF-8"/>
-	<property name="ireport.callouts" value="##4/6/12 callouts.1.text=This Report was converted from on 4/6/12 3:47 PM callouts.1.bounds=10,-10,600,32"/>
-	<property name="net.sf.jasperreports.governor.max.pages" value="500"/>
-	<import value="net.sf.jasperreports.engine.*"/>
-	<import value="java.util.*"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
-	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
+	<parameter name="MOCA_REPORT_TZ" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
-		<defaultValueExpression><![CDATA["US_ENGLISH"]]></defaultValueExpression>
-	</parameter>
-	<parameter name="MOCA_REPORT_CONNECTION" class="com.redprairie.moca.jrds.JRMocaConnection" isForPrompting="false">
-		<property name="MOCA" value="true"/>
-		<defaultValueExpression><![CDATA[new com.redprairie.moca.jrds.JRMocaConnection("http://localhost:4500/service", "super", "super", true)]]></defaultValueExpression>
-	</parameter>
-	<parameter name="MOCA_REPORT_DATE" class="java.lang.String" isForPrompting="false">
-		<property name="MOCA" value="true"/>
-		<defaultValueExpression><![CDATA[DateFormat.getDateInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
 	</parameter>
 	<parameter name="MOCA_REPORT_TIME" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
 		<defaultValueExpression><![CDATA[DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
 	</parameter>
-	<parameter name="MOCA_REPORT_TZ" class="java.lang.String" isForPrompting="false">
+	<parameter name="MOCA_REPORT_DATE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
-		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[DateFormat.getDateInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_CONNECTION" class="com.redprairie.moca.jrds.JRMocaConnection" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new com.redprairie.moca.jrds.JRMocaConnection("http://localhost:4500/service", "super", "super", true)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA["US_ENGLISH"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="wh_id" class="java.lang.String">
 		<property name="prompt" value="^wh_id^"/>
@@ -48,13 +41,156 @@
 	<field name="pick_zone" class="java.lang.String"/>
 	<field name="lpn_level" class="java.lang.String"/>
 	<field name="allocation_uom" class="java.lang.String"/>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
 	<title>
-		<band height="18"/>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="eff96195-e2af-4cf2-8d5a-e5d6559f9b6f" x="3" y="3" width="161" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID ALLOCATION SEARCH PATH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5c616810-d3b5-4139-afa2-131b46aa065b" x="164" y="3" width="85" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[WH ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2f9241e9-4e1b-4bbd-b0be-db746ac41b67" x="249" y="3" width="85" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRIORITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="22b59a92-200f-41ee-a543-0f20c7c9b8be" x="334" y="3" width="214" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEARCH PATH NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0004446c-51a9-4674-9ee4-ea69d91061f6" x="548" y="3" width="214" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLIENT ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d3b63288-0859-4ff3-baa5-837bf0f1d62c" x="762" y="3" width="108" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TYPE ORDER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a92138c0-4041-4eb8-ba2e-46238334e64d" x="870" y="3" width="108" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ITEM FAMILY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5e5d089e-5162-4181-b5d7-ac4afdc40474" x="978" y="3" width="108" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEQUENCE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0d63e4c7-10b3-4f08-b5b2-e6d482573ea2" x="1086" y="3" width="108" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BUILDING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d937404a-2f98-42e5-a1b6-c360117cb5f7" x="1194" y="3" width="108" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PICK ZONE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="289b6336-f603-4dbc-be31-0afe7e1e520d" x="1302" y="3" width="108" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[LPN LEVEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ec686329-5d9c-4ab3-a5f3-f234ebbb7382" x="1410" y="3" width="108" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[UOM ALLOCATION]]></text>
+			</staticText>
+		</band>
 	</title>
 	<detail>
-		<band height="110" splitType="Stretch"/>
+		<band height="545" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="1b50a3f4-9b1a-4eb3-bccf-2130e7c3f29a" x="3" y="3" width="161" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{alloc_search_path_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="bd47813a-423a-4eed-acd1-293f37dcc752" x="164" y="3" width="85" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{wh_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="2dc23396-c159-47d6-be07-1030fc7a3915" x="249" y="3" width="85" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{priority}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="2348f28c-f207-455f-adcb-b7a43f022208" x="334" y="3" width="214" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{search_path_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="bc2aaa0c-46a9-48e2-b0ba-c0e835a0ebee" x="548" y="3" width="214" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{client_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="bef27503-cdb6-4b09-a134-3bb395c9d8a8" x="762" y="3" width="108" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{order_type}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="fc349120-4044-4ba2-8ac8-2ff2530b003e" x="870" y="3" width="108" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{order_type}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="0d4a8efa-7f93-4575-a3c3-edb073e14aa6" x="978" y="3" width="108" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{sequence}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="f299d440-81c9-41a2-86fe-de3ab5c69624" x="1086" y="3" width="108" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{bldg_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="58fa4d82-69a4-41c6-bd52-7aa31a673657" x="1194" y="3" width="108" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{pick_zone}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7b8d548e-b079-4568-b089-87c5f93b3765" x="1302" y="3" width="108" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{lpn_level}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="25ad02f4-2f93-42db-a826-a86067440267" x="1410" y="3" width="108" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{allocation_uom}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
 </jasperReport>
