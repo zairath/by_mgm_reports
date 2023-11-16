@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="exp_alloc_search_path" language="groovy" pageWidth="3670" pageHeight="7128" orientation="Landscape" columnWidth="3666" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
+	<property name="ireport.zoom" value="1.948717100000018"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.ireport.encoding" value="UTF-8"/>
+	<property name="ireport.callouts" value="##4/6/12 callouts.1.text=This Report was converted from on 4/6/12 3:47 PM callouts.1.bounds=10,-10,600,32"/>
+	<property name="net.sf.jasperreports.governor.max.pages" value="500"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA["US_ENGLISH"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_CONNECTION" class="com.redprairie.moca.jrds.JRMocaConnection" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new com.redprairie.moca.jrds.JRMocaConnection("http://localhost:4500/service", "super", "super", true)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_DATE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getDateInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_TIME" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_TZ" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wh_id" class="java.lang.String">
+		<property name="prompt" value="^wh_id^"/>
+	</parameter>
+	<queryString language="MOCA">
+		<![CDATA[list rpt all allocation search path data where @%wh_id]]>
+	</queryString>
+	<field name="alloc_search_path_id" class="java.lang.String"/>
+	<field name="wh_id" class="java.lang.String"/>
+	<field name="priority" class="java.lang.Integer"/>
+	<field name="search_path_name" class="java.lang.String"/>
+	<field name="client_id" class="java.lang.String"/>
+	<field name="order_type" class="java.lang.String"/>
+	<field name="item_family" class="java.lang.String"/>
+	<field name="sequence" class="java.lang.Integer"/>
+	<field name="bldg_id" class="java.lang.String"/>
+	<field name="pick_zone" class="java.lang.String"/>
+	<field name="lpn_level" class="java.lang.String"/>
+	<field name="allocation_uom" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="18"/>
+	</title>
+	<detail>
+		<band height="110" splitType="Stretch"/>
+	</detail>
+</jasperReport>
