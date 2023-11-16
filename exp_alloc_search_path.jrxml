@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="exp_allocation_search_path" language="groovy" pageWidth="1872" pageHeight="842" columnWidth="1864" leftMargin="4" rightMargin="4" topMargin="4" bottomMargin="4" uuid="f632e95a-7094-4389-be89-4ff20c1e84d1">
-	<property name="ireport.zoom" value="1.2100000000000006"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.zoom" value="1.948717100000018"/>
+	<property name="ireport.x" value="991"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_TZ" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
@@ -164,7 +164,7 @@
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement uuid="fc349120-4044-4ba2-8ac8-2ff2530b003e" x="870" y="3" width="108" height="20"/>
 				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[$F{order_type}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{item_family}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement uuid="0d4a8efa-7f93-4575-a3c3-edb073e14aa6" x="978" y="3" width="108" height="20"/>
