@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ship_report_hist" language="groovy" pageWidth="3670" pageHeight="7128" orientation="Landscape" columnWidth="3666" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
 	<property name="ireport.zoom" value="1.948717100000018"/>
-	<property name="ireport.x" value="2639"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
@@ -112,8 +112,18 @@
 	<field name="reference_1" class="java.lang.String"/>
 	<field name="revlvl" class="java.lang.String"/>
 	<field name="catch_qty" class="java.lang.Double"/>
-	<group name="groupby_revlvl">
+	<variable name="TOTAL_PALLET_PCK" class="java.lang.Integer" resetType="Group" resetGroup="REVLVL" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{revlvl}]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<group name="REVLVL">
 		<groupExpression><![CDATA[$F{revlvl}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band height="199"/>
+		</groupFooter>
 	</group>
 	<background>
 		<band splitType="Stretch"/>
@@ -307,7 +317,7 @@
 		</band>
 	</title>
 	<detail>
-		<band height="110" splitType="Stretch">
+		<band height="20" splitType="Stretch">
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement uuid="a031932d-10cf-4013-8ed8-d2783b3130b7" x="257" y="0" width="120" height="20"/>
 				<box leftPadding="3"/>
@@ -438,7 +448,7 @@
 				<reportElement uuid="d124ebab-4edf-4fd3-8d95-c7d0d16a00e5" x="2297" y="0" width="120" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$V{groupby_revlvl_COUNT}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{TOTAL_PALLET_PCK}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement uuid="ecfeaa8f-1ba3-4aa4-a776-3b8800b1a37d" x="497" y="0" width="120" height="20"/>
