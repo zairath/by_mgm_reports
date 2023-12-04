@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="delivery_ba" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="14" bottomMargin="26" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
 	<property name="ireport.zoom" value="1.6105100000000254"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="144"/>
+	<property name="ireport.y" value="288"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
 	<property name="ireport.callouts" value="##4/6/12 callouts.1.text=This Report was converted from on 4/6/12 3:47 PM callouts.1.bounds=10,-10,600,32"/>
@@ -908,7 +908,7 @@
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="0b15f311-e1ba-4241-863c-55a69d58ed3d" x="214" y="0" width="66" height="35" backcolor="#CCCCFF"/>
+				<reportElement uuid="0b15f311-e1ba-4241-863c-55a69d58ed3d" x="214" y="0" width="74" height="35" backcolor="#CCCCFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -967,20 +967,20 @@
 				<text><![CDATA[NOTE]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement uuid="60708c43-6635-440d-b039-b10292247f00" x="280" y="0" width="94" height="35" backcolor="#CCCCFF"/>
+				<reportElement uuid="60708c43-6635-440d-b039-b10292247f00" x="288" y="0" width="86" height="35" backcolor="#CCCCFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<staticText>
-				<reportElement uuid="d0122711-4a14-4669-9949-c633957abb75" x="214" y="0" width="66" height="35"/>
+				<reportElement uuid="d0122711-4a14-4669-9949-c633957abb75" x="214" y="0" width="74" height="35"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[BATCH]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="9e4afdae-52a5-4b3f-a366-d26ce5e62215" x="280" y="0" width="94" height="35"/>
+				<reportElement uuid="9e4afdae-52a5-4b3f-a366-d26ce5e62215" x="288" y="0" width="86" height="35"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10" isBold="true"/>
 				</textElement>
@@ -1041,7 +1041,7 @@
 					</graphicElement>
 				</rectangle>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-					<reportElement uuid="aa6141ff-e4fe-4d2c-a075-fa64526b0a69" stretchType="RelativeToTallestObject" x="214" y="0" width="66" height="30"/>
+					<reportElement uuid="aa6141ff-e4fe-4d2c-a075-fa64526b0a69" stretchType="RelativeToTallestObject" x="214" y="0" width="74" height="30"/>
 					<box>
 						<pen lineWidth="0.5" lineStyle="Dashed"/>
 						<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -1068,8 +1068,8 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$F{dsp_untqty} + " " + $F{dsp_untqty_uom} + " " + $F{rem_untqty} + " " + $F{rem_untqty_uom}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h.mm a" isBlankWhenNull="true">
-					<reportElement uuid="e6978ae6-fed4-4b7c-bba4-c0214cd1a7be" stretchType="RelativeToTallestObject" x="280" y="0" width="94" height="30"/>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement uuid="e6978ae6-fed4-4b7c-bba4-c0214cd1a7be" stretchType="RelativeToTallestObject" x="288" y="0" width="86" height="30"/>
 					<box>
 						<pen lineWidth="0.5" lineStyle="Dashed"/>
 						<topPen lineWidth="0.5" lineStyle="Dashed"/>
