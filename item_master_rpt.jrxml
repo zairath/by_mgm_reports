@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="item_master_rpt" language="groovy" pageWidth="4320" pageHeight="842" columnWidth="4310" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5" uuid="c747277c-96a2-467a-a82c-3b4b4e73fe4a">
 	<property name="ireport.zoom" value="1.4641000000000006"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="4182"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
@@ -118,100 +118,82 @@
 			<staticText>
 				<reportElement uuid="1c3b2ca5-a3f6-4f51-ba63-09f1d3e4050d" x="1235" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Catch Code
-]]></text>
+				<text><![CDATA[Catch Code]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="8334e652-d81b-4c02-b7e4-c410bae3f994" x="1336" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Catch Unit Type
-]]></text>
+				<text><![CDATA[Catch Unit Type]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="af9ffce8-8219-42ed-a215-6db253f19fb0" x="1436" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Minimum Catch Qty
-]]></text>
+				<text><![CDATA[Minimum Catch Qty]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="2954aa7e-fc23-4d1a-9440-95ce004cccf6" x="1537" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Maximum Catch Qty
-]]></text>
+				<text><![CDATA[Maximum Catch Qty]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="364a8f48-924f-4926-a2d8-a5b0f55bb67f" x="1638" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Display UOM
-]]></text>
+				<text><![CDATA[Display UOM]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="12c48b0d-efb4-4b48-b12a-d4c1b6ee2dda" x="1739" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Date Code
-]]></text>
+				<text><![CDATA[Date Code]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="69575452-3538-4ab3-8a8a-e2180fac439d" x="1839" y="0" width="154" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Inventory Rotation Method
-]]></text>
+				<text><![CDATA[Inventory Rotation Method]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="3b99062d-0b2f-4918-b85b-0079272a92c4" x="1994" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Footprint Code
-]]></text>
+				<text><![CDATA[Footprint Code]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="4a6ace95-b4a2-4b00-a3b4-2e629daca8f6" x="2095" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Unit Of Measure
-]]></text>
+				<text><![CDATA[Unit Of Measure]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="b6dd83c0-fb44-4f4e-9c1a-92efdf0db5bf" x="2196" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[UOM Level
-]]></text>
+				<text><![CDATA[UOM Level]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="4b92b54a-fb8d-470e-8709-ee26e61327c8" x="2297" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Length
-
-]]></text>
+				<text><![CDATA[Length]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="34a3ef40-86d4-45f5-99c2-88326ca573ad" x="2397" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Width
-]]></text>
+				<text><![CDATA[Width]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="c1d75306-9d04-4821-93c9-474ab851d9e7" x="2498" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Height
-]]></text>
+				<text><![CDATA[Height]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="df111484-deaa-4b2a-8598-8a007f6ae48d" x="2599" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Gross Weight
-
-]]></text>
+				<text><![CDATA[Gross Weight]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="5b5c7732-83f7-472c-936b-fff179c3f697" x="2700" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Net Weight
-]]></text>
+				<text><![CDATA[Net Weight]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="b4e9b2ec-95b6-4acd-82d1-3b2ef4710e79" x="657" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Aging Profile Name
-]]></text>
+				<text><![CDATA[Aging Profile Name]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="1fe818c6-32c8-4d7c-9c11-9e5bf55575b6" x="2801" y="0" width="100" height="20"/>
@@ -221,8 +203,7 @@
 			<staticText>
 				<reportElement uuid="dde880c5-d692-4597-9aa5-49aeb653850a" x="2902" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Layer Flag
-]]></text>
+				<text><![CDATA[Layer Flag]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="b8319c43-fed1-49ec-812c-6c894246dda4" x="3003" y="0" width="100" height="20"/>
@@ -232,26 +213,22 @@
 			<staticText>
 				<reportElement uuid="21010abb-def2-496c-97de-037fe387eff7" x="3104" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Pack Flag
-]]></text>
+				<text><![CDATA[Pack Flag]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="41f2b34c-ec6a-4122-a05d-bb72170ebfd4" x="3205" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Unit UOM flag
-]]></text>
+				<text><![CDATA[Unit UOM flag]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="30fb8586-2916-462b-811c-2986ae3f8e1e" x="3306" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Receive Flag
-]]></text>
+				<text><![CDATA[Receive Flag]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="ff85381f-58a3-4e29-971c-482bb328c15b" x="3407" y="0" width="100" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[Unit Quantity
-]]></text>
+				<text><![CDATA[Unit Quantity]]></text>
 			</staticText>
 		</band>
 	</title>
