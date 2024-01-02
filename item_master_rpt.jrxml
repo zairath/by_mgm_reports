@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="item_master_rpt" language="groovy" pageWidth="4320" pageHeight="842" columnWidth="4310" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5" uuid="c747277c-96a2-467a-a82c-3b4b4e73fe4a">
 	<property name="ireport.zoom" value="1.4641000000000006"/>
-	<property name="ireport.x" value="4182"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
@@ -23,8 +23,8 @@
 		<property name="MOCA" value="true"/>
 		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
 	</parameter>
-	<parameter name="wh_id" class="java.lang.String">
-		<property name="prompt" value="^wh_id^"/>
+	<parameter name="wh_id_tmpl" class="java.lang.String">
+		<property name="prompt" value="^wh_id_tmpl^"/>
 	</parameter>
 	<queryString language="MOCA">
 		<![CDATA[list rpt all item master data]]>

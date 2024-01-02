@@ -26,8 +26,8 @@
 	<parameter name="wh_id" class="java.lang.String">
 		<property name="prompt" value="^wh_id^"/>
 	</parameter>
-	<parameter name="client_id" class="java.lang.String">
-		<property name="prompt" value="^client_id^"/>
+	<parameter name="prt_client_id" class="java.lang.String">
+		<property name="prompt" value="^prt_client_id^"/>
 	</parameter>
 	<parameter name="start_date" class="java.util.Date">
 		<property name="prompt" value="start_date"/>
