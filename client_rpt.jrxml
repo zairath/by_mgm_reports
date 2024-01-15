@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="client_rpt" language="groovy" pageWidth="1459" pageHeight="842" columnWidth="1449" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5" uuid="f8d17f80-7599-4e78-8596-08eae0c1f89b">
 	<property name="ireport.zoom" value="1.6105100000000014"/>
-	<property name="ireport.x" value="1213"/>
+	<property name="ireport.x" value="1212"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
@@ -64,7 +64,7 @@
 			<staticText>
 				<reportElement uuid="0751cc95-cd85-4178-b78c-a3e1a74c4367" x="857" y="0" width="200" height="20"/>
 				<textElement textAlignment="Center"/>
-				<text><![CDATA[ADDRES 3]]></text>
+				<text><![CDATA[ADDRESS 3]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="f3b69c86-b119-4cb8-a94e-f34aa83e125b" x="1058" y="0" width="200" height="20"/>
