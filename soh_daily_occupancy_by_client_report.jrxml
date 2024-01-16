@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="soh_daily_occupancy_by_client_report" language="groovy" pageWidth="2880" pageHeight="595" orientation="Landscape" columnWidth="2876" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
-	<property name="ireport.zoom" value="1.000000000000011"/>
-	<property name="ireport.x" value="994"/>
+	<property name="ireport.zoom" value="4.5949729863572735"/>
+	<property name="ireport.x" value="6277"/>
 	<property name="ireport.y" value="0"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
@@ -144,13 +144,13 @@
 				<textFieldExpression><![CDATA[$F{temperature}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="5b88585f-195b-4dd7-b010-aa7d1634e7ad" x="1500" y="2" width="250" height="18"/>
+				<reportElement uuid="5b88585f-195b-4dd7-b010-aa7d1634e7ad" x="1500" y="0" width="250" height="18"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{item_family_desc}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="be87a805-89c8-4ba3-a642-5834d349f23d" x="1750" y="2" width="250" height="18"/>
+				<reportElement uuid="be87a805-89c8-4ba3-a642-5834d349f23d" x="1750" y="0" width="250" height="18"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{used_capacity}]]></textFieldExpression>
