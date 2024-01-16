@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="delivery_note" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="14" bottomMargin="26" isFloatColumnFooter="true" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
 	<property name="ireport.zoom" value="1.6105100000000223"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="359"/>
+	<property name="ireport.y" value="288"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
 	<property name="ireport.callouts" value="##4/6/12 callouts.1.text=This Report was converted from on 4/6/12 3:47 PM callouts.1.bounds=10,-10,600,32"/>
@@ -849,17 +849,9 @@
 		<groupFooter>
 			<band height="26">
 				<frame>
-					<reportElement uuid="b4fb02a8-0ed3-48c1-8426-9b25cbe875a0" stretchType="RelativeToTallestObject" x="0" y="0" width="575" height="26"/>
-					<rectangle>
-						<reportElement uuid="c59810c4-b806-4d22-a44a-414e6f7c063a" stretchType="RelativeToTallestObject" x="0" y="0" width="575" height="15" backcolor="#FFFFFF">
-							<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 == 0)]]></printWhenExpression>
-						</reportElement>
-						<graphicElement>
-							<pen lineWidth="0.0"/>
-						</graphicElement>
-					</rectangle>
-					<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="groupby_prtnum" pattern="" isBlankWhenNull="true">
-						<reportElement uuid="1930afc9-01d9-4214-9ba3-042fe1e92fd5" stretchType="RelativeToBandHeight" x="0" y="0" width="115" height="26"/>
+					<reportElement uuid="b4fb02a8-0ed3-48c1-8426-9b25cbe875a0" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="575" height="26"/>
+					<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+						<reportElement uuid="1930afc9-01d9-4214-9ba3-042fe1e92fd5" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="115" height="26"/>
 						<box>
 							<pen lineWidth="0.5" lineStyle="Dashed"/>
 							<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -872,14 +864,8 @@
 						</textElement>
 						<textFieldExpression><![CDATA[$F{prtnum}]]></textFieldExpression>
 					</textField>
-					<rectangle>
-						<reportElement uuid="c553b266-8888-44ad-ae7f-7d6d6a2cc23b" stretchType="RelativeToBandHeight" mode="Transparent" x="469" y="0" width="106" height="26"/>
-						<graphicElement>
-							<pen lineWidth="0.5" lineStyle="Dashed"/>
-						</graphicElement>
-					</rectangle>
 					<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-						<reportElement uuid="4f96859b-b03d-4d87-a592-d0c08562472e" stretchType="RelativeToBandHeight" x="300" y="0" width="110" height="26"/>
+						<reportElement uuid="4f96859b-b03d-4d87-a592-d0c08562472e" positionType="Float" stretchType="RelativeToBandHeight" x="300" y="0" width="110" height="26"/>
 						<box>
 							<pen lineWidth="0.5" lineStyle="Dashed"/>
 							<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -893,7 +879,7 @@
 						<textFieldExpression><![CDATA[$V{tot_dspunits_by_prtnum} + " " + $F{dsp_untqty_uom} + " " + $V{tot_remunits_by_prtnum} + " " + $F{rem_untqty_uom}]]></textFieldExpression>
 					</textField>
 					<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-						<reportElement uuid="4e4ad7ad-e75f-46f1-948a-29f0e9112468" stretchType="RelativeToBandHeight" x="410" y="0" width="59" height="26"/>
+						<reportElement uuid="4e4ad7ad-e75f-46f1-948a-29f0e9112468" positionType="Float" stretchType="RelativeToBandHeight" x="410" y="0" width="59" height="26"/>
 						<box>
 							<pen lineWidth="0.5" lineStyle="Dashed"/>
 							<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -906,8 +892,8 @@
 						</textElement>
 						<textFieldExpression><![CDATA[String.format("%.2f",(double)($V{tot_cartons_by_prtnum}.doubleValue()))]]></textFieldExpression>
 					</textField>
-					<textField isStretchWithOverflow="true" evaluationTime="Group" evaluationGroup="groupby_prtnum" pattern="" isBlankWhenNull="true">
-						<reportElement uuid="f5b1f3be-3882-487e-b60f-eff21ee0d16e" stretchType="RelativeToTallestObject" x="115" y="0" width="185" height="26"/>
+					<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+						<reportElement uuid="f5b1f3be-3882-487e-b60f-eff21ee0d16e" positionType="Float" stretchType="RelativeToBandHeight" x="115" y="0" width="185" height="26"/>
 						<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
 							<pen lineWidth="0.5" lineStyle="Dashed"/>
 							<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -920,6 +906,12 @@
 						</textElement>
 						<textFieldExpression><![CDATA[$F{lngdsc}]]></textFieldExpression>
 					</textField>
+					<rectangle>
+						<reportElement uuid="c553b266-8888-44ad-ae7f-7d6d6a2cc23b" positionType="Float" stretchType="RelativeToBandHeight" mode="Transparent" x="469" y="0" width="106" height="26"/>
+						<graphicElement>
+							<pen lineWidth="0.5" lineStyle="Dashed"/>
+						</graphicElement>
+					</rectangle>
 				</frame>
 			</band>
 		</groupFooter>
