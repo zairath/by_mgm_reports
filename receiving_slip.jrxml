@@ -137,19 +137,19 @@
 				<text><![CDATA[Received]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement uuid="5a675982-aecb-4752-abe7-aefc1e5e0b9d" x="0" y="107" width="83" height="30" backcolor="#CCFFFF"/>
+				<reportElement uuid="5a675982-aecb-4752-abe7-aefc1e5e0b9d" x="0" y="107" width="83" height="30" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="f0c16f6a-3c08-43a9-9543-2b74cbbf67f6" x="0" y="137" width="83" height="30" backcolor="#CCFFFF"/>
+				<reportElement uuid="f0c16f6a-3c08-43a9-9543-2b74cbbf67f6" x="0" y="137" width="83" height="30" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="1f6b3e5f-347f-4857-b6ea-955874ffe4d2" x="0" y="167" width="83" height="30" backcolor="#CCFFFF"/>
+				<reportElement uuid="1f6b3e5f-347f-4857-b6ea-955874ffe4d2" x="0" y="167" width="83" height="30" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -173,19 +173,19 @@
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="20b24a14-e178-43c1-b8b6-9a834c6aa09a" x="286" y="107" width="90" height="30" backcolor="#CCFFFF"/>
+				<reportElement uuid="20b24a14-e178-43c1-b8b6-9a834c6aa09a" x="286" y="107" width="90" height="30" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="67f42bb4-a957-442d-9b63-29cfff9e3795" x="286" y="137" width="90" height="30" backcolor="#CCFFFF"/>
+				<reportElement uuid="67f42bb4-a957-442d-9b63-29cfff9e3795" x="286" y="137" width="90" height="30" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="65eaa173-0d99-4ad3-abe4-757dc5a92476" x="286" y="167" width="90" height="30" backcolor="#CCFFFF"/>
+				<reportElement uuid="65eaa173-0d99-4ad3-abe4-757dc5a92476" x="286" y="167" width="90" height="30" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -316,37 +316,37 @@
 	<columnHeader>
 		<band height="35">
 			<rectangle>
-				<reportElement uuid="66af1141-b26a-46a4-99d7-91f839429fd6" x="0" y="0" width="70" height="35" backcolor="#CCCCCC"/>
+				<reportElement uuid="66af1141-b26a-46a4-99d7-91f839429fd6" x="0" y="0" width="70" height="35" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="4bcbfde2-66fb-4a4e-afd0-e1b0d0aab3eb" x="70" y="0" width="136" height="35" backcolor="#CCCCCC"/>
+				<reportElement uuid="4bcbfde2-66fb-4a4e-afd0-e1b0d0aab3eb" x="70" y="0" width="136" height="35" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="13f60beb-da3f-4e4f-8634-de49163e6470" x="206" y="0" width="72" height="35" backcolor="#CCCCCC"/>
+				<reportElement uuid="13f60beb-da3f-4e4f-8634-de49163e6470" x="206" y="0" width="72" height="35" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="28c3c62b-b3a2-4a71-805c-9b107ea2df05" x="278" y="0" width="71" height="35" backcolor="#CCCCCC"/>
+				<reportElement uuid="28c3c62b-b3a2-4a71-805c-9b107ea2df05" x="278" y="0" width="71" height="35" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="919aedfe-1144-4430-97b4-dbe5d8388c5f" x="349" y="0" width="93" height="35" backcolor="#CCCCCC"/>
+				<reportElement uuid="919aedfe-1144-4430-97b4-dbe5d8388c5f" x="349" y="0" width="93" height="35" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="0e9cb696-be8c-441b-98e9-58d62180c58c" x="442" y="0" width="46" height="35" backcolor="#CCCCCC"/>
+				<reportElement uuid="0e9cb696-be8c-441b-98e9-58d62180c58c" x="442" y="0" width="46" height="35" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -394,7 +394,7 @@
 				<text><![CDATA[ACTUAL KG]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement uuid="7e36eb9a-54f1-40c5-95d7-94abd2d16bbf" x="488" y="0" width="87" height="35" backcolor="#CCCCCC"/>
+				<reportElement uuid="7e36eb9a-54f1-40c5-95d7-94abd2d16bbf" x="488" y="0" width="87" height="35" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -411,7 +411,7 @@
 	<detail>
 		<band height="30" splitType="Stretch">
 			<rectangle>
-				<reportElement uuid="d097d974-a094-4846-930f-36231e2ab651" stretchType="RelativeToTallestObject" x="0" y="0" width="575" height="30" backcolor="#CCFFFF">
+				<reportElement uuid="d097d974-a094-4846-930f-36231e2ab651" stretchType="RelativeToTallestObject" x="0" y="0" width="575" height="30" backcolor="#FFFFFF">
 					<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 == 0)]]></printWhenExpression>
 				</reportElement>
 				<graphicElement>

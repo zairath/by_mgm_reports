@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="grn_ba" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="14" bottomMargin="26" isFloatColumnFooter="true" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
 	<property name="ireport.zoom" value="1.6528925619834747"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="73"/>
+	<property name="ireport.y" value="0"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
 	<property name="ireport.callouts" value="##4/6/12 callouts.1.text=This Report was converted from on 4/6/12 3:47 PM callouts.1.bounds=10,-10,600,32"/>
@@ -135,19 +135,19 @@
 				</graphicElement>
 			</line>
 			<rectangle>
-				<reportElement uuid="5a675982-aecb-4752-abe7-aefc1e5e0b9d" x="0" y="80" width="107" height="24" backcolor="#CCCCCC"/>
+				<reportElement uuid="5a675982-aecb-4752-abe7-aefc1e5e0b9d" x="0" y="80" width="107" height="24" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="f0c16f6a-3c08-43a9-9543-2b74cbbf67f6" x="0" y="104" width="107" height="21" backcolor="#CCCCCC"/>
+				<reportElement uuid="f0c16f6a-3c08-43a9-9543-2b74cbbf67f6" x="0" y="104" width="107" height="21" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="1f6b3e5f-347f-4857-b6ea-955874ffe4d2" x="0" y="125" width="107" height="24" backcolor="#CCCCCC"/>
+				<reportElement uuid="1f6b3e5f-347f-4857-b6ea-955874ffe4d2" x="0" y="125" width="107" height="24" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -171,19 +171,19 @@
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="20b24a14-e178-43c1-b8b6-9a834c6aa09a" x="288" y="80" width="88" height="24" backcolor="#CCCCCC"/>
+				<reportElement uuid="20b24a14-e178-43c1-b8b6-9a834c6aa09a" x="288" y="80" width="88" height="24" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="67f42bb4-a957-442d-9b63-29cfff9e3795" x="288" y="104" width="88" height="21" backcolor="#CCCCCC"/>
+				<reportElement uuid="67f42bb4-a957-442d-9b63-29cfff9e3795" x="288" y="104" width="88" height="21" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="65eaa173-0d99-4ad3-abe4-757dc5a92476" x="288" y="125" width="88" height="24" backcolor="#CCCCCC"/>
+				<reportElement uuid="65eaa173-0d99-4ad3-abe4-757dc5a92476" x="288" y="125" width="88" height="24" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -207,13 +207,13 @@
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="adf95ee7-3c73-4af2-ab8f-6222bd857673" x="0" y="149" width="107" height="25" backcolor="#CCCCCC"/>
+				<reportElement uuid="adf95ee7-3c73-4af2-ab8f-6222bd857673" x="0" y="149" width="107" height="25" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="db3740ed-8911-4749-a6cb-5aa8bfc0ae41" x="288" y="149" width="88" height="25" backcolor="#CCCCCC"/>
+				<reportElement uuid="db3740ed-8911-4749-a6cb-5aa8bfc0ae41" x="288" y="149" width="88" height="25" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -370,37 +370,37 @@
 	<columnHeader>
 		<band height="20">
 			<rectangle>
-				<reportElement uuid="66af1141-b26a-46a4-99d7-91f839429fd6" x="0" y="0" width="77" height="20" backcolor="#CCCCFF"/>
+				<reportElement uuid="66af1141-b26a-46a4-99d7-91f839429fd6" x="0" y="0" width="77" height="20" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="4bcbfde2-66fb-4a4e-afd0-e1b0d0aab3eb" x="77" y="0" width="132" height="20" backcolor="#CCCCFF"/>
+				<reportElement uuid="4bcbfde2-66fb-4a4e-afd0-e1b0d0aab3eb" x="77" y="0" width="132" height="20" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="13f60beb-da3f-4e4f-8634-de49163e6470" x="209" y="0" width="117" height="20" backcolor="#CCCCFF"/>
+				<reportElement uuid="13f60beb-da3f-4e4f-8634-de49163e6470" x="209" y="0" width="117" height="20" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="919aedfe-1144-4430-97b4-dbe5d8388c5f" x="326" y="0" width="86" height="20" backcolor="#CCCCFF"/>
+				<reportElement uuid="919aedfe-1144-4430-97b4-dbe5d8388c5f" x="326" y="0" width="86" height="20" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="7e7bec10-4513-4ab9-b421-18624d2ee8d3" x="412" y="0" width="43" height="20" backcolor="#CCCCFF"/>
+				<reportElement uuid="7e7bec10-4513-4ab9-b421-18624d2ee8d3" x="412" y="0" width="43" height="20" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="ce1604b0-becb-45da-b74f-175c98084e87" x="455" y="0" width="120" height="20" backcolor="#CCCCFF"/>
+				<reportElement uuid="ce1604b0-becb-45da-b74f-175c98084e87" x="455" y="0" width="120" height="20" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -539,19 +539,19 @@
 				<text><![CDATA[Telah dilakukan perhitungan dan pemeriksaan fisik terhadap barang yang diterima/dikirim melalui :]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement uuid="afedb441-515a-42b3-ad05-046bc673aabe" x="0" y="39" width="103" height="30" backcolor="#CCCCCC"/>
+				<reportElement uuid="afedb441-515a-42b3-ad05-046bc673aabe" x="0" y="39" width="103" height="30" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="dae362cd-3d2f-4991-b2cc-6feda84eb7e2" x="0" y="69" width="103" height="30" backcolor="#CCCCCC"/>
+				<reportElement uuid="dae362cd-3d2f-4991-b2cc-6feda84eb7e2" x="0" y="69" width="103" height="30" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="953f4968-6877-4335-a9f9-4a855711cf93" x="0" y="99" width="103" height="30" backcolor="#CCCCCC"/>
+				<reportElement uuid="953f4968-6877-4335-a9f9-4a855711cf93" x="0" y="99" width="103" height="30" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -575,19 +575,19 @@
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="aa80be3c-bb10-48e3-b51f-f09443e239c1" x="279" y="39" width="90" height="30" backcolor="#CCCCCC"/>
+				<reportElement uuid="aa80be3c-bb10-48e3-b51f-f09443e239c1" x="279" y="39" width="90" height="30" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="200d0af0-e176-48cf-88c7-6ee79a7702d8" x="279" y="69" width="90" height="30" backcolor="#CCCCCC"/>
+				<reportElement uuid="200d0af0-e176-48cf-88c7-6ee79a7702d8" x="279" y="69" width="90" height="30" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="5db90894-73e2-4c96-b330-976fe2809deb" x="279" y="99" width="90" height="30" backcolor="#CCCCCC"/>
+				<reportElement uuid="5db90894-73e2-4c96-b330-976fe2809deb" x="279" y="99" width="90" height="30" backcolor="#FFFFFF"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
