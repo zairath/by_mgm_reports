@@ -232,70 +232,52 @@
 		</band>
 	</title>
 	<detail>
-		<band height="21" splitType="Stretch">
+		<band height="20" splitType="Prevent">
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement uuid="d7fb178c-9ff6-4021-a4c8-ed63794b4d37" style="table" positionType="Float" stretchType="RelativeToBandHeight" x="450" y="1" width="200" height="20"/>
-				<textElement rotation="None">
-					<paragraph lineSpacing="Fixed">
-						<tabStop position="0" alignment="Center"/>
-						<tabStop position="0" alignment="Left"/>
-						<tabStop position="0" alignment="Right"/>
-					</paragraph>
+				<reportElement uuid="d7fb178c-9ff6-4021-a4c8-ed63794b4d37" style="table_TD" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="450" y="0" width="200" height="20"/>
+				<textElement textAlignment="Justified" rotation="None">
+					<font isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{adrln1}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement uuid="0447c720-7fe1-46a1-b5f6-026078679433" style="table" positionType="Float" stretchType="RelativeToTallestObject" x="650" y="1" width="200" height="20"/>
-				<textElement rotation="None">
-					<paragraph lineSpacing="Fixed">
-						<tabStop position="0" alignment="Center"/>
-						<tabStop position="0" alignment="Left"/>
-						<tabStop position="0" alignment="Right"/>
-					</paragraph>
+				<reportElement uuid="0447c720-7fe1-46a1-b5f6-026078679433" style="table_TD" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="650" y="0" width="200" height="20"/>
+				<textElement textAlignment="Justified" rotation="None">
+					<font isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{adrln2}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement uuid="944347a8-f24f-47c7-9aef-f98d2225e3f0" style="table" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="1" width="200" height="20"/>
-				<textElement rotation="None">
-					<paragraph lineSpacing="Fixed">
-						<tabStop position="0" alignment="Center"/>
-						<tabStop position="0" alignment="Left"/>
-						<tabStop position="0" alignment="Right"/>
-					</paragraph>
+				<reportElement uuid="944347a8-f24f-47c7-9aef-f98d2225e3f0" style="table_TD" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="0" y="0" width="200" height="20"/>
+				<textElement textAlignment="Justified" rotation="None">
+					<font isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{client_id}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement uuid="5ab4d614-8513-4cd5-bfd9-42985e6ba616" style="table" positionType="Float" stretchType="RelativeToTallestObject" x="850" y="1" width="200" height="20"/>
-				<textElement rotation="None">
-					<paragraph lineSpacing="Fixed">
-						<tabStop position="0" alignment="Center"/>
-						<tabStop position="0" alignment="Left"/>
-						<tabStop position="0" alignment="Right"/>
-					</paragraph>
+				<reportElement uuid="5ab4d614-8513-4cd5-bfd9-42985e6ba616" style="table_TD" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="850" y="0" width="200" height="20"/>
+				<textElement textAlignment="Justified" rotation="None">
+					<font isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{adrln3}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement uuid="d5e3e39f-057b-4f0a-be7d-d4acb376df2c" style="table" positionType="Float" stretchType="RelativeToTallestObject" x="200" y="1" width="250" height="20"/>
-				<textElement rotation="None">
-					<paragraph lineSpacing="Fixed">
-						<tabStop position="0" alignment="Center"/>
-						<tabStop position="0" alignment="Left"/>
-						<tabStop position="0" alignment="Right"/>
-					</paragraph>
+				<reportElement uuid="d5e3e39f-057b-4f0a-be7d-d4acb376df2c" style="table_TD" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="200" y="0" width="250" height="20"/>
+				<textElement textAlignment="Justified" rotation="None">
+					<font isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{adrnam}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement uuid="f2fccea0-ce7d-4c91-ac71-639238b325f7" style="table" positionType="Float" stretchType="RelativeToTallestObject" x="1050" y="1" width="200" height="20"/>
-				<textElement rotation="None">
-					<paragraph lineSpacing="Fixed">
-						<tabStop position="0" alignment="Center"/>
-						<tabStop position="0" alignment="Left"/>
-						<tabStop position="0" alignment="Right"/>
-					</paragraph>
+				<reportElement uuid="f2fccea0-ce7d-4c91-ac71-639238b325f7" style="table_TD" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="1050" y="0" width="200" height="20"/>
+				<textElement textAlignment="Justified" rotation="None">
+					<font isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{adrcty}]]></textFieldExpression>
 			</textField>
