@@ -71,88 +71,88 @@
 	<title>
 		<band height="127" splitType="Stretch">
 			<componentElement>
-				<reportElement uuid="1c27b93d-613a-457b-bd4e-a9885d875aec" key="table" style="table" x="0" y="83" width="1450" height="44"/>
+				<reportElement uuid="1c27b93d-613a-457b-bd4e-a9885d875aec" key="table" style="table" x="0" y="85" width="1450" height="42"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="Table Dataset 1" uuid="7cd26420-e365-4e0d-aa50-3649e1f1a92e">
 						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
 					</datasetRun>
 					<jr:column width="200" uuid="2f389188-3250-4394-99bc-9fc16113b52f">
-						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+						<jr:tableHeader style="table_TH" height="42" rowSpan="1">
 							<staticText>
-								<reportElement uuid="e8f46b76-98e9-43e8-a3e3-cc59573ef8cd" x="0" y="0" width="200" height="30"/>
+								<reportElement uuid="e8f46b76-98e9-43e8-a3e3-cc59573ef8cd" x="0" y="0" width="200" height="42"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<text><![CDATA[client]]></text>
+								<text><![CDATA[CLIENT ID]]></text>
 							</staticText>
 						</jr:tableHeader>
-						<jr:tableFooter style="table_TH" height="30" rowSpan="1"/>
-						<jr:columnHeader style="table_CH" height="30" rowSpan="1"/>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1"/>
+						<jr:tableFooter style="table_TH" height="0" rowSpan="1"/>
+						<jr:columnHeader style="table_CH" height="0" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="1" rowSpan="1"/>
 					</jr:column>
 					<jr:column width="250" uuid="1e647dc6-e9dd-4f8a-958f-0470846380ab">
-						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+						<jr:tableHeader style="table_TH" height="42" rowSpan="1">
 							<staticText>
-								<reportElement uuid="531f87a1-853d-4fbf-999f-e18aa5628500" x="0" y="0" width="250" height="30"/>
+								<reportElement uuid="531f87a1-853d-4fbf-999f-e18aa5628500" x="0" y="0" width="250" height="42"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<text><![CDATA[name]]></text>
+								<text><![CDATA[CLIENT NAME]]></text>
 							</staticText>
 						</jr:tableHeader>
-						<jr:tableFooter style="table_TH" height="30" rowSpan="1"/>
-						<jr:columnHeader style="table_CH" height="30" rowSpan="1"/>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1"/>
+						<jr:tableFooter style="table_TH" height="0" rowSpan="1"/>
+						<jr:columnHeader style="table_CH" height="0" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="1" rowSpan="1"/>
 					</jr:column>
 					<jr:column width="200" uuid="802258d1-fdbf-48a9-a46b-0fb90be48847">
-						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+						<jr:tableHeader style="table_TH" height="42" rowSpan="1">
 							<staticText>
-								<reportElement uuid="e33ae02f-e0c1-4d64-a499-e474c1ed8a9f" x="0" y="0" width="200" height="30"/>
+								<reportElement uuid="e33ae02f-e0c1-4d64-a499-e474c1ed8a9f" x="0" y="0" width="200" height="42"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<text><![CDATA[addres1]]></text>
+								<text><![CDATA[ADDRESS 1]]></text>
 							</staticText>
 						</jr:tableHeader>
-						<jr:tableFooter style="table_TH" height="30" rowSpan="1"/>
-						<jr:columnHeader style="table_CH" height="30" rowSpan="1"/>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1"/>
+						<jr:tableFooter style="table_TH" height="0" rowSpan="1"/>
+						<jr:columnHeader style="table_CH" height="0" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="1" rowSpan="1"/>
 					</jr:column>
 					<jr:column width="200" uuid="98bd31c4-1efc-44b4-8c47-abab15e6826e">
-						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+						<jr:tableHeader style="table_TH" height="42" rowSpan="1">
 							<staticText>
-								<reportElement uuid="aeb8a526-e361-407e-b7f4-aaec21c0b366" x="0" y="0" width="200" height="30"/>
+								<reportElement uuid="aeb8a526-e361-407e-b7f4-aaec21c0b366" x="0" y="0" width="200" height="42"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<text><![CDATA[addres12]]></text>
+								<text><![CDATA[ADDRESS 2]]></text>
 							</staticText>
 						</jr:tableHeader>
-						<jr:tableFooter style="table_TH" height="30" rowSpan="1"/>
-						<jr:columnHeader style="table_CH" height="30" rowSpan="1"/>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1"/>
+						<jr:tableFooter style="table_TH" height="0" rowSpan="1"/>
+						<jr:columnHeader style="table_CH" height="0" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="1" rowSpan="1"/>
 					</jr:column>
 					<jr:column width="200" uuid="c081a557-28db-4d54-9687-6a409897be06">
-						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+						<jr:tableHeader style="table_TH" height="42" rowSpan="1">
 							<staticText>
-								<reportElement uuid="b65a33d7-52f9-45fd-a88c-612c6f0fa17a" x="0" y="0" width="200" height="30"/>
+								<reportElement uuid="b65a33d7-52f9-45fd-a88c-612c6f0fa17a" x="0" y="0" width="200" height="42"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<text><![CDATA[asdsff2]]></text>
+								<text><![CDATA[ADDRESS 3]]></text>
 							</staticText>
 						</jr:tableHeader>
-						<jr:tableFooter style="table_TH" height="30" rowSpan="1"/>
-						<jr:columnHeader style="table_CH" height="30" rowSpan="1"/>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1"/>
+						<jr:tableFooter style="table_TH" height="0" rowSpan="1"/>
+						<jr:columnHeader style="table_CH" height="0" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="1" rowSpan="1"/>
 					</jr:column>
 					<jr:column width="200" uuid="da1143a2-6e74-4cf0-8ecb-dc907e97c83f">
-						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+						<jr:tableHeader style="table_TH" height="42" rowSpan="1">
 							<staticText>
-								<reportElement uuid="8a050a7e-b7b3-48e8-96dd-0230d1c7e1ad" x="0" y="0" width="200" height="30"/>
+								<reportElement uuid="8a050a7e-b7b3-48e8-96dd-0230d1c7e1ad" x="0" y="0" width="200" height="42"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle"/>
-								<text><![CDATA[asd2d12]]></text>
+								<text><![CDATA[CITY]]></text>
 							</staticText>
 						</jr:tableHeader>
-						<jr:tableFooter style="table_TH" height="30" rowSpan="1"/>
-						<jr:columnHeader style="table_CH" height="30" rowSpan="1"/>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1"/>
+						<jr:tableFooter style="table_TH" height="0" rowSpan="1"/>
+						<jr:columnHeader style="table_CH" height="0" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="1" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="1" rowSpan="1"/>
 					</jr:column>
 				</jr:table>
 			</componentElement>
@@ -169,7 +169,7 @@
 				<text><![CDATA[CLIENT MASTER]]></text>
 			</staticText>
 			<image>
-				<reportElement uuid="8aca3305-932e-40fd-9aee-fc978b369ea9" x="0" y="3" width="450" height="38"/>
+				<reportElement uuid="8aca3305-932e-40fd-9aee-fc978b369ea9" x="0" y="6" width="450" height="35"/>
 				<imageExpression><![CDATA["mgm-logo.png"]]></imageExpression>
 			</image>
 		</band>
