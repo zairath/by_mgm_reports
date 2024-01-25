@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tat_rpt2" language="groovy" pageWidth="3564" pageHeight="7128" orientation="Landscape" columnWidth="3558" leftMargin="3" rightMargin="3" topMargin="3" bottomMargin="3" uuid="345ae4f4-6a98-4ed9-899e-44959c34223e">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tat_rpt2" language="groovy" pageWidth="3564" pageHeight="1440" orientation="Landscape" columnWidth="3558" leftMargin="3" rightMargin="3" topMargin="3" bottomMargin="0" uuid="345ae4f4-6a98-4ed9-899e-44959c34223e">
 	<property name="ireport.zoom" value="2.5937424601000214"/>
-	<property name="ireport.x" value="8292"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
