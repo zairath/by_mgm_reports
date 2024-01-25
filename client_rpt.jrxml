@@ -170,7 +170,7 @@
 			</staticText>
 			<image>
 				<reportElement uuid="8aca3305-932e-40fd-9aee-fc978b369ea9" x="0" y="3" width="450" height="38"/>
-				<imageExpression><![CDATA["D:\\Mgmbosco\\Report\\Report Git\\by_mgm_reports\\mgm-logo.png"]]></imageExpression>
+				<imageExpression><![CDATA["mgm-logo.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
