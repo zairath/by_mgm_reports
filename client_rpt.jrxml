@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="client_rpt" language="groovy" pageWidth="1450" pageHeight="72000" orientation="Landscape" columnWidth="1450" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="78833dd1-e941-4059-bac7-466dc45eea72">
-	<property name="ireport.zoom" value="1.3310000000000026"/>
+	<property name="ireport.zoom" value="1.3310000000000028"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<style name="table">
@@ -126,14 +126,14 @@
 	<field name="adrln3" class="java.lang.String"/>
 	<field name="adrcty" class="java.lang.String"/>
 	<title>
-		<band height="90" splitType="Stretch">
+		<band height="127" splitType="Stretch">
 			<textField pattern="dd-MMM-yyyy">
-				<reportElement uuid="256fb48d-33a5-47f8-8cc0-ae331f489514" x="0" y="50" width="200" height="20"/>
+				<reportElement uuid="256fb48d-33a5-47f8-8cc0-ae331f489514" x="0" y="87" width="200" height="20"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="2f1a7ef9-9516-4162-981b-a96a8305b7e4" x="0" y="30" width="450" height="20"/>
+				<reportElement uuid="2f1a7ef9-9516-4162-981b-a96a8305b7e4" x="0" y="67" width="450" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="true" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
 				</textElement>
@@ -144,7 +144,7 @@
 				<imageExpression><![CDATA["mgm-logo.png"]]></imageExpression>
 			</image>
 			<componentElement>
-				<reportElement uuid="ef892268-6670-4e7f-9bb6-d36c9a20fbd5" key="table 3" style="table 3" x="0" y="70" width="1250" height="20"/>
+				<reportElement uuid="ef892268-6670-4e7f-9bb6-d36c9a20fbd5" key="table 3" style="table 3" x="0" y="107" width="1250" height="20"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="Table Dataset 4" uuid="b2db2785-c82c-4533-abe4-19a3b1a31e31">
 						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
@@ -229,6 +229,12 @@
 					</jr:column>
 				</jr:table>
 			</componentElement>
+			<line>
+				<reportElement uuid="23acbf32-8884-40b6-a2bc-cbd1caf80ab7" isPrintRepeatedValues="false" x="0" y="48" width="1250" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="cd76a613-294a-4839-a655-971fe0fcd1e0" x="0" y="51" width="1250" height="1"/>
+			</line>
 		</band>
 	</title>
 	<detail>
