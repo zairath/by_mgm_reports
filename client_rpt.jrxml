@@ -156,10 +156,6 @@
 					</jr:column>
 				</jr:table>
 			</componentElement>
-			<image>
-				<reportElement uuid="8d502ca8-83bf-4e03-ab01-67c2f4a62f62" x="0" y="0" width="450" height="41"/>
-				<imageExpression><![CDATA["D:\\Mgmbosco\\Report\\WhatsApp Image 2024-01-19 at 10.43.13_d95ba2b6.jpg"]]></imageExpression>
-			</image>
 			<textField pattern="dd-MMM-yyyy">
 				<reportElement uuid="256fb48d-33a5-47f8-8cc0-ae331f489514" x="0" y="63" width="200" height="20"/>
 				<textElement/>
@@ -172,6 +168,10 @@
 				</textElement>
 				<text><![CDATA[CLIENT MASTER]]></text>
 			</staticText>
+			<image>
+				<reportElement uuid="8aca3305-932e-40fd-9aee-fc978b369ea9" x="0" y="3" width="450" height="38"/>
+				<imageExpression><![CDATA["D:\\Mgmbosco\\Report\\Report Git\\by_mgm_reports\\mgm-logo.png"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
