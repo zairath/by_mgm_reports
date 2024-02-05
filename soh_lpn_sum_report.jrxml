@@ -79,9 +79,9 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="129">
+		<band height="124">
 			<componentElement>
-				<reportElement uuid="93e90214-8dd6-4d58-adf0-95ff80508470" key="table" style="table" x="0" y="99" width="1641" height="30"/>
+				<reportElement uuid="93e90214-8dd6-4d58-adf0-95ff80508470" key="table" style="table" x="0" y="94" width="1641" height="30"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="Table Dataset 1" uuid="4363ef6d-a0fa-4e05-9454-ff43e3793db2">
 						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
@@ -203,22 +203,22 @@
 				<imageExpression><![CDATA["mgm-logo.png"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement uuid="8fc4153a-dc94-431f-970d-17a113a718ce" x="0" y="59" width="150" height="20"/>
+				<reportElement uuid="8fc4153a-dc94-431f-970d-17a113a718ce" x="0" y="54" width="150" height="20"/>
 				<textElement verticalAlignment="Middle">
 					<font isBold="true" isItalic="false"/>
 				</textElement>
 				<text><![CDATA[SOH PALLET REPORT]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement uuid="b5f5a290-20f3-46c8-91a9-e54e26cf24d6" x="0" y="79" width="150" height="20"/>
-				<textElement/>
+				<reportElement uuid="b5f5a290-20f3-46c8-91a9-e54e26cf24d6" x="0" y="74" width="150" height="20"/>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement uuid="cb5d739c-fc7c-4983-a33a-5f57b9090a66" x="0" y="58" width="1641" height="1"/>
+				<reportElement uuid="cb5d739c-fc7c-4983-a33a-5f57b9090a66" x="0" y="53" width="1641" height="1"/>
 			</line>
 			<line>
-				<reportElement uuid="9734b7dc-50b5-4d81-b3af-2b30e419f2ca" x="0" y="57" width="1641" height="1"/>
+				<reportElement uuid="9734b7dc-50b5-4d81-b3af-2b30e419f2ca" x="0" y="52" width="1641" height="1"/>
 			</line>
 		</band>
 	</title>
