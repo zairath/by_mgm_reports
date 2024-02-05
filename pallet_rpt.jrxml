@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pallet_rpt" language="groovy" pageWidth="7200" pageHeight="1684" orientation="Landscape" columnWidth="7180" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" uuid="e40e7c1b-a80e-4842-bb71-7d2df9d8c90a">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pallet_rpt" language="groovy" pageWidth="7180" pageHeight="720000" orientation="Landscape" columnWidth="7180" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e40e7c1b-a80e-4842-bb71-7d2df9d8c90a">
 	<property name="ireport.zoom" value="1.9487171000000025"/>
-	<property name="ireport.x" value="4966"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
@@ -335,195 +335,193 @@
 		</band>
 	</title>
 	<detail>
-		<band height="201" splitType="Stretch">
-			<elementGroup>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="a53360bc-7783-482d-a24c-a128ccc213d5" x="0" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{stoloc}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="23333d4e-a3e6-4142-991c-7cc284b49fee" x="150" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{arecod}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="fe0f19c9-9ce2-44dc-a1cc-c5d67effaedc" x="450" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{prt_client_id}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="59b25a89-5872-4105-8d5f-0ec8d94207d6" x="600" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{adrnam}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="49a5c214-764d-41e4-8511-1ff84ae85e04" x="750" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{lodnum}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="0cc767e8-4c00-4867-983e-68bdf5d5fab7" x="1050" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{prtnum}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="7fb9a3d8-931b-476d-8a16-be4a5c439a97" x="1200" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{lngdsc}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="7d8cb658-367c-4c13-bd44-dd0d30b24470" x="1500" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{revlvl}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="075f08c7-6c9f-4292-950a-0b24bc73d672" x="2100" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{untqty}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="7c74965c-5099-4be1-936c-b10d3c8d38cc" x="2400" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{untcas}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="eb1a5dd1-60e6-4756-9d00-d70b6e26a6bd" x="2700" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{catch_qty}.doubleValue()))]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="9a5af6fb-a9b2-486a-a09e-8faa2c60519b" x="2850" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{catch_unttyp}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="06b1aef3-d21d-4e38-b3d7-70a009f81c39" x="3150" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{invsts}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="2a72441e-eb2d-4c82-9f05-b123ce767746" x="2250" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{stkuom}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a" isBlankWhenNull="true">
-					<reportElement uuid="ab05e200-d596-4b76-8e62-7e83ec9f8b3c" x="3902" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{expire_dte}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a" isBlankWhenNull="true">
-					<reportElement uuid="5e99ace7-11c1-4ed1-9104-3bb5d4b030b9" x="4052" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{rcvdte}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="483c6da2-0bfc-4f80-a081-be69856cd3a6" x="3451" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{trknum}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="2e8a0894-c691-4760-aa36-53b06c0d8e58" x="3301" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{invsts_desc}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="e0ed4c74-eb0b-4822-9314-dd69296f3cf7" x="300" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{storage_zone}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="2b9352f6-6d20-451e-b995-825512c74862" x="1350" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{prtfam}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="b5b194ba-d512-4ef4-9997-247d3effb380" x="2550" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{dsp_untqty} + " " + $F{dsp_untqty_uom} + " " + $F{rem_untqty} + " " + $F{rem_untqty_uom}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="6b0ced88-e27e-42d2-800f-1d0f49fe074f" x="1650" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{batch_code}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="31eba441-f217-4863-82e4-7be687de420d" x="1800" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{reference_1}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a" isBlankWhenNull="true">
-					<reportElement uuid="93edcbfb-a18e-4502-b18d-1d56a5e35eb4" x="3752" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{mandte}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="f68b4c52-1539-40cf-b366-f06a190ea482" x="3601" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{trlr_num}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="f6972dc6-3691-4fcb-be66-c15df51278f0" x="4202" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{create_user}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="235ed1ee-3542-46b8-b9be-7de108ecc172" x="4352" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{gr_user}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="21b11deb-5816-4ff6-8a07-8dfc95122b08" x="4502" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{putaway_user}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="1ae87794-b048-41d1-85f1-b5fc90028857" x="900" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{subnum}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="846392b1-451c-4042-a529-bfc6a038fa12" x="1950" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[$F{reference_2}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement uuid="36746348-8a0b-49a8-8501-711a835c1945" x="3000" y="0" width="150" height="20"/>
-					<box leftPadding="3"/>
-					<textElement/>
-					<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{carton_weight}.doubleValue()))]]></textFieldExpression>
-				</textField>
-			</elementGroup>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="a53360bc-7783-482d-a24c-a128ccc213d5" x="0" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{stoloc}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="23333d4e-a3e6-4142-991c-7cc284b49fee" x="150" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{arecod}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="fe0f19c9-9ce2-44dc-a1cc-c5d67effaedc" x="450" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{prt_client_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="59b25a89-5872-4105-8d5f-0ec8d94207d6" x="600" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{adrnam}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="49a5c214-764d-41e4-8511-1ff84ae85e04" x="750" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{lodnum}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="0cc767e8-4c00-4867-983e-68bdf5d5fab7" x="1050" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{prtnum}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7fb9a3d8-931b-476d-8a16-be4a5c439a97" x="1200" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{lngdsc}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7d8cb658-367c-4c13-bd44-dd0d30b24470" x="1500" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{revlvl}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="075f08c7-6c9f-4292-950a-0b24bc73d672" x="2100" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{untqty}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7c74965c-5099-4be1-936c-b10d3c8d38cc" x="2400" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{untcas}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="eb1a5dd1-60e6-4756-9d00-d70b6e26a6bd" x="2700" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{catch_qty}.doubleValue()))]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="9a5af6fb-a9b2-486a-a09e-8faa2c60519b" x="2850" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{catch_unttyp}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="06b1aef3-d21d-4e38-b3d7-70a009f81c39" x="3150" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{invsts}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="2a72441e-eb2d-4c82-9f05-b123ce767746" x="2250" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{stkuom}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a" isBlankWhenNull="true">
+				<reportElement uuid="ab05e200-d596-4b76-8e62-7e83ec9f8b3c" x="3902" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{expire_dte}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a" isBlankWhenNull="true">
+				<reportElement uuid="5e99ace7-11c1-4ed1-9104-3bb5d4b030b9" x="4052" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{rcvdte}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="483c6da2-0bfc-4f80-a081-be69856cd3a6" x="3451" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{trknum}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="2e8a0894-c691-4760-aa36-53b06c0d8e58" x="3301" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{invsts_desc}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="e0ed4c74-eb0b-4822-9314-dd69296f3cf7" x="300" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{storage_zone}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="2b9352f6-6d20-451e-b995-825512c74862" x="1350" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{prtfam}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="b5b194ba-d512-4ef4-9997-247d3effb380" x="2550" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dsp_untqty} + " " + $F{dsp_untqty_uom} + " " + $F{rem_untqty} + " " + $F{rem_untqty_uom}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="6b0ced88-e27e-42d2-800f-1d0f49fe074f" x="1650" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{batch_code}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="31eba441-f217-4863-82e4-7be687de420d" x="1800" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{reference_1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a" isBlankWhenNull="true">
+				<reportElement uuid="93edcbfb-a18e-4502-b18d-1d56a5e35eb4" x="3752" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{mandte}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="f68b4c52-1539-40cf-b366-f06a190ea482" x="3601" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{trlr_num}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="f6972dc6-3691-4fcb-be66-c15df51278f0" x="4202" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{create_user}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="235ed1ee-3542-46b8-b9be-7de108ecc172" x="4352" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{gr_user}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="21b11deb-5816-4ff6-8a07-8dfc95122b08" x="4502" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{putaway_user}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="1ae87794-b048-41d1-85f1-b5fc90028857" x="900" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{subnum}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="846392b1-451c-4042-a529-bfc6a038fa12" x="1950" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{reference_2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="36746348-8a0b-49a8-8501-711a835c1945" x="3000" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[String.format("%.2f",(double)($F{carton_weight}.doubleValue()))]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>
