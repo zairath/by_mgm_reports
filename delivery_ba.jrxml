@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="delivery_ba" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="14" bottomMargin="20" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
 	<property name="ireport.zoom" value="2.3579476910000396"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="1054"/>
+	<property name="ireport.y" value="1056"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
 	<property name="ireport.callouts" value="##4/6/12 callouts.1.text=This Report was converted from on 4/6/12 3:47 PM callouts.1.bounds=10,-10,600,32"/>
@@ -103,14 +103,6 @@
 	<field name="sales_ordnum" class="java.lang.String"/>
 	<field name="sales_ordlin" class="java.lang.String"/>
 	<field name="cstprt" class="java.lang.String"/>
-	<field name="requested_lotnum" class="java.lang.String"/>
-	<field name="requested_sup_lotnum" class="java.lang.String"/>
-	<field name="requested_orgcod" class="java.lang.String"/>
-	<field name="requested_revlvl" class="java.lang.String"/>
-	<field name="requested_mandte" class="java.lang.String"/>
-	<field name="requested_expire_dte" class="java.lang.String"/>
-	<field name="requested_inv_attr_str1" class="java.lang.String"/>
-	<field name="requested_invsts_prg" class="java.lang.String"/>
 	<field name="invsts_prg" class="java.lang.String"/>
 	<field name="bckflg" class="java.lang.Integer"/>
 	<field name="loddte" class="java.util.Date"/>
@@ -136,6 +128,7 @@
 	<field name="carton_weight" class="java.lang.Double"/>
 	<field name="alamat" class="java.lang.String"/>
 	<field name="adrcty" class="java.lang.String"/>
+	<field name="wh_city" class="java.lang.String"/>
 	<field name="nama_customer" class="java.lang.String"/>
 	<field name="adrpsz" class="java.lang.String"/>
 	<field name="trlr_num" class="java.lang.String"/>
@@ -768,15 +761,15 @@
 					</textElement>
 					<text><![CDATA[Demikian berita acara ini kami buat sebenar-benarnya :]]></text>
 				</staticText>
-				<staticText>
-					<reportElement uuid="3b922b35-43ee-4e3c-bb07-54cd3f63694d" x="0" y="222" width="30" height="16"/>
-					<textElement verticalAlignment="Middle">
+				<textField>
+					<reportElement uuid="55dc8ad4-0418-43d5-a15d-efe2a3f26673" x="0" y="222" width="50" height="16"/>
+					<textElement verticalAlignment="Middle" markup="none">
 						<font size="9" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Bekasi,]]></text>
-				</staticText>
+					<textFieldExpression><![CDATA[$F{wh_city}]]></textFieldExpression>
+				</textField>
 				<textField pattern="dd MMMMM yyyy">
-					<reportElement uuid="ccd33941-93b3-4774-b7f6-280dfbd66b1a" x="30" y="222" width="168" height="16"/>
+					<reportElement uuid="ccd33941-93b3-4774-b7f6-280dfbd66b1a" x="50" y="222" width="168" height="16"/>
 					<textElement verticalAlignment="Middle">
 						<font size="9" isBold="false"/>
 					</textElement>
@@ -975,6 +968,11 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$F{trlr_seal3}]]></textFieldExpression>
 				</textField>
+				<staticText>
+					<reportElement uuid="5b502d0d-f527-49df-802c-2e269a8d3674" x="44" y="222" width="0" height="16"/>
+					<textElement/>
+					<text><![CDATA[,]]></text>
+				</staticText>
 			</band>
 		</groupFooter>
 	</group>
