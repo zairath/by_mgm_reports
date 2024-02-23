@@ -106,9 +106,6 @@
 	<parameter name="prtnum" class="java.lang.String">
 		<property name="prompt" value="^prtnum^"/>
 	</parameter>
-	<parameter name="date" class="java.util.Date">
-		<property name="prompt" value="date"/>
-	</parameter>
 	<queryString language="MOCA">
 		<![CDATA[list rpt export soh by item where @%start_date and @%prt_client_id and @%wh_id]]>
 	</queryString>

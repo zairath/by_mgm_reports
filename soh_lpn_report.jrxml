@@ -70,9 +70,6 @@
 		<property name="MOCA" value="true"/>
 		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
 	</parameter>
-	<parameter name="date" class="java.util.Date">
-		<property name="prompt" value="date"/>
-	</parameter>
 	<parameter name="wh_id" class="java.lang.String">
 		<property name="prompt" value="^wh_id^"/>
 	</parameter>
@@ -84,6 +81,7 @@
 	</parameter>
 	<parameter name="end_date" class="java.util.Date">
 		<property name="prompt" value="end_date"/>
+		<parameterDescription><![CDATA[]]></parameterDescription>
 	</parameter>
 	<queryString language="MOCA">
 		<![CDATA[list rpt export soh by lpn where @%date and @%prt_client_id and @%wh_id]]>
