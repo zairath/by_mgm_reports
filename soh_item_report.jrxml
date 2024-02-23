@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="soh_item_report" language="groovy" pageWidth="3030" pageHeight="720000" orientation="Landscape" columnWidth="3030" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
-	<property name="ireport.zoom" value="1.771561000000016"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="soh_item_report" language="groovy" pageWidth="5400" pageHeight="720000" orientation="Landscape" columnWidth="5400" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
+	<property name="ireport.zoom" value="1.331000000000013"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<property name="ireport.scriptlethandling" value="0"/>
@@ -50,7 +50,27 @@
 			<pen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 	</style>
-	<subDataset name="Table Dataset 1" uuid="e641aacc-e30e-4377-be79-e69769735553"/>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#1E90FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE0FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 2" uuid="16e8b293-0c52-4268-9f48-d5fc0dcff52b"/>
 	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
 		<defaultValueExpression><![CDATA["US_ENGLISH"]]></defaultValueExpression>
@@ -71,14 +91,20 @@
 		<property name="MOCA" value="true"/>
 		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
 	</parameter>
-	<parameter name="date" class="java.util.Date">
-		<property name="prompt" value="date"/>
-	</parameter>
 	<parameter name="wh_id" class="java.lang.String">
 		<property name="prompt" value="^wh_id^"/>
 	</parameter>
 	<parameter name="prt_client_id" class="java.lang.String">
 		<property name="prompt" value="^prt_client_id^"/>
+	</parameter>
+	<parameter name="start_date" class="java.util.Date">
+		<property name="prompt" value="start_date"/>
+	</parameter>
+	<parameter name="end_date" class="java.util.Date">
+		<property name="prompt" value="end_date"/>
+	</parameter>
+	<parameter name="prtnum" class="java.lang.String">
+		<property name="prompt" value="^prtnum^"/>
 	</parameter>
 	<queryString language="MOCA">
 		<![CDATA[list rpt export soh by item where @%start_date and @%prt_client_id and @%wh_id]]>
@@ -91,21 +117,29 @@
 	<field name="lngdsc" class="java.lang.String"/>
 	<field name="untcas" class="java.lang.String"/>
 	<field name="stkuom" class="java.lang.String"/>
-	<field name="init_stock" class="java.lang.String"/>
-	<field name="init_trn_in" class="java.lang.String"/>
-	<field name="init_trn_out" class="java.lang.String"/>
+	<field name="dspuom" class="java.lang.String"/>
+	<field name="init_untqty" class="java.lang.String"/>
+	<field name="init_carton" class="java.lang.String"/>
 	<field name="init_catch_weight" class="java.lang.String"/>
 	<field name="init_carton_weight" class="java.lang.String"/>
 	<field name="trn_in" class="java.lang.String"/>
 	<field name="trn_in_ctn" class="java.lang.String"/>
 	<field name="trn_in_catch_weight" class="java.lang.String"/>
+	<field name="trn_in_ctn_weight" class="java.lang.String"/>
 	<field name="trn_out" class="java.lang.String"/>
 	<field name="trn_out_ctn" class="java.lang.String"/>
 	<field name="trn_out_catch_weight" class="java.lang.String"/>
+	<field name="trn_out_ctn_weight" class="java.lang.String"/>
 	<field name="trn_adj" class="java.lang.String"/>
 	<field name="trn_adj_ctn" class="java.lang.String"/>
 	<field name="trn_adj_catch_weight" class="java.lang.String"/>
-	<field name="final_stock" class="java.lang.String"/>
+	<field name="trn_adj_ctn_weight" class="java.lang.String"/>
+	<field name="current_stock" class="java.lang.String"/>
+	<field name="current_catch_weight" class="java.lang.String"/>
+	<field name="current_carton_weight" class="java.lang.String"/>
+	<field name="inserted_time" class="java.util.Date"/>
+	<field name="final_untqty" class="java.lang.String"/>
+	<field name="final_carton" class="java.lang.String"/>
 	<field name="final_catch_weight" class="java.lang.String"/>
 	<field name="final_carton_weight" class="java.lang.String"/>
 	<background>
@@ -113,280 +147,16 @@
 	</background>
 	<title>
 		<band height="127">
-			<componentElement>
-				<reportElement uuid="7fa157d0-d3b9-49f7-8d7a-d3394fa42a95" key="table 1" style="table 1" x="0" y="97" width="2911" height="30"/>
-				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-					<datasetRun subDataset="Table Dataset 1" uuid="f6425b33-8c96-4689-8e0a-4a9644e2a779">
-						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
-					</datasetRun>
-					<jr:column width="150" uuid="bdfe77e9-4bdf-4dc2-96d3-86f67db0c842">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="272ccadf-eab4-44f2-bc64-dc6599a7520e" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[CLIENT ID]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="150" uuid="3441c277-4244-4351-8656-e4f1d9eb8484">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="76282a82-4734-4379-9721-82c02b42d743" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[CLIENT NAME]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="150" uuid="3fb2e83e-bc4b-4fe2-b55f-e42bf9f40c9b">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="fb9833b8-6bf3-4851-a353-8bfbe5985ec8" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[ITEM]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="150" uuid="7a6a3852-7eed-4a8d-89bb-6f2310046cf1">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="f4dc0bdd-2f52-481f-9acb-8b6a236b4e4e" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[ITEM DESCRIPTION]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="150" uuid="b21133ae-ee66-4ad6-8749-bc5e27356351">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="5a7c6178-10be-42f7-b0a4-333cfbc15d41" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[UNIT]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="150" uuid="afe3b295-e40a-47ab-8b8b-815349cce295">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="27cdbd6c-2f7d-4a7d-a10b-afb20fb9e1b9" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[STOCKING UOM]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="150" uuid="056aa430-03c8-47a2-adb7-c6596e761355">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="7a761f3a-642b-491a-ba00-725b034eb519" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[INITIAL QTY]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="150" uuid="80718a86-62dd-4b32-8319-df890434b043">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="cd5a529b-0885-4bca-9aa9-05a698e6af77" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[INITIAL WEIGHT]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="150" uuid="fd5efd09-b050-4b97-baed-992a7fa83fe3">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="57433f18-9545-411b-a774-02403cb95444" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[INBOUND QTY]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="150" uuid="a8b647e6-4e9f-4789-aafe-2ceb0d056cdd">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="bfd896c8-9ff8-4011-83ea-d0e5aee597bd" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[INBOUND CTN QTY]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="150" uuid="b7007576-cf1e-4df7-bf96-e0adada68b78">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="15816376-3ab7-49dc-8b9e-b15dbcbc3213" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[INBOUND WEIGHT]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="150" uuid="6d4f9e8d-d9d4-479d-a31b-cf36f632b8a3">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="e2a8d6de-af33-4a06-81fc-3d884f9da82d" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[OUTBOUND QTY]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="150" uuid="e69268fb-4273-47e1-acd3-613c950cd740">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="0fb7732f-8377-4333-b41c-bd3e10a3cc59" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[OUTBOUND CTN QTY]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="150" uuid="338b6ee7-878c-4947-8e58-ee63c29bb506">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="3a70c6a5-a0e2-4f0f-8ef8-cfa3d4f77083" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[OUTBOUND WEIGHT]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="156" uuid="3e34f4de-824b-4c85-a630-3b2b8cff3da3">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="41da645a-db0f-4193-bf03-610053fe6f00" stretchType="RelativeToBandHeight" x="0" y="0" width="156" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[INVENTORY MOVEMENT QTY]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="156" uuid="ad247ded-2499-4f49-a6e9-402fa432e927">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="7bcb6a70-3204-459e-abd9-51ff91abea4e" stretchType="RelativeToBandHeight" x="0" y="0" width="156" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[INVENTORY MOVEMENT CTN]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="199" uuid="9a0d8dbb-4fd2-43da-9af0-daf5c5f9bb89">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="a8f5578c-7ca5-4596-a379-528104db4df1" stretchType="RelativeToBandHeight" x="0" y="0" width="199" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[INVENTORY MOVEMENT WEIGHT]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="150" uuid="9a4702c9-4e93-415c-8b37-f334ac0b0900">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="83b40df2-8c42-409b-b0b5-ad5bff3f0e9c" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[CURRENT QTY]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-					<jr:column width="150" uuid="34a76326-07a8-43e8-a8f4-39416e921c4b">
-						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement uuid="06a0c582-361b-431f-b79f-059d1f54b3e2" stretchType="RelativeToBandHeight" x="0" y="0" width="150" height="30"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<paragraph lineSpacing="Fixed"/>
-								</textElement>
-								<text><![CDATA[CURRENT WEIGHT]]></text>
-							</staticText>
-						</jr:tableHeader>
-						<jr:columnFooter style="table 1_CH" height="0" rowSpan="1"/>
-						<jr:detailCell style="table 1_TD" height="0" rowSpan="1"/>
-					</jr:column>
-				</jr:table>
-			</componentElement>
 			<line>
-				<reportElement uuid="1694deff-a4d3-406c-bf7d-864c9f5a32d1" x="0" y="55" width="2911" height="1"/>
+				<reportElement uuid="1694deff-a4d3-406c-bf7d-864c9f5a32d1" x="0" y="55" width="5349" height="1"/>
 			</line>
 			<line>
-				<reportElement uuid="3ddc7cee-7245-445f-8524-d8a283747608" x="0" y="56" width="2911" height="1"/>
+				<reportElement uuid="3ddc7cee-7245-445f-8524-d8a283747608" x="0" y="56" width="5349" height="1"/>
 			</line>
 			<image scaleImage="RealSize" hAlign="Left" vAlign="Middle">
 				<reportElement uuid="bf5a14e7-fa88-4e5a-b662-9c3b6afe6d78" x="0" y="1" width="300" height="54"/>
 				<imageExpression><![CDATA["mgm-logo.png"]]></imageExpression>
 			</image>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement uuid="280361c4-3881-4d8e-976d-5beedc4ad9ca" x="0" y="77" width="150" height="20"/>
-				<box leftPadding="3"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="false" isUnderline="false" isStrikeThrough="false"/>
-					<paragraph lineSpacing="Fixed"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement uuid="e34815bf-a363-425e-85c6-944c7d1aafe8" x="0" y="57" width="150" height="20"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
@@ -395,102 +165,401 @@
 				</textElement>
 				<text><![CDATA[SOH ITEM REPORT]]></text>
 			</staticText>
+			<componentElement>
+				<reportElement uuid="da4b16c2-dd40-4020-8ac5-cd3a2d8abc0e" key="table 2" style="table 2" x="0" y="97" width="5349" height="30"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table Dataset 2" uuid="f1a9392d-b047-4cc3-ac9d-cdfd48eada58">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="150" uuid="d3ad60db-35b6-48b8-9542-a427d6838c22">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="c056a488-1630-4254-92f9-23bbe37443c5" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[DATE PRINTED]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="447eeb98-2a3c-412a-ac8a-c0684675031b">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="ec614e6a-6e7f-4b47-8a32-f35bf19f35af" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[WH ID]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="17b1a3c9-afff-481c-af07-ade3c3b99dfa">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="cf002e18-5ae3-4334-b1af-cf2629c0501d" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[CLIENT ID]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="200" uuid="d5eb1b4d-3ecd-4ce8-9f01-c7032066bedd">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="91f54f27-4d4d-4fa6-a253-b61f054b68e3" x="0" y="0" width="200" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[CLIENT NAME]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="d3dcf77d-a1bc-49b5-8e03-54ed543e64bd">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="7e677db7-eb70-4edf-bcff-810058e39855" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[ITEM NUMBER]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="200" uuid="da2d95d7-ec4f-4926-95f2-09f9bf264c3f">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="247af6bf-6b74-4878-b468-341df85a0350" x="0" y="0" width="200" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[ITEM DESCRIPTION]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="a3e0d6ac-153e-4de7-b0e3-e14419403f3d">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="c3df8a0c-bf37-4b15-8bbb-cd13b392196e" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[UNIT]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="0bb82486-35cc-43f3-a3d2-114409131b87">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="b9b75902-2137-4227-925c-11c8bb3ebc9f" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[STOCK UOM]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="682258ec-4f95-40eb-924a-a2303783861e">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="44478cff-6a31-46fc-82d9-e2887f6c19ad" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[DISPLAY UOM]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="b87bc6d7-9dfe-4961-9017-4b75cdfa5b6e">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="4c96d55c-888e-418f-a3a6-18d3f2ff1aaf" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[INITIAL QTY]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="9dc876c8-a3ff-492c-9770-d6c761c3eed5">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="78584af7-8000-4c22-8eb8-6ed31181847e" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[INITIAL CARTON]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="8e600cc6-ef38-4bc4-96a8-a4f23aad3550">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="6eff7317-a020-48a3-8756-a216dbaf2bc8" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[INITIAL CATCH WEIGHT]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="305065df-13c7-441e-9346-788baafc1aa0">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="725df4bd-f656-49be-b42f-11bbf5aabea9" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[INITIAL CARTON WEIGHT]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="164456f8-8088-4b61-8fdd-0e2872723a49">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="197b1940-cd8e-4559-8908-4a44acd59e55" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[INBOUND QTY]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="d6dee2af-de31-4358-8331-2efd8268110b">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="677e3b28-c1ec-412d-801b-01f05b2ee979" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[INBOUND CTN QTY]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="199" uuid="00c86ef1-c16a-4df1-99c4-a1e7e5d6623c">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="eb1ed1b2-35a4-4479-8bf2-8c23600ff79a" x="0" y="0" width="199" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[INBOUND WEIGHT]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="c852148c-c68d-46b7-bb36-855e93a76f7a">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="ae8141d8-8b99-4a11-8b34-1ec5dd28cc35" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[INBOUND CTN WEIGHT]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="c1a974eb-0847-4811-99a6-4fc45b7dc653">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="a41d1a1b-eaa3-4173-ac7c-2c93b4e166e5" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[OUTBOUND QTY]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="8c63e60a-6e24-4e64-9e5d-e07552b58af3">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="b14b4564-5112-4bcb-808d-f285046461ca" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[OUTBOUND CTN QTY]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="a95eaab1-c512-4ce2-8a6e-3b60ec818f50">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="71a21bde-345d-4a5a-b2c3-7c3af08cbe07" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[OUTBOUND WEIGHT]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="200" uuid="696cfcad-6300-4626-8d33-43b7ac4f74d3">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="539e0c8c-a68f-4f23-a23a-32d3e40fc1c1" x="0" y="0" width="200" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[OUTBOUND CTN WEIGHT]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="200" uuid="217afca9-c14d-418b-9bcb-1285c91a6990">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="cce9bf83-bb61-49aa-8cce-68b59ada6404" x="0" y="0" width="200" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[INVENTORY MOVEMENT QTY]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="200" uuid="e8a4fc8d-53f5-4bed-8c14-d10f91798925">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="26d945e3-8bd8-4076-8f3d-ef8bb3bb3447" x="0" y="0" width="200" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[INVENTORY MOVEMENT CTN]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="200" uuid="6d903e3a-46a8-4b5b-a318-5d978c0c4a4c">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="e3982641-f21b-4553-923a-02eee7ee86a6" x="0" y="0" width="200" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[INVENTORY MOVEMENT WEIGHT]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="200" uuid="4d0a6e9f-3669-442c-a77c-47641f268b1a">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="e9f10443-7288-4fd6-8bcd-e3b7268e367f" x="0" y="0" width="200" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[INVENTORY MOVEMENT CTN WEIGHT]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="6a134550-c63c-4ac9-87ce-3ccb9c6bfde7">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="8d0379ff-26ac-4032-9999-1dbf4b26d479" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[CURRENT QTY]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="9ecf0ce3-3455-4fd3-b158-ce9707927c75">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="8fe8ab60-b3e6-4309-b303-9df7b0cd3c9c" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[CURRENT CATCH WEIGHT]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="706a40a4-b19c-4f67-b443-e20850545e97">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="6ea4f413-8de5-4575-a869-593aa8aa9f1c" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[CURRENT CTN WEIGHT]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="5ec74dcc-b8f4-4718-b232-476c1af3d8c1">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="611f657f-5189-4376-bb55-2d5188114e46" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[INSERTED TIME]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="4754b996-4312-4195-949a-f2e060ec2a2f">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="9627a2da-dccd-4d18-ab8d-5f0a6df72c9c" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[FINAL QTY]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="485b7eac-13bb-42e9-99b0-3cc26272e6f6">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="9ff2c6c3-c7fb-4ce4-829f-27dfe75dff73" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[FINAL CTN]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="9359f91c-1d51-493c-9cd8-450e727fa0d1">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="cb238245-76c9-4440-9073-148afeb72b45" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[FINAL CATCH WEIGHT]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="150" uuid="b94d68bd-1df9-4af1-b197-1387c124d4ba">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="aab296e2-430e-489e-9ea0-52ba8f8d677c" x="0" y="0" width="150" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[FINAL CTN WEIGHT]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnFooter style="table 2_CH" height="0" rowSpan="1"/>
+						<jr:detailCell style="table 2_TD" height="0" rowSpan="1"/>
+					</jr:column>
+				</jr:table>
+			</componentElement>
 		</band>
 	</title>
 	<detail>
-		<band height="25" splitType="Stretch">
+		<band height="30" splitType="Stretch">
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="a031932d-10cf-4013-8ed8-d2783b3130b7" style="table_TD" x="300" y="0" width="150" height="25"/>
+				<reportElement uuid="a031932d-10cf-4013-8ed8-d2783b3130b7" style="table_TD" x="300" y="0" width="150" height="30"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle">
-					<font isUnderline="false" isStrikeThrough="false"/>
-					<paragraph lineSpacing="Fixed"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{prtnum}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="0054ae7e-9b96-43f3-8032-4c25ae29d7f1" style="table_TD" x="0" y="0" width="150" height="25"/>
-				<box leftPadding="3"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isUnderline="false" isStrikeThrough="false"/>
 					<paragraph lineSpacing="Fixed"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{prt_client_id}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="19a20edd-5f1b-4184-ace0-73b6abd50421" style="table_TD" x="450" y="0" width="150" height="25"/>
-				<box leftPadding="3"/>
-				<textElement verticalAlignment="Middle">
-					<font isUnderline="false" isStrikeThrough="false"/>
-					<paragraph lineSpacing="Fixed"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{lngdsc}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="68fb4306-ce8f-480a-ba8c-f14985c0b2ce" style="table_TD" x="600" y="0" width="150" height="25"/>
+				<reportElement uuid="0054ae7e-9b96-43f3-8032-4c25ae29d7f1" style="table_TD" x="0" y="0" width="150" height="30"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isUnderline="false" isStrikeThrough="false"/>
 					<paragraph lineSpacing="Fixed"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{untcas}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{date_printed}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="4c7608d6-1e6e-49e7-a803-92a98c85d3be" style="table_TD" x="900" y="0" width="150" height="25"/>
-				<box leftPadding="3"/>
-				<textElement verticalAlignment="Middle">
-					<font isUnderline="false" isStrikeThrough="false"/>
-					<paragraph lineSpacing="Fixed"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{init_stock}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="53ca4cc8-5e70-4143-be05-93dfe6c9b86b" style="table_TD" x="1500" y="0" width="150" height="25"/>
-				<box leftPadding="3"/>
-				<textElement verticalAlignment="Middle">
-					<font isUnderline="false" isStrikeThrough="false"/>
-					<paragraph lineSpacing="Fixed"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{trn_in_catch_weight}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="a84c09b3-671e-428a-8f45-981508742579" style="table_TD" x="1050" y="0" width="150" height="25"/>
-				<box leftPadding="3"/>
-				<textElement verticalAlignment="Middle">
-					<font isUnderline="false" isStrikeThrough="false"/>
-					<paragraph lineSpacing="Fixed"/>
-				</textElement>
-				<textFieldExpression><![CDATA[( $F{init_catch_weight} == "0" ? $F{init_carton_weight} : $F{init_catch_weight} )]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="2a95cc06-191d-4e59-afa8-387f9de91aac" style="table_TD" x="2761" y="0" width="150" height="25"/>
-				<box leftPadding="3"/>
-				<textElement verticalAlignment="Middle">
-					<font isUnderline="false" isStrikeThrough="false"/>
-					<paragraph lineSpacing="Fixed"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{final_carton_weight}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="aac2fbbc-2fb8-4c90-b208-349341e4a7cf" style="table_TD" x="1200" y="0" width="150" height="25"/>
-				<box leftPadding="3"/>
-				<textElement verticalAlignment="Middle">
-					<font isUnderline="false" isStrikeThrough="false"/>
-					<paragraph lineSpacing="Fixed"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{init_trn_in}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="ac4eb17e-39d6-4880-b5a4-5fcbb02a4a73" style="table_TD" x="2611" y="0" width="150" height="25"/>
-				<box leftPadding="3"/>
-				<textElement verticalAlignment="Middle">
-					<font isUnderline="false" isStrikeThrough="false"/>
-					<paragraph lineSpacing="Fixed"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{final_stock}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="3597572d-8dc8-4810-8ab7-db54e15775d6" style="table_TD" x="150" y="0" width="150" height="25"/>
+				<reportElement uuid="19a20edd-5f1b-4184-ace0-73b6abd50421" style="table_TD" x="450" y="0" width="200" height="30"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle">
 					<font isUnderline="false" isStrikeThrough="false"/>
@@ -499,52 +568,106 @@
 				<textFieldExpression><![CDATA[$F{client_name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="2d60e5f8-0a34-47c5-890e-ab122035396b" style="table_TD" x="750" y="0" width="150" height="25"/>
+				<reportElement uuid="68fb4306-ce8f-480a-ba8c-f14985c0b2ce" style="table_TD" x="650" y="0" width="150" height="30"/>
 				<box leftPadding="3"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prtnum}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="4c7608d6-1e6e-49e7-a803-92a98c85d3be" style="table_TD" x="1000" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{untcas}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="53ca4cc8-5e70-4143-be05-93dfe6c9b86b" style="table_TD" x="1600" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{init_carton}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="a84c09b3-671e-428a-8f45-981508742579" style="table_TD" x="1150" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
 					<font isUnderline="false" isStrikeThrough="false"/>
 					<paragraph lineSpacing="Fixed"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{stkuom}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="a2014081-6fb4-4d43-bc2e-78eeddd471c3" style="table_TD" x="1650" y="0" width="150" height="25"/>
+				<reportElement uuid="2a95cc06-191d-4e59-afa8-387f9de91aac" style="table_TD" x="2699" y="0" width="150" height="30"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle">
 					<font isUnderline="false" isStrikeThrough="false"/>
 					<paragraph lineSpacing="Fixed"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{init_trn_out}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{trn_out}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="697223f6-de6b-4485-8848-b08fb73ae145" style="table_TD" x="1950" y="0" width="150" height="25"/>
+				<reportElement uuid="aac2fbbc-2fb8-4c90-b208-349341e4a7cf" style="table_TD" x="1300" y="0" width="150" height="30"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle">
 					<font isUnderline="false" isStrikeThrough="false"/>
 					<paragraph lineSpacing="Fixed"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{trn_out_catch_weight}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{dspuom}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="a9491ba8-597d-4763-a9c4-3aa9cd75f899" style="table_TD" x="2100" y="0" width="156" height="25"/>
+				<reportElement uuid="ac4eb17e-39d6-4880-b5a4-5fcbb02a4a73" style="table_TD" x="2549" y="0" width="150" height="30"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle">
 					<font isUnderline="false" isStrikeThrough="false"/>
 					<paragraph lineSpacing="Fixed"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{trn_adj}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{trn_in_ctn_weight}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="ee544f81-75a7-4040-9d16-2ba41806b709" style="table_TD" x="2412" y="0" width="199" height="25"/>
+				<reportElement uuid="3597572d-8dc8-4810-8ab7-db54e15775d6" style="table_TD" x="150" y="0" width="150" height="30"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle">
 					<font isUnderline="false" isStrikeThrough="false"/>
 					<paragraph lineSpacing="Fixed"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{trn_adj_catch_weight}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{wh_id}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="09c793a3-4f57-4a95-9526-1d8119ddbd6f" style="table_TD" x="1350" y="0" width="150" height="25"/>
+				<reportElement uuid="2d60e5f8-0a34-47c5-890e-ab122035396b" style="table_TD" x="800" y="0" width="200" height="30"/>
+				<box leftPadding="3"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lngdsc}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="a2014081-6fb4-4d43-bc2e-78eeddd471c3" style="table_TD" x="1750" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{init_catch_weight}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="697223f6-de6b-4485-8848-b08fb73ae145" style="table_TD" x="2050" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{trn_in}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="a9491ba8-597d-4763-a9c4-3aa9cd75f899" style="table_TD" x="2200" y="0" width="150" height="30"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle">
 					<font isUnderline="false" isStrikeThrough="false"/>
@@ -553,7 +676,43 @@
 				<textFieldExpression><![CDATA[$F{trn_in_ctn}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="1e6e1146-fd21-42d9-a24c-42637afdf9a0" style="table_TD" x="1800" y="0" width="150" height="25"/>
+				<reportElement uuid="ee544f81-75a7-4040-9d16-2ba41806b709" style="table_TD" x="2350" y="0" width="199" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{trn_in_catch_weight}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="09c793a3-4f57-4a95-9526-1d8119ddbd6f" style="table_TD" x="1450" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{init_untqty}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="1e6e1146-fd21-42d9-a24c-42637afdf9a0" style="table_TD" x="1900" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{init_carton_weight}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="551806e4-76b2-4565-a639-2a4dee86933c" style="table_TD" x="5199" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{final_carton_weight}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7418fcb8-ce4b-454d-9e96-4db185ea48e7" style="table_TD" x="2849" y="0" width="150" height="30"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle">
 					<font isUnderline="false" isStrikeThrough="false"/>
@@ -562,13 +721,121 @@
 				<textFieldExpression><![CDATA[$F{trn_out_ctn}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="551806e4-76b2-4565-a639-2a4dee86933c" style="table_TD" x="2256" y="0" width="156" height="25"/>
+				<reportElement uuid="bd16ed0f-3aaa-4150-9345-9663836ba0dc" style="table_TD" x="2999" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{trn_out_catch_weight}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="1f61eb2d-71b7-4f25-bf24-2558a77b01a5" style="table_TD" x="3149" y="0" width="200" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{trn_out_ctn_weight}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="48e4cf1d-9db8-4405-8628-24bc268606a4" style="table_TD" x="3349" y="0" width="200" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{trn_adj}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="63c71a14-2535-4842-811b-c3803dcf51ac" style="table_TD" x="3549" y="0" width="200" height="30"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle">
 					<font isUnderline="false" isStrikeThrough="false"/>
 					<paragraph lineSpacing="Fixed"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{trn_adj_ctn}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="ea02545f-a07a-45f3-85a0-1d06291c330e" style="table_TD" x="3749" y="0" width="200" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{trn_adj_catch_weight}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="05b86d2f-fb0d-40c4-8099-d4f86694bc07" style="table_TD" x="3949" y="0" width="200" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{trn_adj_ctn_weight}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="c8dfc796-dcd1-4835-a6ec-228361e42e17" style="table_TD" x="4149" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{current_stock}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="ef08be0f-ce07-4bd9-b0d9-93b04352afc2" style="table_TD" x="4299" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{current_catch_weight}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="9d88a110-1549-467c-8a16-bad21b6c4e6d" style="table_TD" x="4449" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{current_carton_weight}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="e893200f-88da-4e85-bacd-00f2db624af5" style="table_TD" x="4599" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inserted_time}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="4f6f136d-7ea8-4eac-82e2-3693b193ab66" style="table_TD" x="4749" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{final_untqty}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="c84b831b-3ab1-4972-a203-893201e7392e" style="table_TD" x="4899" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{final_carton}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="d8af6f46-94fe-4ce1-b431-b9de81b97e99" style="table_TD" x="5049" y="0" width="150" height="30"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Fixed"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{final_catch_weight}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
