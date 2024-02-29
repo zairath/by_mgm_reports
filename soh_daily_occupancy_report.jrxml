@@ -33,7 +33,7 @@
 	<parameter name="start_date" class="java.util.Date">
 		<property name="prompt" value="start_date"/>
 	</parameter>
-	<parameter name="end_date" class="java.lang.String">
+	<parameter name="end_date" class="java.util.Date">
 		<property name="prompt" value="end_date"/>
 	</parameter>
 	<parameter name="wh_id" class="java.lang.String">
