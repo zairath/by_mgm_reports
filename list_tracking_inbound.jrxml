@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="customer" language="groovy" pageWidth="2880" pageHeight="712800" orientation="Landscape" columnWidth="2880" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4cf08186-478c-4178-8f40-a4fae758f104">
+	<property name="ireport.zoom" value="1.4615378250000024"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="MOCA_REPORT_TZ" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_TIME" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_DATE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getDateInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_CONNECTION" class="com.redprairie.moca.jrds.JRMocaConnection" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new com.redprairie.moca.jrds.JRMocaConnection("http://localhost:4500/service", "super", "super", true)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA["US_ENGLISH"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wh_id" class="java.lang.String">
+		<property name="wh_id" value="^wh_id^"/>
+	</parameter>
+	<parameter name="start_date" class="java.util.Date">
+		<property name="prompt" value="start_date"/>
+	</parameter>
+	<parameter name="end_date" class="java.util.Date">
+		<property name="prompt" value="end_date"/>
+	</parameter>
+	<parameter name="client_id" class="java.lang.String">
+		<property name="prompt" value="^client_id^"/>
+	</parameter>
+	<queryString language="MOCA">
+		<![CDATA[list cstm tracking inbound]]>
+	</queryString>
+	<field name="license_plate" class="java.lang.String"/>
+	<field name="type_truck" class="java.lang.String"/>
+	<field name="driver_name" class="java.lang.String"/>
+	<field name="truck_status" class="java.lang.String"/>
+	<field name="check_in_time" class="java.util.Date"/>
+	<field name="gate_in_inbound" class="java.util.Date"/>
+	<field name="start_activity_inbound" class="java.util.Date"/>
+	<field name="finish_activity_inbound" class="java.util.Date"/>
+	<field name="get_out_time" class="java.util.Date"/>
+	<field name="check_out_time" class="java.util.Date"/>
+	<field name="activity" class="java.lang.String"/>
+	<field name="clientid_inbound" class="java.lang.String"/>
+	<field name="client_name" class="java.lang.String"/>
+	<field name="inbound_shipment" class="java.lang.String"/>
+	<field name="supp_nam" class="java.lang.String"/>
+	<field name="qty_rcv" class="java.lang.Integer"/>
+	<field name="inb_pall" class="java.lang.Integer"/>
+	<field name="create_dte" class="java.util.Date"/>
+	<field name="crte_by" class="java.lang.String"/>
+	<field name="gr_by" class="java.lang.String"/>
+	<title>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="57f75c1a-e21a-46df-b143-3efba73bdc5d" x="0" y="0" width="101" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[LICENSE PLATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b74a7f78-4ad7-41aa-8d1b-40d33aa9536f" x="101" y="0" width="123" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TYPE TRUCK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="03430037-bcd5-4b0a-b171-66cf5e653e5d" x="224" y="0" width="195" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DRIVER NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d511f0ea-7822-49e5-97e3-2514af1206fa" x="419" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TRUCK STATUS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="302c3e69-93ff-4afc-b849-4eca86e7f82d" x="569" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CHECK IN TIME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="23f6b9a4-ba47-4e0a-b8c3-05695e13b5e7" x="719" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[GATE IN TIME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b28b0355-8c80-4790-910f-67035b188b18" x="869" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[START ACTIVITY TIME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a1c1c8e1-0121-48f9-8827-f71a13f9a78d" x="1019" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FINISH ACTIVITY TIME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2273f2de-36f3-4611-82b3-f88c02fcbcb5" x="1169" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[GET OUT TIME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bd422cd0-1c9a-4713-ac54-53e3c44ac744" x="1319" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CHECK OUT TIME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="70802e6a-8fdd-4415-85ce-11be30d32dac" x="1469" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACTIVITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a9d7643f-2feb-46a5-bb11-b6a605a0b1e5" x="1619" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLIENT NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="53633567-7c71-4eef-90c9-7aab4f22707e" x="1769" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[INBOUND SHIPMENT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c2226407-e6db-4176-b1fe-5b834bb58fbf" x="1919" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cf1f96c9-bd88-437e-aa39-4693fd16962d" x="2069" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTY OF PALLET]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e2f4ac79-bb7e-49b7-a03a-50e0fcabde61" x="2219" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTY OF PRODUCT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="04635e49-b584-4cf3-923b-971e7a52a798" x="2369" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CREATED TIME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6dd94489-7e4c-486d-a17c-e12068e10632" x="2519" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CREATE BY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9339274b-b78e-402d-8cec-d2538f3b69e9" x="2669" y="0" width="150" height="25"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[GR BY]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="d2b90b9e-18b7-46e8-a240-6bba79bd85ca" x="0" y="0" width="101" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{license_plate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="f273214d-073a-43aa-95ea-2c7b9076fab2" x="101" y="0" width="123" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{type_truck}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="19fd28b3-9a29-40e6-8b29-84939e2af494" x="224" y="0" width="195" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{driver_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="d14ec0ef-6fa3-419c-b90d-d5d570929833" x="419" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{truck_status}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="c32c5137-44ae-4422-9831-3526ff4ccfa6" x="569" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{check_in_time}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="0beaaaaf-11a3-4f82-b8a0-796d1657dbb1" x="719" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{gate_in_inbound}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="a3c6f66d-e1c9-4475-ad19-db97d8b2c684" x="869" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{start_activity_inbound}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="9c83c42b-d498-43ba-a579-c23c4a8dc218" x="1019" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{finish_activity_inbound}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="36322700-1d83-4bed-bb08-8826d729d501" x="1169" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{get_out_time}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="3bd9302c-e13e-4cef-bc8b-ffc652931910" x="1319" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{check_out_time}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="50d87f1d-337c-46f3-b466-a9571648c417" x="1469" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{activity}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="b0f01e5c-5146-4a59-ab25-398c6224950d" x="1619" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{client_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="54471afe-a0e4-499a-95ef-eada3fc924f0" x="1769" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{inbound_shipment}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="6b72ef1d-8270-4198-bc93-3bbe5f0284bd" x="1919" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{supp_nam}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="827c5e20-b1ae-4f57-ba8a-23a06b4839b4" x="2069" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{inb_pall}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="e4f0b748-8cc0-427c-83af-702cfb3db15d" x="2219" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{qty_rcv}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="ed8d64fb-323a-4e7d-a549-0ce31cf98eff" x="2369" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{create_dte}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="9269055d-53f9-4357-8e50-39f1baa19985" x="2519" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{crte_by}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="dda7cdac-27b7-4a75-ac3a-1a369848794e" x="2669" y="0" width="150" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{gr_by}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
