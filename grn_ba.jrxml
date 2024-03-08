@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="grn_ba" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="14" bottomMargin="26" isFloatColumnFooter="true" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
-	<property name="ireport.zoom" value="1.2418426461183132"/>
+	<property name="ireport.zoom" value="1.6528925619834751"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="416"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
 	<property name="ireport.callouts" value="##4/6/12 callouts.1.text=This Report was converted from on 4/6/12 3:47 PM callouts.1.bounds=10,-10,600,32"/>
@@ -612,14 +612,14 @@
 					<text><![CDATA[Demikian berita acara ini kami buat sebenar-benarnya :]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="e5848268-b9ad-4901-b1ed-84caf3800586" x="58" y="165" width="0" height="17"/>
+					<reportElement uuid="e5848268-b9ad-4901-b1ed-84caf3800586" x="82" y="165" width="8" height="17"/>
 					<textElement verticalAlignment="Middle">
 						<font size="10"/>
 					</textElement>
 					<text><![CDATA[,]]></text>
 				</staticText>
 				<textField pattern="dd-MMM-yyyy" isBlankWhenNull="true">
-					<reportElement uuid="f1fa3ffc-35bd-4e32-9e4c-e502f85600ac" x="64" y="165" width="152" height="17"/>
+					<reportElement uuid="f1fa3ffc-35bd-4e32-9e4c-e502f85600ac" x="96" y="165" width="152" height="17"/>
 					<box>
 						<pen lineWidth="0.0" lineStyle="Dashed"/>
 						<topPen lineWidth="0.0" lineStyle="Dashed"/>
@@ -765,7 +765,7 @@
 					<text><![CDATA[Name :]]></text>
 				</staticText>
 				<textField>
-					<reportElement uuid="29c8c38f-52f5-451a-a63f-31d914871843" x="0" y="165" width="56" height="17"/>
+					<reportElement uuid="29c8c38f-52f5-451a-a63f-31d914871843" x="0" y="165" width="77" height="17"/>
 					<textElement verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[$F{wh_city}]]></textFieldExpression>
 				</textField>

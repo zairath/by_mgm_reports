@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="gr_report_hist" language="groovy" pageWidth="3816" pageHeight="7128" orientation="Landscape" columnWidth="3812" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
-	<property name="ireport.zoom" value="2.853116706110036"/>
-	<property name="ireport.x" value="7668"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="gr_report_hist" language="groovy" pageWidth="3816" pageHeight="712800" orientation="Landscape" columnWidth="3812" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
+	<property name="ireport.zoom" value="1.6105100000000199"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
@@ -105,7 +105,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="19">
+		<band height="18">
 			<staticText>
 				<reportElement uuid="55eeff45-c2d6-4319-b37e-87bc4f17671e" x="151" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
@@ -254,7 +254,7 @@
 		</band>
 	</title>
 	<detail>
-		<band height="159" splitType="Stretch">
+		<band height="20" splitType="Stretch">
 			<textField isStretchWithOverflow="true">
 				<reportElement uuid="a031932d-10cf-4013-8ed8-d2783b3130b7" x="151" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
