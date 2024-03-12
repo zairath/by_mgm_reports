@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_troughput_building" language="groovy" pageWidth="2408" pageHeight="309560" orientation="Landscape" columnWidth="2408" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="6c068f52-253a-4a39-a978-0301610988ad">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="3073"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA["US_ENGLISH"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_CONNECTION" class="com.redprairie.moca.jrds.JRMocaConnection" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new com.redprairie.moca.jrds.JRMocaConnection("http://localhost:4500/service", "super", "super", true)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_DATE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getDateInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_TIME" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_TZ" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wh_id" class="java.lang.String">
+		<property name="prompt" value="^wh_id^"/>
+	</parameter>
+	<parameter name="start_date" class="java.util.Date">
+		<property name="prompt" value="start_date"/>
+	</parameter>
+	<parameter name="end_date" class="java.util.Date">
+		<property name="prompt" value="end_date"/>
+	</parameter>
+	<parameter name="client_id" class="java.lang.String">
+		<property name="prompt" value="^client_id^"/>
+	</parameter>
+	<queryString language="MOCA">
+		<![CDATA[list rpt printout soh throughput]]>
+	</queryString>
+	<field name="date_printed" class="java.util.Date"/>
+	<field name="wh_id" class="java.lang.String"/>
+	<field name="buildings" class="java.lang.String"/>
+	<field name="temp" class="java.lang.String"/>
+	<field name="init_pallet" class="java.lang.String"/>
+	<field name="init_weight" class="java.lang.String"/>
+	<field name="inbound_pallet" class="java.lang.String"/>
+	<field name="inbound_weight" class="java.lang.String"/>
+	<field name="outbound_pallet" class="java.lang.String"/>
+	<field name="outbound_weight" class="java.lang.String"/>
+	<field name="final_pallet" class="java.lang.String"/>
+	<field name="final_weight" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c5d5081d-d2f2-4d12-a49d-b4d56b5d67ef" x="0" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[WAREHOUSE ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cdc14785-dca7-4262-9ed2-86357edc41d8" x="200" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7e0e2082-774b-47c3-9eb4-29bdcbca7536" x="600" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[TEMPERATURE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="28265d72-572d-454b-8565-4bf2c13e7223" x="400" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[BUILDINGS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="558868e9-7576-4897-9d72-bcc1dd9929c0" x="800" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[INITIAL PALLET]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="634dc9e1-305d-4261-9456-48fe501ae649" x="1000" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[INITIAL KILOGRAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="75e281b4-5337-4c61-9941-afbe72884c97" x="1200" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[INBOUND PALLET]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6ea000c3-9b8e-41ce-9243-5130acc3c7bb" x="1400" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[INBOUND KILOGRAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="54fc4106-a187-4935-8781-335bd9649618" x="1600" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[OUTBOUND PALLET]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8248619e-603c-40f3-aa67-6e867ba0a385" x="1800" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[OUTBOUND KILOGRAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="29b78e39-b738-43bd-b648-5c0f1f7b54b1" x="2000" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CURRENT PALLET]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0fda5a5c-a51e-47d2-849b-ea6639b12766" x="2200" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CURRENT KILOGRAM]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="25">
+			<textField>
+				<reportElement uuid="e1c59699-37ac-47af-8abe-89c6bedb26aa" x="400" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{buildings}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4c4bd64e-7c8d-4918-a6df-47cc94cc43de" x="600" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{temp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="43238318-27d8-468d-8607-99eadc602dec" x="1400" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{inbound_weight}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="ae334f28-08e3-4dc8-a8ac-482118fe0288" x="200" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{date_printed}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dfa24278-2623-46c1-a9ab-810c17dd79cd" x="1600" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{outbound_pallet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9377be12-3c40-4f08-8a81-164bfa31a7a0" x="0" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{wh_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e21c8995-959e-4c40-b663-3c5666ab6990" x="800" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{init_pallet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="aa20a2ec-8525-46b8-9605-5fc63f227eee" x="1200" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{inbound_pallet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a9d805a1-9eda-43a1-829d-21b08fe62d7c" x="2000" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{final_pallet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bad2e242-279b-465f-a1a9-adff3375415b" x="1000" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{init_weight}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dc765f57-6104-4238-b912-9d8c08f074e1" x="1800" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{outbound_weight}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c133153a-aa08-49ff-bb2e-6b2edcc1ac12" x="2200" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{final_weight}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
