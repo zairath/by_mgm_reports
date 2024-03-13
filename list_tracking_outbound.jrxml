@@ -35,6 +35,9 @@
 	<parameter name="client_id" class="java.lang.String">
 		<property name="prompt" value="^client_id^"/>
 	</parameter>
+	<parameter name="ordnum" class="java.lang.String">
+		<property name="prompt" value="^ordnum^"/>
+	</parameter>
 	<queryString language="MOCA">
 		<![CDATA[list cstm tracking outbound]]>
 	</queryString>
