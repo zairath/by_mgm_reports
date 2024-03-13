@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="list_tracking_outbound" language="groovy" pageWidth="3500" pageHeight="712800" orientation="Landscape" columnWidth="3500" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4cf08186-478c-4178-8f40-a4fae758f104">
 	<property name="ireport.zoom" value="1.2078825000000022"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="1813"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_TZ" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
@@ -304,12 +304,12 @@
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{create_do}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy hh:mm:ss" isBlankWhenNull="true">
 				<reportElement uuid="9269055d-53f9-4357-8e50-39f1baa19985" x="2519" y="0" width="150" height="20"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{allocate_date}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy hh:mm:ss" isBlankWhenNull="true">
 				<reportElement uuid="dda7cdac-27b7-4a75-ac3a-1a369848794e" x="2669" y="0" width="150" height="20"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{start_pick}]]></textFieldExpression>
@@ -319,7 +319,7 @@
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{wave_num}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy hh:mm:ss" isBlankWhenNull="true">
 				<reportElement uuid="e3143902-465a-4e3c-87cb-aadb60e67e8a" x="2819" y="0" width="150" height="20"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{finish_pick}]]></textFieldExpression>
