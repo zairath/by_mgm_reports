@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="list_rpt_export_soh_lpn" language="groovy" pageWidth="4424" pageHeight="1080000" orientation="Landscape" columnWidth="4424" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="1ed1a980-666d-4c2f-9cb6-e666b02ce0f0">
+	<property name="ireport.zoom" value="0.9090909090909091"/>
+	<property name="ireport.x" value="3203"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA["US_ENGLISH"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_CONNECTION" class="com.redprairie.moca.jrds.JRMocaConnection" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new com.redprairie.moca.jrds.JRMocaConnection("http://localhost:4500/service", "super", "super", true)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_DATE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getDateInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_TIME" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_TZ" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wh_id" class="java.lang.String">
+		<property name="prompt" value="^wh_id^"/>
+	</parameter>
+	<parameter name="start_date" class="java.util.Date">
+		<property name="prompt" value="start_date"/>
+	</parameter>
+	<parameter name="prt_client_id" class="java.lang.String">
+		<property name="prompt" value="^prt_client_id^"/>
+	</parameter>
+	<parameter name="end_date" class="java.util.Date">
+		<property name="prompt" value="end_date"/>
+	</parameter>
+	<parameter name="rpttrantyp" class="java.lang.String">
+		<property name="prompt" value="^rpttrantyp^"/>
+	</parameter>
+	<queryString language="MOCA">
+		<![CDATA[list rpt export soh by lpn]]>
+	</queryString>
+	<field name="date_printed" class="java.util.Date"/>
+	<field name="wh_id" class="java.lang.String"/>
+	<field name="stoloc" class="java.lang.String"/>
+	<field name="lodnum" class="java.lang.String"/>
+	<field name="subnum" class="java.lang.String"/>
+	<field name="prtnum" class="java.lang.String"/>
+	<field name="prt_client_id" class="java.lang.String"/>
+	<field name="client_name" class="java.lang.String"/>
+	<field name="revlvl" class="java.lang.String"/>
+	<field name="batch_code" class="java.lang.String"/>
+	<field name="reference_1" class="java.lang.String"/>
+	<field name="reference_2" class="java.lang.String"/>
+	<field name="lngdsc" class="java.lang.String"/>
+	<field name="expire_dte" class="java.util.Date"/>
+	<field name="untcas" class="java.lang.String"/>
+	<field name="stkuom" class="java.lang.String"/>
+	<field name="dspuom" class="java.lang.String"/>
+	<field name="trn_in" class="java.lang.String"/>
+	<field name="trn_in_ctn" class="java.lang.String"/>
+	<field name="trn_in_catch_weight" class="java.lang.String"/>
+	<field name="trn_in_ctn_weight" class="java.lang.String"/>
+	<field name="inserted_time" class="java.util.Date"/>
+	<field name="trantyp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="12882bb6-edb7-4322-835d-0b3db3258a55" x="0" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[DATE PRINTED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e991802b-24c5-4f7d-89d4-c152841f0485" x="200" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[WAREHOUSE ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e540346c-a473-40fc-9dce-8ab7c061cb23" x="400" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[LOCATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eeac43db-4aaf-41f9-aeff-d372f6a8380c" x="600" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[LPN ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c7c5a866-4b88-4f03-9220-7363cb2e58cb" x="800" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[SUB LPN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="581c68bd-f532-4a49-9039-36b9f29717df" x="1000" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[ITEM NUMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4420b7a3-29c2-40d8-9366-8aa6d4eaf6f4" x="1500" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[CLIENT ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2d8b0653-23bd-4c14-b939-a3b2e6beecf7" x="1700" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[CLIENT NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="340a5675-29df-41e2-9c45-024f1f135c76" x="1900" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[REVISION LEVEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="85b42c1d-1e63-4244-8c54-b1c7738f6dbb" x="2100" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[BATCH CODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="03277b0a-8d6c-4d0d-93a5-49d53f366a83" x="2300" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[REFERENCE 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f38f79be-7e01-4d0c-912e-4d44f39e903c" x="2500" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[REFERENCE 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9479530b-232c-4862-bee3-bc92733bcac9" x="1200" y="0" width="300" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[ITEM DESCRIPTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3bd2d63d-9fd3-4c54-b649-e097aa4e1d3f" x="2700" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[EXPIRED DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="69eb363f-b32d-4727-9d5f-9c298d3dc67a" x="2900" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[UNIT CASE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b814877b-f664-4053-8ba1-0299451f5303" x="3100" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[STOCK UOM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2c7868f5-0efb-4640-a2dd-9baa6a8c483a" x="3300" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[DISPLAY UOM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="59f771fa-a4cd-4553-bcef-25cf0140ec97" x="3500" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[INBOUND QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a88fe39-24b0-4c08-8f28-c869d3ea7a55" x="3700" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[INBOUND CTN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a56c37bf-d872-48d7-80f1-d8dcb0a12cb7" x="3900" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[INBOUND WEIGHT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6aeb5253-7aae-4224-8eb7-b6b5d345728e" x="4100" y="0" width="200" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none"/>
+				<text><![CDATA[INBOUND CTN WEIGHT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="25">
+			<textField pattern="dd/mm/yyyy hh.mm.ss" isBlankWhenNull="true">
+				<reportElement uuid="588a02ed-7983-4be6-b8da-8a0c356993b6" x="0" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{date_printed}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="9231e438-dc01-4491-84ce-5800c7d2968a" x="200" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{wh_id}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="5274cb0e-8344-4216-8788-fe059bd583c2" x="400" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{stoloc}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="3c1d37e4-55d3-46c7-bea2-3dec93728be5" x="600" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{lodnum}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="4ac6d2b1-6531-4bb8-b149-86477889eaf9" x="800" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{subnum}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="cc6a9646-2a0a-47e8-9e33-02b161e94743" x="1000" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{prtnum}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="a75d7509-3e47-46d6-a1cf-94b69aecf42d" x="1500" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{prt_client_id}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="e7e3705a-6575-46a3-b31d-e303100a6acf" x="1700" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{client_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="9b6ae85c-e8d0-43fe-ae72-8b5539c71009" x="1900" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{revlvl}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="2ce35087-71b7-4c91-8710-7ed7dce4ae86" x="2100" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{batch_code}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="92a19e05-58b1-4a5e-9cd6-6ad00d634202" x="2300" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{reference_1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="9be8e95d-97a9-4ba2-8dcd-560f0a5faea2" x="2500" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{reference_2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="409416b5-3138-45e9-a5e7-71e3bf728b7c" x="1200" y="0" width="300" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{lngdsc}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy HH.mm.ss" isBlankWhenNull="true">
+				<reportElement uuid="e23be9d5-cc47-4f68-bef2-ca4bfe525908" x="2700" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{expire_dte}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f2a9c63d-1cea-4ad9-a09b-ae437f433b50" x="2900" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{untcas}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="4bf30ec2-4a44-48f8-a177-1c42da308b68" x="3100" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{stkuom}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="b5cc92e9-3560-4d8c-b648-dfc3b15f06b8" x="3300" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{dspuom}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="d156d654-b03f-46dd-928d-0eef15c10e8e" x="3500" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{trn_in}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="c56601b8-908f-481a-a71a-6fda6e7aac0d" x="3700" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{trn_in_ctn}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="d0ec9915-fa50-4111-aceb-3b1c94dd2357" x="3900" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{trn_in_catch_weight}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="c5cd7d51-7a31-47a6-8b2b-0325629e66fe" x="4100" y="0" width="200" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{trn_in_ctn_weight}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
