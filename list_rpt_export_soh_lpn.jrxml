@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="list_rpt_export_soh_lpn" language="groovy" pageWidth="4424" pageHeight="1080000" orientation="Landscape" columnWidth="4424" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="1ed1a980-666d-4c2f-9cb6-e666b02ce0f0">
 	<property name="ireport.zoom" value="0.9090909090909091"/>
-	<property name="ireport.x" value="2128"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
@@ -178,7 +178,7 @@
 	</title>
 	<detail>
 		<band height="25">
-			<textField pattern="dd/mm/yyyy hh.mm.ss" isBlankWhenNull="true">
+			<textField isBlankWhenNull="true">
 				<reportElement uuid="588a02ed-7983-4be6-b8da-8a0c356993b6" x="0" y="0" width="200" height="25"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
 				<textFieldExpression><![CDATA[$F{date_printed}]]></textFieldExpression>
@@ -243,7 +243,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
 				<textFieldExpression><![CDATA[$F{lngdsc}]]></textFieldExpression>
 			</textField>
-			<textField pattern="dd/MM/yyyy HH.mm.ss" isBlankWhenNull="true">
+			<textField pattern="dd/MM/yyyy h.mm a" isBlankWhenNull="true">
 				<reportElement uuid="e23be9d5-cc47-4f68-bef2-ca4bfe525908" x="2700" y="0" width="200" height="25"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
 				<textFieldExpression><![CDATA[$F{expire_dte}]]></textFieldExpression>
