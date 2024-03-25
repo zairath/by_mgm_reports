@@ -24,7 +24,11 @@
 		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
 	</parameter>
 	<parameter name="wh_id" class="java.lang.String">
+<<<<<<< HEAD
+		<property name="prompt" value="^wh_idl^"/>
+=======
 		<property name="prompt" value="^wh_id^"/>
+>>>>>>> 29e256e6c83ac0bf9005b757826078d0b43b521f
 	</parameter>
 	<parameter name="prt_client_id" class="java.lang.String">
 		<property name="prompt" value="^prt_client_id^"/>
