@@ -23,8 +23,8 @@
 		<property name="MOCA" value="true"/>
 		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
 	</parameter>
-	<parameter name="wh_id_tmpl" class="java.lang.String">
-		<property name="prompt" value="^wh_id_tmpl^"/>
+	<parameter name="wh_id" class="java.lang.String">
+		<property name="prompt" value="^wh_idl^"/>
 	</parameter>
 	<parameter name="prt_client_id" class="java.lang.String">
 		<property name="prompt" value="^prt_client_id^"/>
