@@ -32,8 +32,14 @@
 	<parameter name="client_id" class="java.lang.String">
 		<property name="prompt" value="^client_id^"/>
 	</parameter>
+	<parameter name="start_date" class="java.util.Date">
+		<property name="prompt" value="start_date"/>
+	</parameter>
+	<parameter name="end_date" class="java.util.Date">
+		<property name="prompt" value="end_date"/>
+	</parameter>
 	<queryString language="MOCA">
-		<![CDATA[list rpt export outbound order list where @%wh_id and @%client_id and @%ordnum]]>
+		<![CDATA[list rpt export outbound order list where @%wh_id and @%client_id and @%ordnum and @%start_date and @%end_date]]>
 	</queryString>
 	<field name="order_status" class="java.lang.String"/>
 	<field name="client_name" class="java.lang.String"/>
