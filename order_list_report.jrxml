@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="order_list_report" language="groovy" pageWidth="6840" pageHeight="3600000" orientation="Landscape" columnWidth="6840" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e40e7c1b-a80e-4842-bb71-7d2df9d8c90a">
+	<property name="ireport.zoom" value="1.7715610000000022"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA["US_ENGLISH"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_CONNECTION" class="com.redprairie.moca.jrds.JRMocaConnection" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new com.redprairie.moca.jrds.JRMocaConnection("http://localhost:4500/service", "super", "super", true)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_DATE" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getDateInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_TIME" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[DateFormat.getTimeInstance(DateFormat.SHORT).format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MOCA_REPORT_TZ" class="java.lang.String" isForPrompting="false">
+		<property name="MOCA" value="true"/>
+		<defaultValueExpression><![CDATA[new java.text.SimpleDateFormat("z").format(new Date())]]></defaultValueExpression>
+	</parameter>
+	<parameter name="wh_id" class="java.lang.String">
+		<property name="prompt" value="^wh_id^"/>
+	</parameter>
+	<parameter name="ordnum" class="java.lang.String">
+		<property name="prompt" value="^ordnum^"/>
+	</parameter>
+	<parameter name="client_id" class="java.lang.String">
+		<property name="prompt" value="^client_id^"/>
+	</parameter>
+	<parameter name="start_date" class="java.util.Date">
+		<property name="prompt" value="start_date"/>
+	</parameter>
+	<parameter name="end_date" class="java.util.Date">
+		<property name="prompt" value="end_date"/>
+	</parameter>
+	<queryString language="MOCA">
+		<![CDATA[list rpt export outbound order list where @%wh_id and @%client_id and @%ordnum and @%start_date and @%end_date]]>
+	</queryString>
+	<field name="order_status" class="java.lang.String"/>
+	<field name="client_name" class="java.lang.String"/>
+	<field name="client_id" class="java.lang.String"/>
+	<field name="order_number" class="java.lang.String"/>
+	<field name="warehouse_id" class="java.lang.String"/>
+	<field name="bill_to_customer" class="java.lang.String"/>
+	<field name="ship_to_customer" class="java.lang.String"/>
+	<field name="route_to_customer" class="java.lang.String"/>
+	<field name="order_type" class="java.lang.String"/>
+	<field name="customer_po_number" class="java.lang.String"/>
+	<field name="order_line" class="java.lang.String"/>
+	<field name="item_number" class="java.lang.String"/>
+	<field name="description_item" class="java.lang.String"/>
+	<field name="order_unit_qty" class="java.lang.Integer"/>
+	<field name="ordered_quantity" class="java.lang.String"/>
+	<field name="remainder_ordered_quantity" class="java.lang.String"/>
+	<field name="carrier" class="java.lang.String"/>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="bill_to_address" class="java.lang.String"/>
+	<field name="ship_to_address" class="java.lang.String"/>
+	<field name="route_to_address" class="java.lang.String"/>
+	<field name="ship_to_city" class="java.lang.String"/>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="2a5357a7-6dad-4c60-ac1e-94d149aa41b5" x="0" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDER STATUS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f54d071a-ef5d-4c97-9a94-5c5bd1f91712" x="900" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDER NUMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7a02a1d7-590f-451d-b3b0-43d868167f11" x="1500" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BILL TO CUSTOMER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6f26d2f2-1411-4728-bc1e-76bbe4b3d594" x="1800" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SHIP TO CUSTOMER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4d07c6d0-8b44-42b5-bc3f-b5a030bd6fc1" x="2100" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ROUTE TO CUSTOMER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9dba0fe2-4a12-4213-ade5-d035a453a98c" x="2700" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CUSTOMER PO NUMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ad309235-e640-4c7c-9590-dffe61977e86" x="3000" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDER LINE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ed48228f-9ced-4144-85c9-332c8cae35c1" x="3600" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPTION ITEM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="050dbee6-cce7-4c45-9cb6-ba6919e3b463" x="4800" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CARRIER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b0823b9c-d3c4-484d-a5fe-234686fdc213" x="5400" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BILL TO ADDRESS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c2313e8d-f126-41cd-abc0-d880605de1a3" x="6000" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ROUTE TO ADDRESS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b70e858f-047b-475a-af74-3d07c346c805" x="6300" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SHIP TO CITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="81f29174-bd97-4833-b6c2-c4198c26279e" x="5100" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CUSTOMER NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cfa13654-3304-46c6-8622-48d1f6e83b82" x="1200" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[WAREHOUSE ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2713b6e1-1abf-4f3c-9e59-04c2e1611157" x="3300" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ITEM NUMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6077f5ed-8968-44ab-83f9-3e34b1b7514b" x="5700" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SHIP TO ADDRESS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9e8b4072-1c8b-4802-88f8-602a4afd9702" x="3900" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDER UNIT QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ef8eed86-7d74-44e1-936a-66e680cfd116" x="4200" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDERED QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="af0b3b77-bf5c-4aef-a7bf-e07578635bb5" x="2400" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDER TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3d7d5c61-7240-429d-9df1-dec8fae4cebb" x="4500" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[REMAINDER ORDERED QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6b0f56e8-158b-482a-af4e-7fbd4ea6b231" x="300" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLIENT NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9e335466-a72c-4d8a-a41d-776813dc650b" x="600" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLIENT ID]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="a53360bc-7783-482d-a24c-a128ccc213d5" x="0" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{order_status}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="23333d4e-a3e6-4142-991c-7cc284b49fee" x="900" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{order_number}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="fe0f19c9-9ce2-44dc-a1cc-c5d67effaedc" x="1500" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{bill_to_customer}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="59b25a89-5872-4105-8d5f-0ec8d94207d6" x="1800" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ship_to_customer}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="49a5c214-764d-41e4-8511-1ff84ae85e04" x="2100" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{route_to_customer}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="0cc767e8-4c00-4867-983e-68bdf5d5fab7" x="2700" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{customer_po_number}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7fb9a3d8-931b-476d-8a16-be4a5c439a97" x="3000" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{order_line}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7d8cb658-367c-4c13-bd44-dd0d30b24470" x="3600" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{description_item}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="075f08c7-6c9f-4292-950a-0b24bc73d672" x="4800" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{carrier}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7c74965c-5099-4be1-936c-b10d3c8d38cc" x="5400" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{bill_to_address}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="eb1a5dd1-60e6-4756-9d00-d70b6e26a6bd" x="6000" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{route_to_address}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="9a5af6fb-a9b2-486a-a09e-8faa2c60519b" x="6300" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ship_to_city}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="2a72441e-eb2d-4c82-9f05-b123ce767746" x="5100" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="e0ed4c74-eb0b-4822-9314-dd69296f3cf7" x="1200" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{warehouse_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="2b9352f6-6d20-451e-b995-825512c74862" x="3300" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{item_number}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="b5b194ba-d512-4ef4-9997-247d3effb380" x="5700" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ship_to_address}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="6b0ced88-e27e-42d2-800f-1d0f49fe074f" x="3900" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{order_unit_qty}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="31eba441-f217-4863-82e4-7be687de420d" x="4200" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ordered_quantity}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="1ae87794-b048-41d1-85f1-b5fc90028857" x="2400" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{order_type}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="846392b1-451c-4042-a529-bfc6a038fa12" x="4500" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{remainder_ordered_quantity}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="487740fa-8cd0-4b7b-a60f-58bb5c96acb6" x="300" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{client_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="6958664c-0219-420c-a03b-655565184a8e" x="600" y="0" width="300" height="20"/>
+				<box leftPadding="3"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{client_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
