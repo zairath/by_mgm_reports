@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ticket_picking" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="14" bottomMargin="26" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
-	<property name="ireport.zoom" value="2.000000000000002"/>
+	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="15"/>
+	<property name="ireport.y" value="32"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
 	<property name="ireport.callouts" value="##4/6/12 callouts.1.text=This Report was converted from on 4/6/12 3:47 PM callouts.1.bounds=10,-10,600,32"/>
@@ -75,7 +75,7 @@
 	<field name="inv_attr_str1" class="java.lang.String"/>
 	<field name="inv_attr_str2" class="java.lang.String"/>
 	<field name="inv_attr_str3" class="java.lang.String"/>
-	<field name="expire_dte" class="java.util.Date"/>
+	<field name="expire_dte" class="java.lang.String"/>
 	<variable name="oprcod" class="java.lang.String">
 		<variableExpression><![CDATA[$F{oprcod}]]></variableExpression>
 		<initialValueExpression><![CDATA[$F{oprcod}]]></initialValueExpression>
@@ -195,19 +195,19 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="17a5c893-9fdd-45de-b408-73787a1bbd22" x="390" y="0" width="44" height="20" backcolor="#CCCCCC"/>
+				<reportElement uuid="17a5c893-9fdd-45de-b408-73787a1bbd22" x="420" y="0" width="39" height="20" backcolor="#CCCCCC"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="13f60beb-da3f-4e4f-8634-de49163e6470" x="434" y="0" width="54" height="20" backcolor="#CCCCCC"/>
+				<reportElement uuid="13f60beb-da3f-4e4f-8634-de49163e6470" x="459" y="0" width="47" height="20" backcolor="#CCCCCC"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<rectangle>
-				<reportElement uuid="7e7bec10-4513-4ab9-b421-18624d2ee8d3" x="488" y="0" width="87" height="20" backcolor="#CCCCCC"/>
+				<reportElement uuid="7e7bec10-4513-4ab9-b421-18624d2ee8d3" x="506" y="0" width="69" height="20" backcolor="#CCCCCC"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -227,21 +227,21 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 				<text><![CDATA[Description]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="356f8d43-c647-4864-b44a-c6f1363261da" x="390" y="0" width="44" height="20"/>
+				<reportElement uuid="356f8d43-c647-4864-b44a-c6f1363261da" x="420" y="0" width="39" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PCK QTY]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="e79f7563-9357-46f2-9fc0-6be29f4adfd7" x="434" y="0" width="54" height="20"/>
+				<reportElement uuid="e79f7563-9357-46f2-9fc0-6be29f4adfd7" x="459" y="0" width="47" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[UOM]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="0bec6edd-0162-4dea-96da-bd5ee64a4d25" x="488" y="0" width="87" height="20"/>
+				<reportElement uuid="0bec6edd-0162-4dea-96da-bd5ee64a4d25" x="506" y="0" width="69" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="6" isBold="true"/>
 				</textElement>
@@ -274,13 +274,13 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 				<text><![CDATA[Revision Level]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement uuid="d4a271ed-bd93-4ed8-ae9c-b3336db739d4" x="336" y="0" width="54" height="20" backcolor="#CCCCCC"/>
+				<reportElement uuid="d4a271ed-bd93-4ed8-ae9c-b3336db739d4" x="336" y="0" width="84" height="20" backcolor="#CCCCCC"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<staticText>
-				<reportElement uuid="03716ecc-5572-4472-8a12-402613ed575a" x="336" y="0" width="54" height="20"/>
+				<reportElement uuid="03716ecc-5572-4472-8a12-402613ed575a" x="336" y="0" width="84" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="6" isBold="true"/>
 				</textElement>
@@ -289,11 +289,17 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="20" splitType="Stretch">
+		<band height="27" splitType="Stretch">
 			<frame>
-				<reportElement uuid="c5713720-6635-4890-9869-3a78dcbbbb77" x="0" y="0" width="575" height="20"/>
+				<reportElement uuid="c5713720-6635-4890-9869-3a78dcbbbb77" x="0" y="0" width="575" height="27"/>
+				<rectangle>
+					<reportElement uuid="20b605ea-14ca-4706-8de8-45633d416641" stretchType="RelativeToBandHeight" x="336" y="1" width="84" height="24"/>
+					<graphicElement>
+						<pen lineWidth="0.5" lineStyle="Dashed"/>
+					</graphicElement>
+				</rectangle>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-					<reportElement uuid="1930afc9-01d9-4214-9ba3-042fe1e92fd5" stretchType="RelativeToBandHeight" x="0" y="0" width="70" height="20"/>
+					<reportElement uuid="1930afc9-01d9-4214-9ba3-042fe1e92fd5" stretchType="RelativeToBandHeight" x="0" y="0" width="70" height="25"/>
 					<box>
 						<pen lineWidth="0.5" lineStyle="Dashed"/>
 						<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -307,7 +313,7 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 					<textFieldExpression><![CDATA[$F{item_number}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-					<reportElement uuid="f5b1f3be-3882-487e-b60f-eff21ee0d16e" stretchType="RelativeToBandHeight" x="70" y="0" width="158" height="20"/>
+					<reportElement uuid="f5b1f3be-3882-487e-b60f-eff21ee0d16e" stretchType="RelativeToBandHeight" x="70" y="0" width="158" height="25"/>
 					<box>
 						<pen lineWidth="0.5" lineStyle="Dashed"/>
 						<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -321,7 +327,7 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 					<textFieldExpression><![CDATA[$F{item_description}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-					<reportElement uuid="6e35a2a0-16e8-4a3e-bcb2-6586db0f9deb" stretchType="RelativeToBandHeight" x="390" y="0" width="44" height="20"/>
+					<reportElement uuid="6e35a2a0-16e8-4a3e-bcb2-6586db0f9deb" stretchType="RelativeToBandHeight" x="420" y="0" width="39" height="25"/>
 					<box>
 						<pen lineWidth="0.5" lineStyle="Dashed"/>
 						<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -335,7 +341,7 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 					<textFieldExpression><![CDATA[$F{pick_qty}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-					<reportElement uuid="53d54cc2-267a-4237-aaf4-a4f87d3ec291" stretchType="RelativeToBandHeight" x="434" y="0" width="54" height="20"/>
+					<reportElement uuid="53d54cc2-267a-4237-aaf4-a4f87d3ec291" stretchType="RelativeToBandHeight" x="459" y="0" width="47" height="25"/>
 					<box>
 						<pen lineWidth="0.5" lineStyle="Dashed"/>
 						<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -349,7 +355,7 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 					<textFieldExpression><![CDATA[$F{pck_uom}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-					<reportElement uuid="4f73a164-c1f6-4135-a11c-79a9702f2b5b" stretchType="RelativeToBandHeight" x="488" y="0" width="87" height="20"/>
+					<reportElement uuid="4f73a164-c1f6-4135-a11c-79a9702f2b5b" stretchType="RelativeToBandHeight" x="506" y="0" width="69" height="25"/>
 					<box>
 						<pen lineWidth="0.5" lineStyle="Dashed"/>
 						<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -363,7 +369,7 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 					<textFieldExpression><![CDATA[$F{srcloc}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-					<reportElement uuid="eb744e9d-827e-401e-9fda-f595c3857716" stretchType="RelativeToBandHeight" x="228" y="0" width="54" height="20"/>
+					<reportElement uuid="eb744e9d-827e-401e-9fda-f595c3857716" stretchType="RelativeToBandHeight" x="228" y="0" width="54" height="25"/>
 					<box>
 						<pen lineWidth="0.5" lineStyle="Dashed"/>
 						<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -377,7 +383,7 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 					<textFieldExpression><![CDATA[$F{inv_attr_str1}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-					<reportElement uuid="dc8c580c-5c6d-4245-a389-2c503700b615" stretchType="RelativeToBandHeight" x="282" y="0" width="54" height="20"/>
+					<reportElement uuid="dc8c580c-5c6d-4245-a389-2c503700b615" stretchType="RelativeToBandHeight" x="282" y="0" width="54" height="25"/>
 					<box>
 						<pen lineWidth="0.5" lineStyle="Dashed"/>
 						<topPen lineWidth="0.5" lineStyle="Dashed"/>
@@ -390,20 +396,12 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{revlvl}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
-					<reportElement uuid="b89b164f-ecbf-4ced-8189-68c44217689c" stretchType="RelativeToBandHeight" x="336" y="0" width="54" height="20"/>
-					<box>
-						<pen lineWidth="0.5" lineStyle="Dashed"/>
-						<topPen lineWidth="0.5" lineStyle="Dashed"/>
-						<leftPen lineWidth="0.5" lineStyle="Dashed"/>
-						<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
-						<rightPen lineWidth="0.5" lineStyle="Dashed"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{expire_dte}]]></textFieldExpression>
-				</textField>
+				<componentElement>
+					<reportElement uuid="f8aee8e1-e5d1-4cf2-baf6-dce1899ae6bd" stretchType="RelativeToBandHeight" x="339" y="1" width="84" height="24"/>
+					<jr:Code128 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
+						<jr:codeExpression><![CDATA[$F{expire_dte}]]></jr:codeExpression>
+					</jr:Code128>
+				</componentElement>
 			</frame>
 		</band>
 	</detail>
