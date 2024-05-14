@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ticket_picking" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="14" bottomMargin="26" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="32"/>
+	<property name="ireport.y" value="2"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
 	<property name="ireport.callouts" value="##4/6/12 callouts.1.text=This Report was converted from on 4/6/12 3:47 PM callouts.1.bounds=10,-10,600,32"/>
@@ -289,11 +289,11 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="27" splitType="Stretch">
+		<band height="25" splitType="Stretch">
 			<frame>
-				<reportElement uuid="c5713720-6635-4890-9869-3a78dcbbbb77" x="0" y="0" width="575" height="27"/>
+				<reportElement uuid="c5713720-6635-4890-9869-3a78dcbbbb77" x="0" y="0" width="575" height="25"/>
 				<rectangle>
-					<reportElement uuid="20b605ea-14ca-4706-8de8-45633d416641" stretchType="RelativeToBandHeight" x="336" y="1" width="84" height="24"/>
+					<reportElement uuid="20b605ea-14ca-4706-8de8-45633d416641" stretchType="RelativeToBandHeight" x="336" y="0" width="84" height="25"/>
 					<graphicElement>
 						<pen lineWidth="0.5" lineStyle="Dashed"/>
 					</graphicElement>
@@ -397,7 +397,7 @@ com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
 					<textFieldExpression><![CDATA[$F{revlvl}]]></textFieldExpression>
 				</textField>
 				<componentElement>
-					<reportElement uuid="f8aee8e1-e5d1-4cf2-baf6-dce1899ae6bd" stretchType="RelativeToBandHeight" x="339" y="1" width="84" height="24"/>
+					<reportElement uuid="f8aee8e1-e5d1-4cf2-baf6-dce1899ae6bd" stretchType="RelativeToBandHeight" x="339" y="1" width="81" height="24"/>
 					<jr:Code128 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
 						<jr:codeExpression><![CDATA[$F{expire_dte}]]></jr:codeExpression>
 					</jr:Code128>
