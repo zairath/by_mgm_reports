@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ship_report_hist" language="groovy" pageWidth="5040" pageHeight="719928" orientation="Landscape" columnWidth="5036" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
 	<property name="ireport.zoom" value="2.1435888100000207"/>
-	<property name="ireport.x" value="4699"/>
+	<property name="ireport.x" value="4290"/>
 	<property name="ireport.y" value="0"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
@@ -436,7 +436,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{catch_qty}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[( $F{catch_unttyp} == null ? $F{carton_weight} : $F{catch_qty} )]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement uuid="408f8fa0-41e9-401a-ba0b-f62205cbbe89" x="2805" y="0" width="120" height="20"/>
