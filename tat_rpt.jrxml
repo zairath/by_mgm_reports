@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tat_rpt" language="groovy" pageWidth="3960" pageHeight="7128" orientation="Landscape" columnWidth="3954" leftMargin="3" rightMargin="3" topMargin="3" bottomMargin="3" uuid="345ae4f4-6a98-4ed9-899e-44959c34223e">
 	<property name="ireport.zoom" value="2.5937424601000214"/>
-	<property name="ireport.x" value="8772"/>
+	<property name="ireport.x" value="5368"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="MOCA_REPORT_LOCALE" class="java.lang.String" isForPrompting="false">
 		<property name="MOCA" value="true"/>
@@ -211,7 +211,7 @@
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[GET OUT TIME ]]></text>
+				<text><![CDATA[GATE OUT TIME ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="a227acfe-435c-4ec3-abab-0eb640283a95" x="3450" y="0" width="150" height="20"/>
