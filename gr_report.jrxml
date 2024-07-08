@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="gr_report" language="groovy" pageWidth="4176" pageHeight="719928" orientation="Landscape" columnWidth="4172" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
-	<property name="ireport.zoom" value="1.2100000000000146"/>
-	<property name="ireport.x" value="556"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="gr_report" language="groovy" pageWidth="4464" pageHeight="719928" orientation="Landscape" columnWidth="4460" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" scriptletClass="com.redprairie.moca.jrds.ReportingIreportScriptlet" resourceBundle="com.redprairie.moca.jrds.Xlate" whenResourceMissingType="Key" uuid="85a62c41-ac5d-41cf-ae2f-cbe6a3553efc">
+	<property name="ireport.zoom" value="1.9487171000000247"/>
+	<property name="ireport.x" value="5515"/>
 	<property name="ireport.y" value="0"/>
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.ireport.encoding" value="UTF-8"/>
@@ -76,6 +76,8 @@
 	<field name="batch_code" class="java.lang.String"/>
 	<field name="reference_1" class="java.lang.String"/>
 	<field name="reference_2" class="java.lang.String"/>
+	<field name="reference_3" class="java.lang.String"/>
+	<field name="reference_4" class="java.lang.String"/>
 	<field name="lotnum" class="java.lang.String"/>
 	<field name="rcvsts" class="java.lang.String"/>
 	<field name="mandte" class="java.util.Date"/>
@@ -212,31 +214,31 @@
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="c1cd591d-ff66-46c8-ac08-8cdf7f5ce902" x="3055" y="0" width="150" height="18"/>
+				<reportElement uuid="c1cd591d-ff66-46c8-ac08-8cdf7f5ce902" x="3504" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[MANUFACTURE DATE ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="f49204fa-bbc9-43b1-9d4c-64424c28b3e0" x="3205" y="0" width="150" height="18"/>
+				<reportElement uuid="f49204fa-bbc9-43b1-9d4c-64424c28b3e0" x="3654" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[EXPIRED DATE ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="7f87b3c5-1605-45af-8cf6-f2d55924fd58" x="3355" y="0" width="150" height="18"/>
+				<reportElement uuid="7f87b3c5-1605-45af-8cf6-f2d55924fd58" x="3804" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[CREATED DATE ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="efadb88e-3b67-48a8-b289-20dde1c717c2" x="3657" y="0" width="150" height="18"/>
+				<reportElement uuid="efadb88e-3b67-48a8-b289-20dde1c717c2" x="4106" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[GR BY]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="d779e6f9-c4be-4eaf-8797-07c75346cca6" x="3808" y="0" width="150" height="18"/>
+				<reportElement uuid="d779e6f9-c4be-4eaf-8797-07c75346cca6" x="4257" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[PUTAWAY BY]]></text>
@@ -248,7 +250,7 @@
 				<text><![CDATA[BATCH CODE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="64013481-1adc-4143-8c75-11d76dbe4146" x="3506" y="0" width="150" height="18"/>
+				<reportElement uuid="64013481-1adc-4143-8c75-11d76dbe4146" x="3955" y="0" width="150" height="18"/>
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[CREATE BY]]></text>
@@ -264,6 +266,25 @@
 				<box leftPadding="3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[SUPPLIER NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9c56b5c7-cf8c-4395-b855-92e9f7649a33" x="3054" y="0" width="150" height="18"/>
+				<box leftPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[REFERENCE 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2fda73a1-48e7-491f-b5a7-b483b20fbb67" x="3204" y="0" width="150" height="18"/>
+				<box leftPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[REFERENCE 3
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4370fadc-2472-461b-878e-51c33fbc06fb" x="3354" y="0" width="150" height="18"/>
+				<box leftPadding="3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[REFERENCE 4]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -336,25 +357,25 @@
 				<textFieldExpression><![CDATA[( $F{catch_unttyp} != null ? $F{rcv_catch_qty} : $F{carton_weight} )]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a" isBlankWhenNull="true">
-				<reportElement uuid="d56dfccb-c703-408a-868e-c6cbcac0504a" x="3205" y="0" width="150" height="20"/>
+				<reportElement uuid="d56dfccb-c703-408a-868e-c6cbcac0504a" x="3654" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{expire_dte}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h:mm:ss a" isBlankWhenNull="true">
-				<reportElement uuid="d9bb48b1-ee07-4e1d-9bc1-b9a919b80c94" x="3355" y="0" width="150" height="20"/>
+				<reportElement uuid="d9bb48b1-ee07-4e1d-9bc1-b9a919b80c94" x="3804" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{completed_date}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="408f8fa0-41e9-401a-ba0b-f62205cbbe89" x="3657" y="0" width="150" height="20"/>
+				<reportElement uuid="408f8fa0-41e9-401a-ba0b-f62205cbbe89" x="4106" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{gr_user}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="bde5b9de-b35c-4920-be6a-919ff283aa33" x="3808" y="0" width="150" height="20"/>
+				<reportElement uuid="bde5b9de-b35c-4920-be6a-919ff283aa33" x="4257" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{putaway_user}]]></textFieldExpression>
@@ -402,13 +423,13 @@
 				<textFieldExpression><![CDATA[$F{reference_1}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement uuid="8f24691a-1f8a-45dd-a35d-683778e107f8" x="3055" y="0" width="150" height="20"/>
+				<reportElement uuid="8f24691a-1f8a-45dd-a35d-683778e107f8" x="3504" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{mandte}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy h.mm a" isBlankWhenNull="true">
-				<reportElement uuid="ce48e93c-f903-4e3b-ad70-e8fc5dfdc34d" x="3506" y="0" width="150" height="20"/>
+				<reportElement uuid="ce48e93c-f903-4e3b-ad70-e8fc5dfdc34d" x="3955" y="0" width="150" height="20"/>
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{create_by}]]></textFieldExpression>
@@ -424,6 +445,24 @@
 				<box leftPadding="3"/>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{sup_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="5613b79c-c55c-43ff-b540-bd223e047c03" x="3054" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{reference_2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="0ee4d8a4-6fd2-4e4a-a92e-9df7ff65ce93" x="3204" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{reference_3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="53efb262-d41a-4c1e-9ede-810068769ece" x="3354" y="0" width="150" height="20"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{reference_4}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
