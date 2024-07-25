@@ -36,6 +36,9 @@
 	<parameter name="lodnum" class="java.lang.String">
 		<property name="prompt" value="^lodnum^"/>
 	</parameter>
+	<parameter name="trknum" class="java.lang.String">
+		<property name="prompt" value="^trknum^"/>
+	</parameter>
 	<queryString language="MOCA">
 		<![CDATA[list rpt produce labels new where @%lodnum and @%wh_id]]>
 	</queryString>
